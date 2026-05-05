@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "title": "Sixto Feliciano Arrejin — Desarrollador Full Stack",
+    "description": "Portafolio profesional de Sixto Feliciano Arrejin. Ingeniero en Sistemas, desarrollador Full Stack especializado en React, Node.js, TypeScript, Cloud y DevOps."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "awards": "Logros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Sixto Feliciano Arrejin",
+    "title": "Desarrollador Full Stack",
+    "subtitle": "React · Node.js · TypeScript · Cloud & DevOps",
+    "description": "Ingeniero en Sistemas de Información enfocado en construir soluciones eficientes con tecnologías modernas, metodologías ágiles y cultura DevOps.",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contactame",
+    "cta_resume": "CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Desarrollador Full Stack e Ingeniero en Sistemas de Información (UTN-FRRe) con foco en React, Node.js y TypeScript.\n\nDesarrollé y desplegué en producción la plataforma web para la Secretaría de Ciencia y Tecnología de la UTN-FRRe, abarcando desde el diseño de la API REST hasta las interfaces. Además, fui parte del equipo creador de Elepad, una aplicación móvil con impacto social publicada en Google Play Store.\n\nMe apasiona construir soluciones eficientes aplicando metodologías ágiles y cultura DevOps (Docker, CI/CD, Cloud). Actualmente busco sumarme a un equipo donde pueda desarrollar producto real, aprender rápido y aportar valor.",
+    "location": "Corrientes, Argentina",
+    "location_label": "Ubicación",
+    "remote": "Disponible para trabajo remoto",
+    "education": "Ing. en Sistemas de Información",
+    "education_label": "Educación",
+    "university": "Universidad Tecnológica Nacional — Facultad Regional Resistencia",
+    "gpa": "Promedio: 8.55/10",
+    "degree_analyst": "Analista Desarrollador Universitario en Sistemas de Información (ADUSI)",
+    "degree_analyst_date": "Marzo 2021 – Julio 2024",
+    "degree_engineer": "Ingeniería en Sistemas de Información",
+    "degree_engineer_date": "Marzo 2021 – Marzo 2026",
+    "languages_label": "Idiomas",
+    "languages": [
+      "Español (Nativo)",
+      "Inglés (Intermedio técnico)"
+    ],
+    "flag_bearer": "Escolta de la bandera 2025"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "languages": "Lenguajes",
+    "frontend": "Frontend",
+    "backend": "Backend & DB",
+    "devops": "DevOps & Cloud",
+    "data": "Datos & BI",
+    "tools": "Herramientas & Metodologías"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "view_more": "Ver detalles",
+    "back": "Volver a proyectos",
+    "type_professional": "Profesional",
+    "type_academic": "Académico",
+    "type_thesis": "Proyecto Final",
+    "team": "Equipo de {count} personas",
+    "links_github": "Código fuente",
+    "links_live": "Ver en vivo",
+    "links_playstore": "Google Play Store",
+    "features_title": "Características implementadas",
+    "stack_title": "Stack tecnológico",
+    "elepad": {
+      "dateRange": "Marzo 2025 - Marzo 2026",
+      "title": "Elepad — App Móvil para Adultos Mayores",
+      "description": "Aplicación móvil publicada en Google Play Store para estimulación cognitiva, rutinas diarias y conexión intergeneracional.",
+      "long_description": "Desarrollé aplicación móvil publicada en Google Play Store para estimulación cognitiva, rutinas diarias y conexión intergeneracional. Proyecto originado de propuesta ganadora del Rally Latinoamericano de Innovación 2024 (3er lugar, Impacto Social).",
+      "features": [
+        "Stack: React Native + Expo (iOS/Android/Web), TypeScript, Cloudflare Workers (backend serverless), Supabase (autenticación JWT + Google OAuth, almacenamiento, PostgreSQL)",
+        "Arquitectura monorepo con Turborepo, CI/CD con GitHub Actions (7 releases bajo Scrum)",
+        "Funcionalidades: calendario adaptativo, juegos cognitivos, galería compartida, estadísticas y monitoreo familiar",
+        "Equipo de 5 personas — Proyecto Final de Ingeniería en Sistemas"
+      ]
+    },
+    "scyt-utn": {
+      "dateRange": "Abril 2023 - Abril 2026",
+      "title": "Plataforma SCyT — UTN FRRe",
+      "description": "Plataforma web para centralización de procesos administrativos y seguimiento de proyectos de investigación.",
+      "long_description": "Diseñé y desarrollé la plataforma web para centralización de procesos administrativos y seguimiento de proyectos de investigación bajo Beca Manuel Belgrano, acreditada como Práctica Profesional Supervisada (PPS).",
+      "features": [
+        "Interfaces dinámicas con React.js, ChakraUI y TanStack Query, incluyendo gestión compleja del estado",
+        "API REST con Node.js y Express bajo arquitectura multicapa (controllers, services, repositories)",
+        "Base de datos PostgreSQL con Prisma ORM, incluyendo migraciones y optimizaciones de performance",
+        "Autenticación segura con JWT y hashing de contraseñas (bcrypt)",
+        "Despliegue continuo en entorno cloud (Render) con CI/CD"
+      ]
+    },
+    "devops-kubernetes": {
+      "dateRange": "Octubre - Noviembre 2025",
+      "title": "DevOps: Kubernetes & Observabilidad",
+      "description": "Orquestación con Kubernetes, alta disponibilidad y observabilidad completa con OpenTelemetry, Prometheus y Grafana.",
+      "long_description": "Proyecto académico de implementación de orquestación con Kubernetes (K3d) con configuración de observabilidad completa y validación de resiliencia.",
+      "features": [
+        "Orquestación con Kubernetes (K3d): 1 control-plane + 2 workers, con 2 réplicas del backend y podAntiAffinity",
+        "Observabilidad completa: OpenTelemetry → Tempo (trazas), Prometheus (métricas), Grafana (dashboards)",
+        "Métricas custom: RPS, latencia p95/p50, CPU, memoria, reinicios",
+        "Validación de resiliencia mediante saturación de recursos"
+      ]
+    },
+    "devops-azure": {
+      "dateRange": "Agosto - Septiembre 2025",
+      "title": "DevOps: Contenerización & CI/CD en Azure",
+      "description": "Contenerización de aplicación web y pipeline CI/CD con GitHub Actions para deploy en Azure.",
+      "long_description": "Contenericé aplicación web (Next.js frontend, Flask backend, Redis caché) con Docker y Docker Compose, con pipeline CI/CD completo en Azure.",
+      "features": [
+        "Contenerización con Docker y Docker Compose (Next.js + Flask + Redis)",
+        "Pipeline CI/CD con GitHub Actions: build automático, push a Azure Container Registry",
+        "Deploy a Azure Container Instances",
+        "Arquitectura de servicios desacoplados comunicados vía API REST"
+      ]
+    },
+    "data-warehouse": {
+      "dateRange": "Abril - Junio 2025",
+      "title": "Data Warehouse & BI: Sello Discográfico",
+      "description": "Solución completa de Business Intelligence con ETL, cubos OLAP y dashboards interactivos en Power BI.",
+      "long_description": "Diseñé una solución completa de BI para un sello discográfico con 3 tablas de hechos, ETL, OLAP y dashboards interactivos.",
+      "features": [
+        "3 tablas de hechos (Ventas, Contratos, Producciones) con manejo de SCD",
+        "ETL con SSIS para integración y transformación de datos",
+        "Cubos OLAP con SSAS para análisis multidimensional",
+        "Dashboards en Power BI: ROI por artista/disco, demanda insatisfecha, ingresos por región, análisis temporal"
+      ]
+    },
+    "play-finder": {
+      "dateRange": "Marzo 2023 - Diciembre 2023",
+      "title": "Play Finder — Gestión de Reservas Deportivas",
+      "description": "Aplicación web Full Stack para la gestión y reserva de canchas deportivas.",
+      "long_description": "Desarrollé una aplicación web Full Stack para la gestión y reserva de canchas deportivas como Proyecto Integrador ADUSI, con equipo de 7 personas bajo metodología Scrum.",
+      "features": [
+        "Full Stack: React, TypeScript, Node.js, Prisma, PostgreSQL",
+        "Arquitectura por capas, autenticación robusta (JWT y Google OAuth)",
+        "Despliegue contenerizado con Docker en Azure",
+        "Equipo de 7 personas bajo metodología Scrum — ciclo de vida completo del software"
+      ]
+    }
+  },
+  "awards": {
+    "title": "Logros y Certificaciones",
+    "rally_title": "3er Lugar — Rally Latinoamericano de Innovación 2024",
+    "rally_description": "Categoría Impacto Social · Proyecto Elepad (equipo Gang of Four, INTECNOR/UTN-FRRe) · Octubre 2024",
+    "scrum_title": "Scrum Fundamentals Certified (SFC)",
+    "scrum_description": "SCRUMstudy — Accreditation Body for Scrum and Agile (Credential ID: 1040148) · Julio 2024",
+    "flag_title": "Escolta de la Bandera 2025",
+    "flag_description": "UTN — Facultad Regional Resistencia (UTN-FRRe) · Promedio general: 8.55/10"
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Tenés un proyecto en mente o querés conversar? No dudes en contactarme.",
+    "email_label": "Email",
+    "social_label": "Redes profesionales"
+  },
+  "footer": {
+    "built_with": "Desarrollado con Next.js, TypeScript y Tailwind CSS",
+    "rights": "Todos los derechos reservados."
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo oscuro",
+    "system": "Sistema"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+}
