@@ -1,30 +1,29 @@
 # Sixto Feliciano Arrejin — Full Stack Developer Portfolio
 
-Bienvenido al repositorio de mi portafolio profesional. Este proyecto es una Single Page Application (SPA) diseñada para mostrar mi experiencia, habilidades y proyectos destacados como Ingeniero en Sistemas de Información y Desarrollador Full Stack.
+Welcome to the repository of my professional portfolio. This project is a Single Page Application (SPA) designed to showcase my experience, skills, and featured projects as an Information Systems Engineer and Full Stack Developer.
 
-🔗 **[Ver Portafolio en Vivo](https://tu-dominio.vercel.app)**
+🔗 **[View Live Portfolio](https://sixto-arrejin.vercel.app)**
 
-## 🚀 Características Principales
+## 🚀 Key Features
 
-Este portafolio fue construido con un enfoque en rendimiento, accesibilidad y experiencia de usuario:
+This portfolio was built with a strong focus on performance, accessibility, and user experience:
 
-- **Internacionalización (i18n):** Soporte nativo para Español e Inglés mediante `next-intl`.
-- **Tema Dinámico:** Soporte integrado para Modo Claro / Modo Oscuro con `next-themes`.
-- **Animaciones Fluidas:** Interacciones y transiciones suaves utilizando `framer-motion`.
-- **Diseño Responsivo:** Completamente adaptable a dispositivos móviles, tablets y pantallas de escritorio.
-- **Rendimiento Optimizado:** Aprovechando las capacidades de Server Components y App Router de Next.js 15.
+- **Internationalization (i18n):** Native support for English and Spanish using `next-intl`.
+- **Dynamic Theme:** Integrated Light / Dark mode support with `next-themes`.
+- **Fluid Animations:** Smooth interactions and transitions using `framer-motion`.
+- **Responsive Design:** Fully adaptable to mobile devices, tablets, and desktop screens.
+- **Optimized Performance:** Leveraging the capabilities of Next.js 15 Server Components and App Router.
 
-## 💻 Stack Tecnológico
+## 💻 Tech Stack
 
 - **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
-- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animaciones:** [Framer Motion](https://www.framer.com/motion/)
-- **Iconos:** [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
 - **i18n:** [next-intl](https://next-intl-docs.vercel.app/)
 
-
-## 📬 Contacto
+## 📬 Contact
 
 - **LinkedIn:** [linkedin.com/in/sixto-arrejin](https://linkedin.com/in/sixto-arrejin)
 - **GitHub:** [github.com/SixtoArrejin](https://github.com/SixtoArrejin)
@@ -32,4 +31,4 @@ Este portafolio fue construido con un enfoque en rendimiento, accesibilidad y ex
 - **WhatsApp:** [+54 379 479-7572](https://wa.me/543794797572)
 
 ---
-*Desarrollado con dedicación por Sixto Feliciano Arrejin.*
+*Designed and developed with dedication by Sixto Feliciano Arrejin.*
