@@ -63,9 +63,9 @@ export function ProjectDetail({ project }: { project: Project }) {
         >
           {/* Header & Carousel Grid */}
           {/* Header & Carousel Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+          <div className={`grid grid-cols-1 ${project.slug !== 'elepad' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-8 lg:gap-12 items-start`}>
             {/* Left: Text & Badges & Links */}
-            <motion.div variants={fadeInUp} custom={0} className="lg:col-span-2">
+            <motion.div variants={fadeInUp} custom={0} className={project.slug !== 'elepad' ? 'lg:col-span-1' : 'lg:col-span-2'}>
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className={`type-badge type-badge--${project.type}`}>
                   {t(`type_${project.type}`)}
@@ -160,6 +160,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                 <ProjectHeaderCarousel 
                   media={project.media!} 
                   onOpenLightbox={(idx) => setLightboxIndex(idx)} 
+                  isDesktop={project.slug !== "elepad"}
                 />
               </motion.div>
             )}
@@ -264,12 +265,13 @@ export function ProjectDetail({ project }: { project: Project }) {
           
           {/* Bottom Gallery Grid */}
           {hasMedia && (
-            <motion.div variants={fadeInUp} custom={4}>
-              <ProjectGallery 
-                media={project.media!} 
-                onOpenLightbox={(idx) => setLightboxIndex(idx)} 
+            <div className="mt-16">
+              <ProjectGallery
+                media={project.media!}
+                onOpenLightbox={(idx) => setLightboxIndex(idx)}
+                isDesktop={project.slug !== "elepad"}
               />
-            </motion.div>
+            </div>
           )}
         </motion.div>
         

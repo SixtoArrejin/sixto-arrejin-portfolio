@@ -13,9 +13,10 @@ type Media = {
 interface ProjectHeaderCarouselProps {
   media: Media[];
   onOpenLightbox: (idx: number) => void;
+  isDesktop?: boolean;
 }
 
-export function ProjectHeaderCarousel({ media, onOpenLightbox }: ProjectHeaderCarouselProps) {
+export function ProjectHeaderCarousel({ media, onOpenLightbox, isDesktop }: ProjectHeaderCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto-play opcional (opcional: podés quitar el useEffect si no querés que se mueva solo)
@@ -39,9 +40,13 @@ export function ProjectHeaderCarousel({ media, onOpenLightbox }: ProjectHeaderCa
     setCurrentIndex((prev) => (prev === media.length - 1 ? 0 : prev + 1));
   };
 
+  const containerClasses = isDesktop 
+    ? "relative w-full mx-auto aspect-[16/9] rounded-2xl overflow-hidden glass-card group cursor-pointer shadow-2xl"
+    : "relative w-full max-w-[230px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden glass-card group cursor-pointer shadow-2xl";
+
   return (
     <div 
-      className="relative w-full max-w-[230px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden glass-card group cursor-pointer shadow-2xl"
+      className={containerClasses}
       onClick={() => onOpenLightbox(currentIndex)}
     >
       <AnimatePresence>

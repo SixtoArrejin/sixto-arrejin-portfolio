@@ -13,12 +13,13 @@ type Media = {
 interface ProjectGalleryProps {
   media: Media[];
   onOpenLightbox: (idx: number) => void;
+  isDesktop?: boolean;
 }
 
-export function ProjectGallery({ media, onOpenLightbox }: ProjectGalleryProps) {
+export function ProjectGallery({ media, onOpenLightbox, isDesktop }: ProjectGalleryProps) {
   // Mostramos 5 elementos inicialmente (aproximadamente una fila en escritorio).
   // Si en el futuro querés que sean múltiplos de la cantidad de columnas, podés usar un custom hook para leer el ancho de ventana, pero 5 es un estándar seguro.
-  const CHUNK_SIZE = 5;
+  const CHUNK_SIZE = isDesktop ? 3 : 5;
   const [visibleCount, setVisibleCount] = useState(CHUNK_SIZE);
 
   if (!media || media.length === 0) return null;
@@ -37,7 +38,7 @@ export function ProjectGallery({ media, onOpenLightbox }: ProjectGalleryProps) {
       </h3>
       
       {/* Grid of Thumbnails */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className={`grid gap-4 ${isDesktop ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3' : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'}`}>
         {visibleMedia.map((item, idx) => {
           // Si es el último elemento visible y todavía hay más por mostrar, le ponemos el overlay
           const isLastVisible = idx === visibleMedia.length - 1;
@@ -49,7 +50,7 @@ export function ProjectGallery({ media, onOpenLightbox }: ProjectGalleryProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => (showOverlay ? handleShowMore() : onOpenLightbox(idx))}
-              className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group glass-card"
+              className={`relative ${isDesktop ? 'aspect-video' : 'aspect-square'} rounded-xl overflow-hidden cursor-pointer group glass-card`}
             >
               {item.type === "image" ? (
                 <Image

@@ -71,6 +71,10 @@ export const projects: Project[] = [
       github:
         "https://github.com/SixtoArrejin/frre-scyt-research-manager",
     },
+    media: Array.from({ length: 36 }, (_, i) => ({
+      type: "image",
+      url: `/projects/scyt/${i + 1}.png`,
+    })),
   },
   {
     slug: "devops-kubernetes",
