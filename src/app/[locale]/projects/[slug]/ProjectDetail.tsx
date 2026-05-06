@@ -20,6 +20,8 @@ import {
   RotateCcw,
   X,
   Cpu,
+  GitBranch,
+  BarChart3,
 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { iconMap } from "@/utils/iconMap";
@@ -63,6 +65,8 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Google OAuth": "backend",
   "Cloudflare Workers": "backend",
   "REST APIs": "backend",
+  "Pytest": "backend",
+  "Python": "backend",
 
   // Database
   "Supabase": "database",
@@ -80,6 +84,7 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   // DevOps & Infra
   "Docker": "devops",
   "Docker Compose": "devops",
+  "Docker Buildx": "devops",
   "Kubernetes": "devops",
   "K3d": "devops",
   "OpenTelemetry": "devops",
@@ -90,6 +95,8 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "CI/CD": "devops",
   "GitHub Actions": "devops",
   "Azure": "devops",
+  "Azure ACR": "devops",
+  "Azure ACI": "devops",
   "Render": "devops",
   "Turborepo": "devops",
 };
@@ -105,11 +112,16 @@ export function ProjectDetail({ project }: { project: Project }) {
   const [activeDiagramTitle, setActiveDiagramTitle] = useState<string>("");
   const [zoomLevel, setZoomLevel] = useState<number>(1);
 
-  const descLimit = project.slug === 'elepad' ? 800 : 500;
+  const projectTitle = t(`${project.slug}.title`);
+  const isTitleLong = projectTitle.length > 30;
+
+  const descLimit = project.slug === 'elepad'
+    ? 800
+    : (isTitleLong ? 320 : 500);
   const fullDescription = t(`${project.slug}.long_description`);
   const isTruncated = fullDescription.length > descLimit;
-  const displayText = isDescExpanded 
-    ? fullDescription 
+  const displayText = isDescExpanded
+    ? fullDescription
     : (isTruncated ? `${fullDescription.substring(0, descLimit)}...` : fullDescription);
 
   const handleZoomIn = (e: React.MouseEvent) => {
@@ -255,14 +267,14 @@ export function ProjectDetail({ project }: { project: Project }) {
 
             {/* Right: Featured Carousel */}
             {hasMedia && (
-              <motion.div 
-                variants={fadeInUp} 
-                custom={0.5} 
+              <motion.div
+                variants={fadeInUp}
+                custom={0.5}
                 className={project.slug !== 'elepad' ? 'lg:col-span-2 flex justify-center lg:justify-end' : 'lg:col-span-1 flex justify-center lg:justify-end'}
               >
-                <ProjectHeaderCarousel 
-                  media={project.media!} 
-                  onOpenLightbox={(idx) => setLightboxIndex(idx)} 
+                <ProjectHeaderCarousel
+                  media={project.media!}
+                  onOpenLightbox={(idx) => setLightboxIndex(idx)}
                   isDesktop={project.slug !== "elepad"}
                 />
               </motion.div>
@@ -280,7 +292,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                 {t("stack_title")}
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
               {[
                 { id: "frontend", title: t("cat_frontend"), color: "var(--accent-blue)" },
@@ -291,8 +303,8 @@ export function ProjectDetail({ project }: { project: Project }) {
                 const catTags = project.tags.filter((tag) => tagCategories[tag] === cat.id);
                 if (catTags.length === 0) return null;
                 return (
-                  <div 
-                    key={cat.id} 
+                  <div
+                    key={cat.id}
                     className="p-4 rounded-xl border flex flex-col gap-3"
                     style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}
                   >
@@ -365,7 +377,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 {t("arch_desc")}
               </p>
-              
+
               <div className="mt-4 flex justify-center">
                 <button
                   onClick={() => {
@@ -406,7 +418,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 {t("db_schema_desc")}
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 {/* DER Diagram Card */}
                 <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
@@ -417,18 +429,18 @@ export function ProjectDetail({ project }: { project: Project }) {
                   <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
                     {t("db_der_desc")}
                   </p>
-                  <button 
+                  <button
                     onClick={() => {
                       setActiveDiagramUrl("/projects/scyt/db-der-conceptual.png");
                       setActiveDiagramTitle(t("db_der_title"));
                       setZoomLevel(1);
                     }}
-                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none" 
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
                     style={{ borderColor: "var(--border-color)" }}
                   >
-                    <img 
-                      src="/projects/scyt/db-der-conceptual.png" 
-                      alt={t("db_der_title")} 
+                    <img
+                      src="/projects/scyt/db-der-conceptual.png"
+                      alt={t("db_der_title")}
                       className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -448,18 +460,257 @@ export function ProjectDetail({ project }: { project: Project }) {
                   <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
                     {t("db_physical_desc")}
                   </p>
-                  <button 
+                  <button
                     onClick={() => {
                       setActiveDiagramUrl("/projects/scyt/db-relational-physical.png");
                       setActiveDiagramTitle(t("db_physical_title"));
                       setZoomLevel(1);
                     }}
-                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none" 
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
                     style={{ borderColor: "var(--border-color)" }}
                   >
-                    <img 
-                      src="/projects/scyt/db-relational-physical.png" 
-                      alt={t("db_physical_title")} 
+                    <img
+                      src="/projects/scyt/db-relational-physical.png"
+                      alt={t("db_physical_title")}
+                      className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Cloud Architecture Section (Specific to DevOps Azure) */}
+          {project.slug === "devops-azure" && (
+            <motion.div variants={fadeInUp} custom={3.0} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Layers size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("devops_arch_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("devops_arch_desc")}
+              </p>
+
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => {
+                    setActiveDiagramUrl("/projects/devops-azure/arquitectura.png");
+                    setActiveDiagramTitle(t("devops_arch_title"));
+                    setZoomLevel(1);
+                  }}
+                  className="relative block w-full rounded-xl overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                  style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}
+                >
+                  <img
+                    src="/projects/devops-azure/arquitectura.png"
+                    alt={t("devops_arch_title")}
+                    className="w-full h-auto max-h-[500px] object-contain transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-110 p-2 sm:p-4 mx-auto"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                      {t("view_more")}
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* CI/CD Pipeline Section (Specific to DevOps Azure) */}
+          {project.slug === "devops-azure" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <GitBranch size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("devops_pipeline_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("devops_pipeline_desc")}
+              </p>
+
+              <div className="space-y-6 mt-4">
+                {/* Parallel Triggers Card (Full Width - Side to Side) */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border w-full" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                    {t("devops_parallel_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                    {t("devops_parallel_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-azure/test-and-deploy.png");
+                      setActiveDiagramTitle(t("devops_parallel_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-azure/test-and-deploy.png"
+                      alt={t("devops_parallel_label")}
+                      className="w-full h-auto object-contain transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Grid for Success Deploy and Detailed Execution Sequence (2 Columns) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Success Deploy Card */}
+                  <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                      {t("devops_success_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("devops_success_desc")}
+                    </p>
+                    <button
+                      onClick={() => {
+                        setActiveDiagramUrl("/projects/devops-azure/deploy-succes.png");
+                        setActiveDiagramTitle(t("devops_success_label"));
+                        setZoomLevel(1);
+                      }}
+                      className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                      style={{ borderColor: "var(--border-color)" }}
+                    >
+                      <img
+                        src="/projects/devops-azure/deploy-succes.png"
+                        alt={t("devops_success_label")}
+                        className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                          {t("view_more")}
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+
+                  {/* Detailed Sequence Card */}
+                  <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                      {t("devops_detail_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("devops_detail_desc")}
+                    </p>
+                    <button
+                      onClick={() => {
+                        setActiveDiagramUrl("/projects/devops-azure/pipeline-ci-cd.png");
+                        setActiveDiagramTitle(t("devops_detail_label"));
+                        setZoomLevel(1);
+                      }}
+                      className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                      style={{ borderColor: "var(--border-color)" }}
+                    >
+                      <img
+                        src="/projects/devops-azure/pipeline-ci-cd.png"
+                        alt={t("devops_detail_label")}
+                        className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                          {t("view_more")}
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* SmartCatalog Views Section (Specific to DevOps Azure) */}
+          {project.slug === "devops-azure" && (
+            <motion.div variants={fadeInUp} custom={3.3} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart3 size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("devops_app_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("devops_app_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* Voting View Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                    {t("devops_voting_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                    {t("devops_voting_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-azure/app-voting.png");
+                      setActiveDiagramTitle(t("devops_voting_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-azure/app-voting.png"
+                      alt={t("devops_voting_label")}
+                      className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Statistics View Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                    {t("devops_stats_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                    {t("devops_stats_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-azure/app-statistics.png");
+                      setActiveDiagramTitle(t("devops_stats_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-azure/app-statistics.png"
+                      alt={t("devops_stats_label")}
                       className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -512,7 +763,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               </div>
             </motion.div>
           )}
-          
+
           {/* Bottom Gallery Grid */}
           {hasMedia && (
             <div className="mt-16">
@@ -524,7 +775,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
           )}
         </motion.div>
-        
+
         {/* Fullscreen Lightbox */}
         {hasMedia && (
           <ProjectLightbox
@@ -597,7 +848,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               </div>
 
               {/* Main Content Area with Zoom & Drag */}
-              <div 
+              <div
                 className="relative w-full flex-grow flex items-center justify-center overflow-hidden my-4"
                 onClick={() => setActiveDiagramUrl(null)}
               >

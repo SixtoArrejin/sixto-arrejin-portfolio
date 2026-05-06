@@ -100,15 +100,39 @@ export const projects: Project[] = [
     slug: "devops-azure",
     tags: [
       "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Python",
       "Flask",
+      "Pytest",
       "Redis",
       "Docker",
       "Docker Compose",
-      "Azure",
+      "Docker Buildx",
       "GitHub Actions",
+      "Azure",
+      "Azure ACR",
+      "Azure ACI",
     ],
     type: "academic",
-    links: {},
+    team: 3,
+    links: {
+      github: "https://github.com/Andre-Leandro/Description-Evaluator/tree/docker",
+    },
+    media: Array.from({ length: 8 }, (_, i) => ({
+      type: "image",
+      url: `/projects/devops-azure/${i + 1}.png`,
+    })),
+    documents: [
+      {
+        title: "Consigna del Trabajo Práctico - App Web & Redis Contenerizados",
+        url: "/projects/devops-azure/TP1-AppWebRedisContenerizados-DevOps-UTN-2025.pdf",
+      },
+      {
+        title: "Informe Técnico de Entrega - Arrejín, Maciel & San Lorenzo",
+        url: "/projects/devops-azure/devops-tp1-informe.pdf",
+      },
+    ],
   },
   {
     slug: "data-warehouse",

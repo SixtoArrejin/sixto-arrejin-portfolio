@@ -70,5 +70,9 @@ export const iconMap: Record<string, { icon: IconType; color: string }> = {
   "Tempo": { icon: SiGrafana, color: "#F46800" },
   "Expo": { icon: SiReact, color: "var(--text-primary)" },
   "Turborepo": { icon: SiReact, color: "#EF4444" },
-  "Flask": { icon: SiPython, color: "var(--text-primary)" }
+  "Flask": { icon: SiPython, color: "var(--text-primary)" },
+  "Docker Buildx": { icon: SiDocker, color: "#2496ED" },
+  "Azure ACR": { icon: VscAzure, color: "#0078D4" },
+  "Azure ACI": { icon: VscAzure, color: "#0078D4" },
+  "Pytest": { icon: SiPython, color: "#3776AB" }
 };
