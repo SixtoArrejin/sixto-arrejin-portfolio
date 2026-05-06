@@ -9,6 +9,8 @@ export type Project = {
     playStore?: string;
   };
   image?: string;
+  media?: { type: "image" | "video"; url: string }[];
+  documents?: { title: string; url: string; size?: string }[];
 };
 
 export const projects: Project[] = [
@@ -31,6 +33,24 @@ export const projects: Project[] = [
       playStore:
         "https://play.google.com/store/apps/details?id=com.elepadorg.elepad",
     },
+    media: Array.from({ length: 37 }, (_, i) => ({
+      type: "image",
+      url: `/projects/elepad/${i + 1}.jpg`,
+    })),
+    documents: [
+      {
+        title: "Escenario del Proyecto",
+        url: "/projects/elepad/Elepad - Escenario Elepad.pdf",
+      },
+      {
+        title: "Documentación Completa",
+        url: "/projects/elepad/Elepad - Documentación Completa.pdf",
+      },
+      {
+        title: "Descripción Técnica",
+        url: "/projects/elepad/Elepad - Descripción Técnica.pdf",
+      },
+    ],
   },
   {
     slug: "scyt-utn",

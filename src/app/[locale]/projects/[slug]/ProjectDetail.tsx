@@ -12,9 +12,15 @@ import {
   Calendar,
   CheckCircle2,
   Layers,
+  FileText,
+  Download,
 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { iconMap } from "@/utils/iconMap";
+import { ProjectGallery } from "@/components/ui/ProjectGallery";
+import { ProjectHeaderCarousel } from "@/components/ui/ProjectHeaderCarousel";
+import { ProjectLightbox } from "@/components/ui/ProjectLightbox";
+import { useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -27,10 +33,13 @@ const fadeInUp = {
 
 export function ProjectDetail({ project }: { project: Project }) {
   const t = useTranslations("projects");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const hasMedia = project.media && project.media.length > 0;
 
   return (
     <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -52,96 +61,109 @@ export function ProjectDetail({ project }: { project: Project }) {
           animate="visible"
           className="space-y-8"
         >
-          {/* Header */}
-          <motion.div variants={fadeInUp} custom={0}>
-            <div className="flex items-center gap-3 mb-4 flex-wrap">
-              <span className={`type-badge type-badge--${project.type}`}>
-                {t(`type_${project.type}`)}
-              </span>
-              <span
-                className="flex items-center gap-1.5 text-xs"
-                style={{ color: "var(--text-muted)" }}
-              >
-                <Calendar size={13} />
-                {t(`${project.slug}.dateRange`)}
-              </span>
-              {project.team && (
+          {/* Header & Carousel Grid */}
+          {/* Header & Carousel Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+            {/* Left: Text & Badges & Links */}
+            <motion.div variants={fadeInUp} custom={0} className="lg:col-span-2">
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className={`type-badge type-badge--${project.type}`}>
+                  {t(`type_${project.type}`)}
+                </span>
                 <span
                   className="flex items-center gap-1.5 text-xs"
                   style={{ color: "var(--text-muted)" }}
                 >
-                  <Users size={13} />
-                  {t("team", { count: project.team })}
+                  <Calendar size={13} />
+                  {t(`${project.slug}.dateRange`)}
                 </span>
-              )}
-            </div>
+                {project.team && (
+                  <span
+                    className="flex items-center gap-1.5 text-xs"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    <Users size={13} />
+                    {t("team", { count: project.team })}
+                  </span>
+                )}
+              </div>
 
-            <h1
-              className="text-3xl sm:text-4xl font-extrabold mb-4"
-              style={{ fontFamily: "var(--font-sora)" }}
-            >
-              <span className="gradient-text">
-                {t(`${project.slug}.title`)}
-              </span>
-            </h1>
+              <h1
+                className="text-3xl sm:text-4xl font-extrabold mb-4"
+                style={{ fontFamily: "var(--font-sora)" }}
+              >
+                <span className="gradient-text">
+                  {t(`${project.slug}.title`)}
+                </span>
+              </h1>
 
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              {t(`${project.slug}.long_description`)}
-            </p>
-          </motion.div>
-
-          {/* Links */}
-          {(project.links.github || project.links.live || project.links.playStore) && (
-            <motion.div variants={fadeInUp} custom={1} className="flex flex-wrap gap-3">
-              {project.links.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
-                  style={{
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border-color)",
-                    color: "var(--text-primary)",
-                  }}
-                >
-                  <GithubIcon size={16} />
-                  {t("links_github")}
-                </a>
-              )}
-              {project.links.live && (
-                <a
-                  href={project.links.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:scale-105"
-                  style={{ background: "var(--accent-gradient)" }}
-                >
-                  <ExternalLink size={16} />
-                  {t("links_live")}
-                </a>
-              )}
-              {project.links.playStore && (
-                <a
-                  href={project.links.playStore}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
-                  style={{
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border-color)",
-                    color: "var(--text-primary)",
-                  }}
-                >
-                  <Smartphone size={16} />
-                  {t("links_playstore")}
-                </a>
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {t(`${project.slug}.long_description`)}
+              </p>
+              {/* Links */}
+              {(project.links.github || project.links.live || project.links.playStore) && (
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {project.links.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+                      style={{
+                        background: "var(--bg-card)",
+                        border: "1px solid var(--border-color)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      <GithubIcon size={16} />
+                      {t("links_github")}
+                    </a>
+                  )}
+                  {project.links.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:scale-105"
+                      style={{ background: "var(--accent-gradient)" }}
+                    >
+                      <ExternalLink size={16} />
+                      {t("links_live")}
+                    </a>
+                  )}
+                  {project.links.playStore && (
+                    <a
+                      href={project.links.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+                      style={{
+                        background: "var(--bg-card)",
+                        border: "1px solid var(--border-color)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      <Smartphone size={16} />
+                      {t("links_playstore")}
+                    </a>
+                  )}
+                </div>
               )}
             </motion.div>
-          )}
+
+            {/* Right: Featured Carousel */}
+            {hasMedia && (
+              <motion.div variants={fadeInUp} custom={0.5} className="lg:col-span-1 flex justify-center lg:justify-end">
+                <ProjectHeaderCarousel 
+                  media={project.media!} 
+                  onOpenLightbox={(idx) => setLightboxIndex(idx)} 
+                />
+              </motion.div>
+            )}
+          </div>
 
           {/* Tech Stack */}
           <motion.div variants={fadeInUp} custom={2} className="glass-card p-6">
@@ -199,7 +221,66 @@ export function ProjectDetail({ project }: { project: Project }) {
               ))}
             </ul>
           </motion.div>
+
+          {/* Documents */}
+          {project.documents && project.documents.length > 0 && (
+            <motion.div variants={fadeInUp} custom={3.5} className="glass-card p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <FileText size={16} style={{ color: "var(--accent-orange, #f97316)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-orange, #f97316)" }}
+                >
+                  {t("documents_title")}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {project.documents.map((doc, idx) => (
+                  <a
+                    key={idx}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-4 rounded-xl border transition-all duration-200 hover:scale-[1.02] group"
+                    style={{
+                      background: "var(--bg-secondary)",
+                      borderColor: "var(--border-color)",
+                    }}
+                  >
+                    <div className="flex items-center gap-3 overflow-hidden">
+                      <div className="p-2 rounded-lg" style={{ background: "var(--bg-card)" }}>
+                        <FileText size={20} style={{ color: "var(--text-secondary)" }} />
+                      </div>
+                      <span className="text-sm font-medium truncate" style={{ color: "var(--text-primary)" }}>
+                        {doc.title}
+                      </span>
+                    </div>
+                    <Download size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "var(--accent-blue)" }} />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+          
+          {/* Bottom Gallery Grid */}
+          {hasMedia && (
+            <motion.div variants={fadeInUp} custom={4}>
+              <ProjectGallery 
+                media={project.media!} 
+                onOpenLightbox={(idx) => setLightboxIndex(idx)} 
+              />
+            </motion.div>
+          )}
         </motion.div>
+        
+        {/* Fullscreen Lightbox */}
+        {hasMedia && (
+          <ProjectLightbox
+            media={project.media!}
+            selectedIndex={lightboxIndex}
+            setSelectedIndex={setLightboxIndex}
+          />
+        )}
       </div>
     </div>
   );

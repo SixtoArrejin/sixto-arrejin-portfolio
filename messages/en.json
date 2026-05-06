@@ -63,16 +63,20 @@
     "links_playstore": "Google Play Store",
     "features_title": "Implemented features",
     "stack_title": "Tech stack",
+    "documents_title": "Documentation & Resources",
     "elepad": {
       "dateRange": "March 2025 - March 2026",
       "title": "Elepad — Mobile App for Senior Citizens",
       "description": "Mobile application published on Google Play Store for cognitive stimulation, daily routines, and intergenerational connection.",
-      "long_description": "Developed a mobile application published on the Google Play Store for cognitive stimulation, daily routines, and intergenerational connection. Project originated from a winning proposal at the Latin American Innovation Rally 2024 (3rd place, Social Impact).",
+      "long_description": "Elepad is a mobile application designed to foster the emotional, cognitive, and social well-being of senior citizens through an accessible and interactive digital environment. By integrating Generative Artificial Intelligence (Google Gemini) and a simplified interface, it seeks to build meaningful intergenerational bridges within the family. Originating as a winning proposal at the Latin American Innovation Rally 2024 (3rd place, Social Impact), it evolved into the Final Degree Project for the Information Systems Engineering program (UTN-FRRe). Available on the Google Play Store.",
       "features": [
-        "Stack: React Native + Expo (iOS/Android/Web), TypeScript, Cloudflare Workers (serverless backend), Supabase (JWT + Google OAuth auth, storage, PostgreSQL)",
-        "Monorepo architecture with Turborepo, CI/CD with GitHub Actions (7 releases under Scrum)",
-        "Features: adaptive calendar, cognitive games, shared memory gallery, statistics, and family monitoring",
-        "Team of 5 people — Final Degree Project in Information Systems Engineering"
+        "Google Gemini AI integration for memory synthesis and automated narrative album creation",
+        "Cross-platform mobile development (iOS/Android/Web) using React Native, Expo, and TypeScript",
+        "Hyper-scalable Serverless Backend architecture using Cloudflare Workers, Hono, and OpenAPI validation",
+        "Comprehensive data management with Supabase: PostgreSQL database, Authentication (Google OAuth), Storage, and Realtime",
+        "Monorepo structure managed with Turborepo, optimizing build and development times",
+        "Automated CI/CD pipelines via GitHub Actions targeting Cloudflare and Expo EAS",
+        "Agile development: Team management under the Scrum methodology with 7 documented releases"
       ]
     },
     "scyt-utn": {

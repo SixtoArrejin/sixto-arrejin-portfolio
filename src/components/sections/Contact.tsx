@@ -6,14 +6,6 @@ import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import { SiWhatsapp } from "react-icons/si";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
 
 const socialLinks = [
   {
@@ -44,45 +36,48 @@ export function Contact() {
   return (
     <section className="py-24" id="contact">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="mb-12">
           <motion.h2
-            variants={fadeInUp}
-            custom={0}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="text-3xl font-bold mb-2"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             {t("title")}
           </motion.h2>
-          <motion.div variants={fadeInUp} custom={0} className="section-divider mb-6 mx-auto" />
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section-divider mb-6 mx-auto" 
+          />
           <motion.p
-            variants={fadeInUp}
-            custom={1}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="text-base mb-12"
             style={{ color: "var(--text-muted)" }}
           >
             {t("description")}
           </motion.p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="flex flex-col gap-3"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {socialLinks.map((link, idx) => (
             <motion.a
-              key={link.href}
+              key={idx}
               href={link.href}
               target={link.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              variants={fadeInUp}
-              custom={idx + 2}
-              whileHover={{ x: 6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -3, scale: 1.02 }}
+              transition={{ duration: 0.7 }}
               className="glass-card p-4 flex items-center gap-4 text-left transition-all"
             >
               <div
@@ -99,7 +94,7 @@ export function Contact() {
               </span>
             </motion.a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

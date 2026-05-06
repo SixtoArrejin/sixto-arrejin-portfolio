@@ -67,14 +67,6 @@ const skillCategories = [
   },
 ];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
 
 export function Skills() {
   const t = useTranslations("skills");
@@ -82,33 +74,34 @@ export function Skills() {
   return (
     <section className="py-24" id="skills">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="mb-12">
           <motion.h2
-            variants={fadeInUp}
-            custom={0}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="text-3xl font-bold mb-2"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             {t("title")}
           </motion.h2>
-          <motion.div variants={fadeInUp} custom={0} className="section-divider mb-12" />
-        </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section-divider mb-12" 
+          />
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          {skillCategories.map((category, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {skillCategories.map((category) => (
             <motion.div
               key={category.key}
-              variants={fadeInUp}
-              custom={idx + 1}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
               className="glass-card p-5"
             >
               <h3
@@ -130,7 +123,7 @@ export function Skills() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

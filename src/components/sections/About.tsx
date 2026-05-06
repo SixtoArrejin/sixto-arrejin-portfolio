@@ -4,14 +4,6 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { MapPin, GraduationCap, Languages } from "lucide-react";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
 
 export function About() {
   const t = useTranslations("about");
@@ -19,33 +11,34 @@ export function About() {
   return (
     <section className="py-24" id="about">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="mb-12">
           <motion.h2
-            variants={fadeInUp}
-            custom={0}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="text-3xl font-bold mb-2"
             style={{ fontFamily: "var(--font-sora)" }}
           >
             {t("title")}
           </motion.h2>
-          <motion.div variants={fadeInUp} custom={0} className="section-divider mb-12" />
-        </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section-divider mb-12" 
+          />
+        </div>
 
         {/* Bento Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Bio — spans 2 columns */}
           <motion.div
-            variants={fadeInUp}
-            custom={1}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="glass-card p-6 md:col-span-2"
           >
             <p
@@ -57,7 +50,13 @@ export function About() {
           </motion.div>
 
           {/* Location */}
-          <motion.div variants={fadeInUp} custom={2} className="glass-card p-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="glass-card p-6"
+          >
             <div className="flex items-center gap-2 mb-3">
               <MapPin size={16} style={{ color: "var(--accent-blue)" }} />
               <span
@@ -80,7 +79,13 @@ export function About() {
           </motion.div>
 
           {/* Languages */}
-          <motion.div variants={fadeInUp} custom={3} className="glass-card p-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="glass-card p-6"
+          >
             <div className="flex items-center gap-2 mb-3">
               <Languages size={16} style={{ color: "var(--accent-violet)" }} />
               <span
@@ -102,8 +107,10 @@ export function About() {
 
           {/* Education — spans 2 columns */}
           <motion.div
-            variants={fadeInUp}
-            custom={4}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="glass-card p-6 md:col-span-2"
           >
             <div className="flex items-center gap-2 mb-3">
@@ -141,7 +148,7 @@ export function About() {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

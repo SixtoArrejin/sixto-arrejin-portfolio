@@ -189,12 +189,13 @@ export function Hero() {
         >
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden glow-ring">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.webp"
               alt="Sixto Feliciano Arrejin"
               fill
-              className="object-cover object-top"
+              className="object-cover object-top scale-120"
               priority
-              sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 288px"
+              quality={100}
+              sizes="(max-width: 640px) 300px, (max-width: 1024px) 350px, 400px"
             />
           </div>
           {/* Decorative ring */}
