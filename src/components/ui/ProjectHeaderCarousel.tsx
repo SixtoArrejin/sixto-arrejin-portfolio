@@ -44,7 +44,7 @@ export function ProjectHeaderCarousel({ media, onOpenLightbox }: ProjectHeaderCa
       className="relative w-full max-w-[230px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden glass-card group cursor-pointer shadow-2xl"
       onClick={() => onOpenLightbox(currentIndex)}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0, scale: 1.05 }}
