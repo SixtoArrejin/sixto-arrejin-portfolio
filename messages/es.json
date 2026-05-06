@@ -67,13 +67,13 @@
     "elepad": {
       "dateRange": "Marzo 2025 - Marzo 2026",
       "title": "Elepad — App Móvil para Adultos Mayores",
-      "description": "Aplicación móvil publicada en Google Play Store para estimulación cognitiva, rutinas diarias y conexión intergeneracional.",
-      "long_description": "Elepad es una aplicación móvil diseñada para fomentar el bienestar emocional, cognitivo y social de los adultos mayores mediante un entorno digital accesible e interactivo. Integrando Inteligencia Artificial Generativa (Google Gemini) y una interfaz simplificada, busca construir puentes intergeneracionales significativos dentro de la familia. Originada como propuesta ganadora del Rally Latinoamericano de Innovación 2024 (3er puesto Impacto Social), evolucionó hasta convertirse en el Proyecto Final de la carrera de Ingeniería en Sistemas de Información (UTN-FRRe). Disponible en Google Play Store.",
+      "description": "App móvil diseñada para fomentar el bienestar emocional, cognitivo y social de adultos mayores mediante un entorno digital accesible.",
+      "long_description": "Elepad es una aplicación móvil diseñada para fomentar el bienestar emocional, cognitivo y social de los adultos mayores mediante un entorno digital accesible e interactivo. A través de una interfaz simplificada y herramientas innovadoras como la síntesis de recuerdos con Inteligencia Artificial (Google Gemini), busca construir puentes intergeneracionales significativos dentro de la familia. Originada como propuesta ganadora del Rally Latinoamericano de Innovación 2024 (3er puesto Impacto Social), evolucionó hasta convertirse en el Proyecto Final de la carrera de Ingeniería en Sistemas de Información (UTN-FRRe). Disponible en Google Play Store.",
       "features": [
-        "Integración de Google Gemini AI para la síntesis de recuerdos y creación automatizada de álbumes narrativos",
         "Desarrollo móvil multiplataforma (iOS/Android/Web) con React Native, Expo y TypeScript",
         "Arquitectura Backend Serverless hiper-escalable utilizando Cloudflare Workers, Hono y validación con OpenAPI",
         "Gestión de datos integral con Supabase: Base de datos PostgreSQL, Autenticación (Google OAuth), Storage y Realtime",
+        "Módulo de síntesis de recuerdos y álbumes narrativos asistido por IA (Google Gemini)",
         "Estructura Monorepo gestionada con Turborepo, optimizando tiempos de build y desarrollo",
         "Flujos CI/CD automatizados con GitHub Actions hacia Cloudflare y Expo EAS",
         "Desarrollo ágil: Gestión de equipo bajo metodología Scrum con 7 releases documentadas"
