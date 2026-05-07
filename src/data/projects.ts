@@ -85,6 +85,8 @@ export const projects: Project[] = [
   {
     slug: "devops-kubernetes",
     tags: [
+      "Flask",
+      "Python",
       "Docker",
       "K3d",
       "Kubernetes",
@@ -94,7 +96,24 @@ export const projects: Project[] = [
       "Tempo",
     ],
     type: "academic",
-    links: {},
+    team: 3,
+    links: {
+      github: "https://github.com/Andre-Leandro/Description-Evaluator/tree/orchestration-and-observability",
+    },
+    media: Array.from({ length: 6 }, (_, i) => ({
+      type: "image",
+      url: `/projects/devops-kubernetes/${i + 1}-${["arquitectura-de-comunicacion", "flujo-de-datos-detallados", "alta-disponibilidad-estrategia", "metricas", "trazas", "vision-general-cluster"][i]}.png`,
+    })),
+    documents: [
+      {
+        title: "Consigna del Trabajo Práctico — Orquestación y Observabilidad",
+        url: "/projects/devops-kubernetes/TP2-OrquestacionObservabilidad-DevOps-UTN-2025.pdf",
+      },
+      {
+        title: "Slide Deck de Entrega — Arquitectura del Cluster K8s",
+        url: "/projects/devops-kubernetes/TP2-Arquitectura-SlideDeck.pdf",
+      },
+    ],
   },
   {
     slug: "devops-azure",

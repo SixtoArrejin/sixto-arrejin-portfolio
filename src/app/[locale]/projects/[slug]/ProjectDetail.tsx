@@ -294,38 +294,44 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-              {[
-                { id: "frontend", title: t("cat_frontend"), color: "var(--accent-blue)" },
-                { id: "backend", title: t("cat_backend"), color: "var(--accent-violet)" },
-                { id: "database", title: t("cat_database"), color: "var(--accent-orange)" },
-                { id: "devops", title: t("cat_devops"), color: "#10b981" },
-              ].map((cat) => {
-                const catTags = project.tags.filter((tag) => tagCategories[tag] === cat.id);
-                if (catTags.length === 0) return null;
-                return (
-                  <div
-                    key={cat.id}
-                    className="p-4 rounded-xl border flex flex-col gap-3"
-                    style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}
-                  >
-                    <h3 className="text-xs font-bold uppercase tracking-wider flex items-center gap-2" style={{ color: cat.color }}>
-                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: cat.color }} />
-                      {cat.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {catTags.map((tag) => {
-                        const IconConfig = iconMap[tag];
-                        return (
-                          <span key={tag} className="tech-badge">
-                            {IconConfig && <IconConfig.icon size={14} style={{ color: IconConfig.color }} />}
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
+              {(() => {
+                const cats = [
+                  { id: "frontend", title: t("cat_frontend"), color: "var(--accent-blue)" },
+                  { id: "backend", title: t("cat_backend"), color: "var(--accent-violet)" },
+                  { id: "database", title: t("cat_database"), color: "var(--accent-orange)" },
+                  { id: "devops", title: t("cat_devops"), color: "#10b981" },
+                ];
+                const visible = cats.filter(cat =>
+                  project.tags.some(tag => tagCategories[tag] === cat.id)
                 );
-              })}
+                return visible.map((cat, idx) => {
+                  const catTags = project.tags.filter((tag) => tagCategories[tag] === cat.id);
+                  const isFullWidth = visible.length % 2 !== 0 && idx === visible.length - 1;
+                  return (
+                    <div
+                      key={cat.id}
+                      className={`p-4 rounded-xl border flex flex-col gap-3${isFullWidth ? " md:col-span-2" : ""}`}
+                      style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}
+                    >
+                      <h3 className="text-xs font-bold uppercase tracking-wider flex items-center gap-2" style={{ color: cat.color }}>
+                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: cat.color }} />
+                        {cat.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {catTags.map((tag) => {
+                          const IconConfig = iconMap[tag];
+                          return (
+                            <span key={tag} className="tech-badge">
+                              {IconConfig && <IconConfig.icon size={14} style={{ color: IconConfig.color }} />}
+                              {tag}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                });
+              })()}
             </div>
           </motion.div>
 
@@ -712,6 +718,208 @@ export function ProjectDetail({ project }: { project: Project }) {
                       src="/projects/devops-azure/app-statistics.png"
                       alt={t("devops_stats_label")}
                       className="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Kubernetes Cluster Architecture Section */}
+          {project.slug === "devops-kubernetes" && (
+            <motion.div variants={fadeInUp} custom={3.0} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Layers size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("k8s_cluster_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("k8s_cluster_desc")}
+              </p>
+
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => {
+                    setActiveDiagramUrl("/projects/devops-kubernetes/communication-architecture.png");
+                    setActiveDiagramTitle(t("k8s_cluster_title"));
+                    setZoomLevel(1);
+                  }}
+                  className="relative block w-full rounded-xl overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                  style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}
+                >
+                  <img
+                    src="/projects/devops-kubernetes/communication-architecture.png"
+                    alt={t("k8s_cluster_title")}
+                    className="w-full h-auto max-h-[500px] object-contain transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-110 p-2 sm:p-4 mx-auto"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                      {t("view_more")}
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* K8s HA + Data Flow Section */}
+          {project.slug === "devops-kubernetes" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <GitBranch size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("k8s_ha_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("k8s_ha_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* HA Diagram */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                    {t("k8s_ha_title")}
+                  </h3>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-kubernetes/high-availability.png");
+                      setActiveDiagramTitle(t("k8s_ha_title"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-kubernetes/high-availability.png"
+                      alt={t("k8s_ha_title")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Data Flow Diagram */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                    {t("k8s_flow_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                    {t("k8s_flow_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-kubernetes/data-flow.png");
+                      setActiveDiagramTitle(t("k8s_flow_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-kubernetes/data-flow.png"
+                      alt={t("k8s_flow_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* K8s Observability Stack Section */}
+          {project.slug === "devops-kubernetes" && (
+            <motion.div variants={fadeInUp} custom={3.3} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart3 size={16} style={{ color: "#10b981" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "#10b981" }}
+                >
+                  {t("k8s_observability_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("k8s_observability_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* Metrics Pipeline */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#10b981" }} />
+                    {t("k8s_metrics_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                    {t("k8s_metrics_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-kubernetes/metrics-stack.png");
+                      setActiveDiagramTitle(t("k8s_metrics_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-kubernetes/metrics-stack.png"
+                      alt={t("k8s_metrics_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Tracing Pipeline */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                    {t("k8s_tracing_label")}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                    {t("k8s_tracing_desc")}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/devops-kubernetes/tracing-stack.png");
+                      setActiveDiagramTitle(t("k8s_tracing_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/devops-kubernetes/tracing-stack.png"
+                      alt={t("k8s_tracing_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">

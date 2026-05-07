@@ -94,6 +94,18 @@
     "devops_voting_desc": "Interactive module where users vote blindly and anonymously on the description that best fits the product.",
     "devops_stats_label": "Real-Time Performance Statistics",
     "devops_stats_desc": "Dynamic chart displaying the performance and cumulative votes of each AI model in the database.",
+    "k8s_cluster_title": "Cluster Communication Architecture",
+    "k8s_cluster_desc": "Overview of the system's three layers: Application Layer (Next.js Frontend, Flask Backend x2, Redis), Observability Stack (Grafana, Prometheus, Tempo, OTEL Collector), and K8s infrastructure (Traefik, CoreDNS, kube-state-metrics). Each component exposes its endpoints and communicates internally via ClusterIP, with external access via NodePort.",
+    "k8s_ha_title": "High Availability (HA)",
+    "k8s_ha_desc": "2 Flask backend replicas with mandatory podAntiAffinity — never on the same worker. Readiness probes every 5s and liveness probes every 10s guarantee auto-restart on failure. The NodePort service load balances traffic round-robin between both replicas.",
+    "k8s_observability_title": "Full Observability Stack",
+    "k8s_observability_desc": "We implemented a complete observability stack with three pillars: Metrics (Prometheus + kube-state-metrics + cAdvisor → Grafana), Distributed Traces (Backend instrumented with OpenTelemetry SDK → OTEL Collector → Tempo → Grafana with TraceQL), and real-time dashboards with a 30-second refresh window.",
+    "k8s_flow_label": "End-to-End Data Flow",
+    "k8s_flow_desc": "Full sequence diagram showing the lifecycle of a request: User → Frontend → NodePort → Backend (with load balancing) → Redis (cache) → OTEL Collector → Tempo for traces, while Prometheus scrapes /metrics every 5s for Grafana dashboards.",
+    "k8s_metrics_label": "Metrics Pipeline (Prometheus)",
+    "k8s_metrics_desc": "Prometheus scrapes prometheus_flask_exporter on :10000/metrics, kube-state-metrics on :8080, and cAdvisor (built into K3s). Key metrics: RPS (all/business), p95/p50 latency, CPU usage, memory, and pod restarts.",
+    "k8s_tracing_label": "Tracing Pipeline (OpenTelemetry → Tempo)",
+    "k8s_tracing_desc": "The backend sends traces via OTLP gRPC to the OTEL Collector, which exports them to Tempo. Grafana queries them using TraceQL, capturing Trace ID, Span ID, duration, status, and HTTP attributes.",
     "elepad": {
       "dateRange": "March 2025 - March 2026",
       "title": "Elepad — Mobile App for Senior Citizens",
@@ -133,12 +145,16 @@
       "dateRange": "October - November 2025",
       "title": "DevOps: Kubernetes & Observability",
       "description": "Kubernetes orchestration, high availability, and full observability with OpenTelemetry, Prometheus, and Grafana.",
-      "long_description": "Academic project implementing Kubernetes (K3d) orchestration with full observability configuration and resilience validation.",
+      "long_description": "Academic project building on the same SmartCatalog system from TP1 (orchestration-and-observability branch), elevated to Kubernetes local orchestration (K3d) and production-grade observability. We deployed a tp2-cluster with 3 nodes (1 control-plane + 2 workers) and 2 Flask backend replicas distributed via strict podAntiAffinity — ensuring they never coexist on the same worker. The observability stack integrates three fundamental pillars: metrics with Prometheus (+ kube-state-metrics + cAdvisor), distributed traces with OpenTelemetry SDK → OTEL Collector → Tempo, and unified visualization in Grafana. Custom business metrics (RPS, p95/p50 latency), resilience validation via resource saturation, and automated health checks were implemented. The project was delivered as a live demonstration showing the cluster operating in real time.",
       "features": [
-        "Kubernetes orchestration (K3d): 1 control-plane + 2 workers, with 2 backend replicas and podAntiAffinity",
-        "Full observability: OpenTelemetry → Tempo (traces), Prometheus (metrics), Grafana (dashboards)",
-        "Custom metrics: RPS, p95/p50 latency, CPU, memory, restarts",
-        "Resilience validation through resource saturation"
+        "K3d 3-node cluster: 1 control-plane + 2 workers running 8 distributed microservices (Frontend, Backend x2, Redis, Prometheus, Tempo, OTEL Collector, Grafana, kube-state-metrics)",
+        "Guaranteed High Availability: podAntiAffinity with requiredDuringSchedulingIgnoredDuringExecution prevents the 2 backend replicas from sharing a node. Readiness probes every 5s + liveness probes every 10s for automatic auto-restart",
+        "Distributed tracing with OpenTelemetry SDK (auto-instrumented Flask backend) → OTEL Collector (OTLP gRPC :4317) → Tempo → Grafana with TraceQL queries (Trace ID, Span ID, duration, status, HTTP attributes)",
+        "Metrics with Prometheus: scraping prometheus_flask_exporter (:10000/metrics), kube-state-metrics (:8080), and cAdvisor built into K3s every 5s",
+        "Custom business metrics in Grafana: global RPS vs business RPS (filtering /health and /metrics), p95 and p50 latency, CPU and memory per pod, pod restarts",
+        "Public NodePort services: Frontend :30080, Backend :30100 (load balanced), Grafana :30000 — internal ClusterIP services for Redis, Prometheus, Tempo, and OTEL Collector",
+        "K8s resource management: requests and limits configured per service (backend: 256Mi–512Mi RAM, 100m–500m CPU) for saturation and OOMKilled testing",
+        "Resilience validation: resource saturation tests with real-time observation of scheduler and load balancer behavior"
       ]
     },
     "devops-azure": {

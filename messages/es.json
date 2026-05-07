@@ -94,6 +94,18 @@
     "devops_voting_desc": "Módulo interactivo donde los usuarios votan de forma ciega y anónima la descripción que mejor se adapta al producto.",
     "devops_stats_label": "Estadísticas de Rendimiento en Tiempo Real",
     "devops_stats_desc": "Gráfico dinámico que muestra el rendimiento y votaciones acumuladas de cada modelo de IA en la base de datos.",
+    "k8s_cluster_title": "Arquitectura de Comunicación del Cluster",
+    "k8s_cluster_desc": "Vista de las tres capas del sistema: Application Layer (Frontend Next.js, Backend Flask x2, Redis), Observability Stack (Grafana, Prometheus, Tempo, OTEL Collector) e infraestructura K8s (Traefik, CoreDNS, kube-state-metrics). Cada componente expone sus endpoints y se comunica internamente via ClusterIP, con acceso externo por NodePort.",
+    "k8s_ha_title": "Alta Disponibilidad (HA)",
+    "k8s_ha_desc": "2 réplicas del backend Flask con podAntiAffinity obligatorio — nunca en el mismo worker. Readiness probes cada 5s y liveness probes cada 10s garantizan auto-restart ante fallos. El service NodePort balancea tráfico round-robin entre ambas réplicas.",
+    "k8s_observability_title": "Stack de Observabilidad Completo",
+    "k8s_observability_desc": "Implementamos el stack de observabilidad completo con tres pilares: Métricas (Prometheus + kube-state-metrics + cAdvisor → Grafana), Trazas distribuidas (Backend instrumentado con OpenTelemetry SDK → OTEL Collector → Tempo → Grafana con TraceQL) y Dashboards en tiempo real con ventana de 30 segundos de actualización.",
+    "k8s_flow_label": "Flujo de Datos End-to-End",
+    "k8s_flow_desc": "Diagrama de secuencia completo que muestra el ciclo de vida de una request: desde el usuario → Frontend → NodePort → Backend (con balanceo) → Redis (cache) → OTEL Collector → Tempo para trazas, y Prometheus scrapeando /metrics cada 5s para dashboards en Grafana.",
+    "k8s_metrics_label": "Pipeline de Métricas (Prometheus)",
+    "k8s_metrics_desc": "Prometheus scrapea prometheus_flask_exporter en :10000/metrics, kube-state-metrics en :8080 y cAdvisor (integrado en K3s). Métricas clave: RPS (all/business), latencia p95/p50, CPU usage, memoria y pod restarts.",
+    "k8s_tracing_label": "Pipeline de Trazas (OpenTelemetry → Tempo)",
+    "k8s_tracing_desc": "El backend envía trazas via OTLP gRPC al OTEL Collector, que las exporta a Tempo. Desde Grafana se consultan con TraceQL capturando Trace ID, Span ID, duración, status y atributos HTTP.",
     "elepad": {
       "dateRange": "Marzo 2025 - Marzo 2026",
       "title": "Elepad — App Móvil para Adultos Mayores",
@@ -133,12 +145,16 @@
       "dateRange": "Octubre - Noviembre 2025",
       "title": "DevOps: Kubernetes & Observabilidad",
       "description": "Orquestación con Kubernetes, alta disponibilidad y observabilidad completa con OpenTelemetry, Prometheus y Grafana.",
-      "long_description": "Proyecto académico de implementación de orquestación con Kubernetes (K3d) con configuración de observabilidad completa y validación de resiliencia.",
+      "long_description": "Proyecto académico sobre el mismo sistema SmartCatalog del TP anterior (rama orchestration-and-observability), elevado a orquestación con Kubernetes local (K3d) y observabilidad de nivel productivo. Desplegamos un cluster tp2-cluster de 3 nodos (1 control-plane + 2 workers) con 2 réplicas del backend Flask distribuidas mediante podAntiAffinity estricto — garantizando que nunca convivan en el mismo worker. El stack de observabilidad integra los tres pilares fundamentales: métricas con Prometheus (+ kube-state-metrics + cAdvisor), trazas distribuidas con OpenTelemetry SDK → OTEL Collector → Tempo, y visualización unificada en Grafana. Se implementaron métricas custom de negocio (RPS, latencia p95/p50), validación de resiliencia mediante saturación de recursos y health checks automáticos. La entrega fue una exposición en vivo demostrando el cluster funcionando en tiempo real.",
       "features": [
-        "Orquestación con Kubernetes (K3d): 1 control-plane + 2 workers, con 2 réplicas del backend y podAntiAffinity",
-        "Observabilidad completa: OpenTelemetry → Tempo (trazas), Prometheus (métricas), Grafana (dashboards)",
-        "Métricas custom: RPS, latencia p95/p50, CPU, memoria, reinicios",
-        "Validación de resiliencia mediante saturación de recursos"
+        "Cluster K3d de 3 nodos: 1 control-plane + 2 workers con 8 microservicios distribuidos (Frontend, Backend x2, Redis, Prometheus, Tempo, OTEL Collector, Grafana, kube-state-metrics)",
+        "Alta Disponibilidad garantizada: podAntiAffinity con requiredDuringSchedulingIgnoredDuringExecution impide que las 2 réplicas del backend compartan nodo. Readiness probes cada 5s + liveness probes cada 10s para auto-restart automático",
+        "Trazas distribuidas con OpenTelemetry SDK (auto-instrumentación del backend Flask) → OTEL Collector (OTLP gRPC :4317) → Tempo → Grafana con consultas TraceQL (Trace ID, Span ID, duración, status, atributos HTTP)",
+        "Métricas con Prometheus: scraping de prometheus_flask_exporter (:10000/metrics), kube-state-metrics (:8080) y cAdvisor integrado en K3s cada 5s",
+        "Métricas custom de negocio en Grafana: RPS global vs RPS de negocio (filtrando /health y /metrics), latencia p95 y p50, CPU y memoria por pod, reinicios de pods",
+        "Servicios NodePort públicos: Frontend :30080, Backend :30100 (balanceado), Grafana :30000 — servicios internos ClusterIP para Redis, Prometheus, Tempo y OTEL Collector",
+        "Gestión de recursos K8s: requests y limits configurados por servicio (backend: 256Mi–512Mi RAM, 100m–500m CPU) para testing de saturación y OOMKilled",
+        "Validación de resiliencia: pruebas de saturación de recursos con observación en tiempo real del comportamiento del scheduler y del balanceador de carga"
       ]
     },
     "devops-azure": {
