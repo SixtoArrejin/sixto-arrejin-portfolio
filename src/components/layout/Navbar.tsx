@@ -48,9 +48,9 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
-              href={`#${item}`}
+              href={`/#${item}`}
               className="px-3 py-1.5 rounded-lg text-sm transition-all duration-200 hover:scale-105"
               style={{ color: "var(--text-muted)" }}
               onMouseEnter={(e) => {
@@ -63,7 +63,7 @@ export function Navbar() {
               }}
             >
               {t(item)}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -97,15 +97,15 @@ export function Navbar() {
           style={{ background: "var(--bg-card)", backdropFilter: "blur(20px)" }}
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
-              href={`#${item}`}
+              href={`/#${item}`}
               onClick={() => setMobileOpen(false)}
               className="block py-2 text-sm"
               style={{ color: "var(--text-muted)" }}
             >
               {t(item)}
-            </a>
+            </Link>
           ))}
         </motion.div>
       )}
