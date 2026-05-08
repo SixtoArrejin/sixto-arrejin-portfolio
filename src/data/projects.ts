@@ -157,7 +157,84 @@ export const projects: Project[] = [
     slug: "data-warehouse",
     tags: ["SQL Server", "ETL", "OLAP", "SSIS", "SSAS", "Power BI"],
     type: "academic",
+    team: 5,
     links: {},
+    media: [
+      { type: "image", url: "/projects/data-warehouse/1-tp1-m-conceptual-diagrama-relacional-.png" },
+      { type: "image", url: "/projects/data-warehouse/2-tp1-d-fisico-entidad-relacion.png" },
+      { type: "image", url: "/projects/data-warehouse/3-tp1-diagrama-ing-inversa-ssms.png" },
+      { type: "image", url: "/projects/data-warehouse/4-tp2-conexion-db-datawarehouse.png" },
+      { type: "image", url: "/projects/data-warehouse/5-tp2-control-flow-carga-inicial.png" },
+      { type: "image", url: "/projects/data-warehouse/6-tp2-configuración-execute-sql-task-trunca-data-warehouse.png" },
+      { type: "image", url: "/projects/data-warehouse/7-tp2-configuración-insertar-registros-comodines.png" },
+      { type: "image", url: "/projects/data-warehouse/8-tp2-data-flow-etl-dimTiempo.png" },
+      { type: "image", url: "/projects/data-warehouse/9-tp2-data-flow-etl-dimensiones-hoja.png" },
+      { type: "image", url: "/projects/data-warehouse/10-tp2-data-flow-completo-etl-dimTienda-y-DimBanda.png" },
+      { type: "image", url: "/projects/data-warehouse/11-tp2-etl-dimArtista-y-DimDisco.png" },
+      { type: "image", url: "/projects/data-warehouse/12-tp2-execute-sql-task-para-asignar-representantes-en-DimBanda.png" },
+      { type: "image", url: "/projects/data-warehouse/13-tp2-data-flow-del-etl-hechos.png" },
+      { type: "image", url: "/projects/data-warehouse/14-tp2-etl-hechoVentas-basico.png" },
+      { type: "image", url: "/projects/data-warehouse/15-tp2-etl-HechoVentas-parte-1-cargando-en-DimTiempo-fechas-no-encontradas.png" },
+      { type: "image", url: "/projects/data-warehouse/16-tp2-etl-HechoVentas-parte-2-con-logging-de-los-registros-sin-dwid_banda-o-dwid_disco.png" },
+      { type: "image", url: "/projects/data-warehouse/17-tp2-etl-HechoProducciones-básico.png" },
+      { type: "image", url: "/projects/data-warehouse/18-tp2-etl-HechoProducciones-cargando-en-DimTiempo-las-fechas-no-encontradas.png" },
+      { type: "image", url: "/projects/data-warehouse/19-tp2-control-flow-de-la-carga-inicial.png" },
+      { type: "image", url: "/projects/data-warehouse/20-tp2-etl-DimTiempo.png" },
+      { type: "image", url: "/projects/data-warehouse/21-tp2-etl-dimensiones-hoja.png" },
+      { type: "image", url: "/projects/data-warehouse/22-tp2-etl-DimTienda-y-DimBanda.png" },
+      { type: "image", url: "/projects/data-warehouse/23-tp2-etl-DimArtista-y-DimDisco.png" },
+      { type: "image", url: "/projects/data-warehouse/24-etl-hechos.png" },
+      { type: "image", url: "/projects/data-warehouse/25-tp2-esquema-carga-incremental.png" },
+      { type: "image", url: "/projects/data-warehouse/26-tp2-etl-incremental-HechoVentas-1.png" },
+      { type: "image", url: "/projects/data-warehouse/27-tp2-etl-incremental-HechoVentas-2.png" },
+      { type: "image", url: "/projects/data-warehouse/28-tp2-etl-incremento-HechoProducciones-1.png" },
+      { type: "image", url: "/projects/data-warehouse/29-tp2-etl-incremento-HechoProducciones-2.png" },
+      { type: "image", url: "/projects/data-warehouse/30-tp2-Slowly-Changing-Dimensions.png" },
+      { type: "image", url: "/projects/data-warehouse/31-tp2-incrementar-DimArtista-SCD-1.png" },
+      { type: "image", url: "/projects/data-warehouse/32-tp2-incrementar-DimArtista-SCD-2.png" },
+      { type: "image", url: "/projects/data-warehouse/33-tp2-incrementar-DimBanda-SCD-1.png" },
+      { type: "image", url: "/projects/data-warehouse/34-tp2-incrementar-DimBanda-SCD-2.png" },
+      { type: "image", url: "/projects/data-warehouse/35-tp2-incrementar-DimDiscos.png" },
+      { type: "image", url: "/projects/data-warehouse/36-tp2-ejecución-de-SCD.png" },
+      { type: "image", url: "/projects/data-warehouse/37-tp2-DQS-pantalla-inicial-de-SQL-Server-2022-Data-Services-Client.png" },
+      { type: "image", url: "/projects/data-warehouse/38-tp2-DQS-Cleansing-el-data-flow-de-DimUbicacion.png" },
+      { type: "image", url: "/projects/data-warehouse/39-tp2-mensaje-de-prerrequisitos-en-el-Master-Data-Configuration-Manager.png" },
+      { type: "image", url: "/projects/data-warehouse/40-tp3-vista-de-Origen-de-Datos.png" },
+      { type: "image", url: "/projects/data-warehouse/41-tp3-nuevo-cubo.png" },
+      { type: "image", url: "/projects/data-warehouse/42-tp3-seleccionar-medidas.png" },
+      { type: "image", url: "/projects/data-warehouse/43-tp3-seleccionar-dimensiones.png" },
+      { type: "image", url: "/projects/data-warehouse/44-tp3-cubo.png" },
+      { type: "image", url: "/projects/data-warehouse/45-tp3-conf-DimTienda.png" },
+      { type: "image", url: "/projects/data-warehouse/46-tp3-conf-DimTiempo.png" },
+      { type: "image", url: "/projects/data-warehouse/47-tp3-conf-DimDisco.png" },
+      { type: "image", url: "/projects/data-warehouse/48-tp3-med-calculada-demanda-insatisfecha.png" },
+      { type: "image", url: "/projects/data-warehouse/49-tp3-med-calculada-kpi.png" },
+      { type: "image", url: "/projects/data-warehouse/50-tp3-configuracion-db-power-bi.png" },
+      { type: "image", url: "/projects/data-warehouse/51-tp3-power-bi-tablero-home.png" },
+      { type: "image", url: "/projects/data-warehouse/52-tpi-power-bi-tablero-mapa.png" }
+    ],
+    documents: [
+      {
+        title: "Consigna General — Escenario Sello Discográfico",
+        url: "/projects/data-warehouse/TPSellodiscográfico-ADE2025.pdf"
+      },
+      {
+        title: "TPI Parte 1 — Modelo Relacional y Multidimensional",
+        url: "/projects/data-warehouse/ADE - TPI Parte 1 - Modelo de la Discográfica.pdf"
+      },
+      {
+        title: "TPI Parte 2 — Procesos ETL en SSIS",
+        url: "/projects/data-warehouse/ADE - TPI Parte 2 - ETL.pdf"
+      },
+      {
+        title: "TPI Parte 3 — Cubo OLAP (SSAS) y Power BI",
+        url: "/projects/data-warehouse/ADE - TPI Parte 3 - Cubo OLAP y Power BI.pdf"
+      },
+      {
+        title: "Fuentes de Datos y Mapeo de Atributos",
+        url: "/projects/data-warehouse/ADE - TPI - Data Sources - Sheet1.pdf"
+      }
+    ]
   },
   {
     slug: "play-finder",

@@ -15,6 +15,7 @@ import {
   FileText,
   Download,
   Database,
+  Server,
   ZoomIn,
   ZoomOut,
   RotateCcw,
@@ -919,6 +920,264 @@ export function ProjectDetail({ project }: { project: Project }) {
                     <img
                       src="/projects/devops-kubernetes/tracing-stack.png"
                       alt={t("k8s_tracing_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Part 1: Dimensional Modeling (Specific to Data Warehouse) */}
+          {project.slug === "data-warehouse" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Database size={16} style={{ color: "var(--accent-orange, #f97316)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-orange, #f97316)" }}
+                >
+                  {t("bi_modeling_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("bi_modeling_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* Conceptual Model Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-orange, #f97316)" }} />
+                      {t("bi_conceptual_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_conceptual_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/conceptual-model.png");
+                      setActiveDiagramTitle(t("bi_conceptual_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/conceptual-model.png"
+                      alt={t("bi_conceptual_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Physical Model Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                      {t("bi_physical_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_physical_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/physical-model.png");
+                      setActiveDiagramTitle(t("bi_physical_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/physical-model.png"
+                      alt={t("bi_physical_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Part 2: SSIS ETL (Specific to Data Warehouse) */}
+          {project.slug === "data-warehouse" && (
+            <motion.div variants={fadeInUp} custom={3.2} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Server size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("bi_etl_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("bi_etl_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* Control Flow Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                      {t("bi_control_flow_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_control_flow_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/etl-control-flow.png");
+                      setActiveDiagramTitle(t("bi_control_flow_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/etl-control-flow.png"
+                      alt={t("bi_control_flow_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* SCD Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                      {t("bi_scd_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_scd_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/scd-schema.png");
+                      setActiveDiagramTitle(t("bi_scd_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/scd-schema.png"
+                      alt={t("bi_scd_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Part 3: SSAS & Power BI (Specific to Data Warehouse) */}
+          {project.slug === "data-warehouse" && (
+            <motion.div variants={fadeInUp} custom={3.3} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart3 size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("bi_olap_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("bi_olap_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* OLAP Cube Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-violet)" }} />
+                      {t("bi_cube_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_cube_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/olap-cube.png");
+                      setActiveDiagramTitle(t("bi_cube_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/olap-cube.png"
+                      alt={t("bi_cube_label")}
+                      className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Power BI Dashboard Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border h-full justify-between" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                      {t("bi_powerbi_label")}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)", minHeight: "2.5rem" }}>
+                      {t("bi_powerbi_desc")}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/data-warehouse/powerbi-dashboard.png");
+                      setActiveDiagramTitle(t("bi_powerbi_label"));
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer mt-auto text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <img
+                      src="/projects/data-warehouse/powerbi-dashboard.png"
+                      alt={t("bi_powerbi_label")}
                       className="w-full h-48 object-contain object-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 p-2"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
