@@ -33,10 +33,20 @@ export const projects: Project[] = [
       playStore:
         "https://play.google.com/store/apps/details?id=com.elepadorg.elepad",
     },
-    media: Array.from({ length: 37 }, (_, i) => ({
-      type: "image",
-      url: `/projects/elepad/${i + 1}.jpg`,
-    })),
+    media: [
+      ...Array.from({ length: 37 }, (_, i) => ({
+        type: "image",
+        url: `/projects/elepad/${i + 1}.jpg`,
+      })),
+      {
+        type: "image",
+        url: "/projects/elepad/system-architecture.png",
+      },
+      {
+        type: "image",
+        url: "/projects/elepad/db-der-simplified.png",
+      },
+    ],
     documents: [
       {
         title: "Escenario del Proyecto",

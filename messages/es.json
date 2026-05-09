@@ -137,7 +137,11 @@
         "Estructura Monorepo gestionada con Turborepo, optimizando tiempos de build y desarrollo",
         "Flujos CI/CD automatizados con GitHub Actions hacia Cloudflare y Expo EAS",
         "Desarrollo ágil: Gestión de equipo bajo metodología Scrum con 7 releases documentadas"
-      ]
+      ],
+      "arch_title": "Arquitectura del Sistema & Flujo Serverless",
+      "arch_desc": "Elepad está diseñado bajo un modelo Cliente/Servidor desacoplado y serverless, optimizado para garantizar alta disponibilidad e hiper-escalabilidad con costes mínimos. La aplicación móvil multiplataforma (desarrollada con React Native y Expo para Android/iOS/Web) interactúa de forma asíncrona con un backend serverless stateless implementado con Hono y validación OpenAPI, desplegado en Cloudflare Workers. Toda la persistencia, almacenamiento de recursos multimedia y autenticación OAuth con Google se delegan de forma segura en Supabase, comunicándose a través de tokens JWT firmados.",
+      "db_title": "Estructura y Modelo de la Base de Datos",
+      "db_desc": "El motor de base de datos relacional PostgreSQL, alojado en Supabase, fue estructurado inicialmente con un diseño simplificado para persistir usuarios, grupos familiares y recuerdos multimedia. Con la evolución del proyecto y el desarrollo iterativo con Scrum, el esquema de datos se expandió de manera ágil para dar soporte completo a la lógica de juegos cognitivos y de memoria (Sudoku, Memoria, Lights Out), control de rachas de actividad, gestión integrada de tokens de notificaciones push, configuraciones de dispositivos y compras virtuales en la tienda interna."
     },
     "scyt-utn": {
       "dateRange": "Abril 2023 - Abril 2026",

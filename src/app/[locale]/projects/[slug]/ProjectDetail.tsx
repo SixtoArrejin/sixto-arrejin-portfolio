@@ -369,6 +369,88 @@ export function ProjectDetail({ project }: { project: Project }) {
             </ul>
           </motion.div>
 
+          {/* System Architecture Section (Specific to Elepad) */}
+          {project.slug === "elepad" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Cpu size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("elepad.arch_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("elepad.arch_desc")}
+              </p>
+
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => {
+                    setActiveDiagramUrl("/projects/elepad/system-architecture.png");
+                    setActiveDiagramTitle(t("elepad.arch_title"));
+                    setZoomLevel(1);
+                  }}
+                  className="relative block w-full rounded-xl overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                  style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}
+                >
+                  <img
+                    src="/projects/elepad/system-architecture.png"
+                    alt={t("elepad.arch_title")}
+                    className="w-full h-auto max-h-[500px] object-contain transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-110 p-2 sm:p-4 mx-auto"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                      {t("view_more")}
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Database Schema Section (Specific to Elepad) */}
+          {project.slug === "elepad" && (
+            <motion.div variants={fadeInUp} custom={3.2} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Database size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("elepad.db_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("elepad.db_desc")}
+              </p>
+
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => {
+                    setActiveDiagramUrl("/projects/elepad/db-der-simplified.png");
+                    setActiveDiagramTitle(t("elepad.db_title"));
+                    setZoomLevel(1);
+                  }}
+                  className="relative block w-full rounded-xl overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                  style={{ borderColor: "var(--border-color)", background: "var(--bg-secondary)" }}
+                >
+                  <img
+                    src="/projects/elepad/db-der-simplified.png"
+                    alt={t("elepad.db_title")}
+                    className="w-full h-auto max-h-[500px] object-contain transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-110 p-2 sm:p-4 mx-auto"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
+                      {t("view_more")}
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          )}
+
           {/* System Architecture Section (Specific to SCyT) */}
           {project.slug === "scyt-utn" && (
             <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
