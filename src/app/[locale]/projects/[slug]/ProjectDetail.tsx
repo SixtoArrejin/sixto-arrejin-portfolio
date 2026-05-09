@@ -121,9 +121,12 @@ export function ProjectDetail({ project }: { project: Project }) {
     : (isTitleLong ? 320 : 500);
   const fullDescription = t(`${project.slug}.long_description`);
   const isTruncated = fullDescription.length > descLimit;
+  const paragraphs = fullDescription.split("\n\n");
+  const firstParagraph = paragraphs[0];
+
   const displayText = isDescExpanded
     ? fullDescription
-    : (isTruncated ? `${fullDescription.substring(0, descLimit)}...` : fullDescription);
+    : (isTruncated ? `${firstParagraph.substring(0, descLimit)}...` : firstParagraph);
 
   const handleZoomIn = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -164,11 +167,25 @@ export function ProjectDetail({ project }: { project: Project }) {
           animate="visible"
           className="space-y-8"
         >
-          {/* Header & Carousel Grid */}
-          {/* Header & Carousel Grid */}
-          <div className={`grid grid-cols-1 ${project.slug !== 'elepad' ? 'lg:grid-cols-5' : 'lg:grid-cols-3'} gap-8 lg:gap-12 items-start`}>
+          {/* Header & Carousel Float Layout */}
+          <div className="flow-root">
+            {/* Right: Featured Carousel (Floated Right on Desktop) */}
+            {hasMedia && (
+              <motion.div
+                variants={fadeInUp}
+                custom={0.5}
+                className={`w-full ${project.slug !== 'elepad' ? 'lg:w-[42%] lg:max-w-[480px]' : 'lg:w-[35%] lg:max-w-[360px]'} lg:float-right lg:ml-10 lg:mb-6 mb-8 flex justify-center lg:justify-end`}
+              >
+                <ProjectHeaderCarousel
+                  media={project.media!}
+                  onOpenLightbox={(idx) => setLightboxIndex(idx)}
+                  isDesktop={project.slug !== "elepad"}
+                />
+              </motion.div>
+            )}
+
             {/* Left: Text & Badges & Links */}
-            <motion.div variants={fadeInUp} custom={0} className={project.slug !== 'elepad' ? 'lg:col-span-3' : 'lg:col-span-2'}>
+            <motion.div variants={fadeInUp} custom={0}>
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className={`type-badge type-badge--${project.type}`}>
                   {t(`type_${project.type}`)}
@@ -201,7 +218,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               </h1>
 
               <p
-                className="text-base leading-relaxed"
+                className="text-base leading-relaxed whitespace-pre-line"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {displayText}
@@ -266,21 +283,10 @@ export function ProjectDetail({ project }: { project: Project }) {
               )}
             </motion.div>
 
-            {/* Right: Featured Carousel */}
-            {hasMedia && (
-              <motion.div
-                variants={fadeInUp}
-                custom={0.5}
-                className={project.slug !== 'elepad' ? 'lg:col-span-2 flex justify-center lg:justify-end' : 'lg:col-span-1 flex justify-center lg:justify-end'}
-              >
-                <ProjectHeaderCarousel
-                  media={project.media!}
-                  onOpenLightbox={(idx) => setLightboxIndex(idx)}
-                  isDesktop={project.slug !== "elepad"}
-                />
-              </motion.div>
-            )}
+
           </div>
+ 
+
 
           {/* Tech Stack */}
           <motion.div variants={fadeInUp} custom={2} className="glass-card p-6">
