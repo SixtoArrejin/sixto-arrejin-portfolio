@@ -46,7 +46,7 @@ export const projects: Project[] = [
         type: "image" as const,
         url: "/projects/elepad/db-der-simplified.png",
       },
-    ],
+    ] as { type: "image" | "video"; url: string }[],
     documents: [
       {
         title: "Escenario del Proyecto",
