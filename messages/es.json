@@ -217,15 +217,27 @@
     },
     "play-finder": {
       "dateRange": "Marzo 2023 - Diciembre 2023",
-      "title": "Play Finder — Gestión de Reservas Deportivas",
-      "description": "Aplicación web Full Stack para la gestión y reserva de canchas deportivas.",
-      "long_description": "Desarrollé una aplicación web Full Stack para la gestión y reserva de canchas deportivas como Proyecto Integrador ADUSI, con equipo de 7 personas bajo metodología Scrum.",
+      "title": "Play Finder — Gestión y Reserva de Canchas Deportivas",
+      "description": "Plataforma web Full Stack para la reserva de turnos, administración de complejos deportivos y analítica de reservas en tiempo real.",
+      "long_description": "Play Finder es una plataforma web responsive diseñada para optimizar y simplificar la gestión y reserva de canchas deportivas, conectando de forma ágil a dueños de complejos deportivos con jugadores. Desarrollada de manera colaborativa por un equipo de 7 personas a lo largo de 8 sprints de 3 semanas bajo la metodología Scrum, sirvió como el Proyecto Integrador de la carrera Analista Desarrollador Universitario en Sistemas de Información (ADUSI) de la UTN-FRRe. El sistema cuenta con dos flujos principales: un portal para dueños (administración de complejos, parametrización de canchas, gestión de tarifas y un panel de analítica con gráficos de reservas e ingresos populares) y un portal para jugadores (búsqueda avanzada con geolocalización, reserva en vivo, simulación de pagos con pasarela y notificaciones por correo). La plataforma fue desplegada en producción en Microsoft Azure utilizando contenedores Docker.",
       "features": [
-        "Full Stack: React, TypeScript, Node.js, Prisma, PostgreSQL",
-        "Arquitectura por capas, autenticación robusta (JWT y Google OAuth)",
-        "Despliegue contenerizado con Docker en Azure",
-        "Equipo de 7 personas bajo metodología Scrum — ciclo de vida completo del software"
-      ]
+        "Arquitectura Full Stack desacoplada: Frontend interactivo en React.js con Chakra UI y backend robusto en Node.js, Express y TypeScript.",
+        "Modelado de base de datos relacional PostgreSQL con Prisma ORM, garantizando integridad referencial mediante claves foráneas y un óptimo rendimiento en consultas anidadas complejas.",
+        "Gestión de Establecimientos: Registro, edición y parametrización de complejos deportivos con horarios de atención, dirección y fotos.",
+        "Administración de Canchas Deportivas: Configuración de tipos de suelo, disciplinas de juego (fútbol, pádel, básquet), precios diferenciados y horarios de disponibilidad dinámica.",
+        "Búsqueda y Filtros Inteligentes: Permite a los jugadores explorar establecimientos deportivos y filtrar canchas disponibles en tiempo real por fecha, hora, deporte y características específicas.",
+        "Sistema de Reserva y Turnos: Proceso de reserva interactivo con validaciones estrictas de negocio en el backend para evitar sobre-turnos (doble reserva en el mismo horario).",
+        "Módulo de Pagos Simulados: Simulación segura de pasarela de pago para la seña o pago completo del turno utilizando flujos interactivos de tarjeta de crédito.",
+        "Autenticación y Seguridad Robustas: Sistema basado en JSON Web Tokens (JWT) y autenticación social mediante Google OAuth, con middleware de enrutamiento protegido.",
+        "Notificaciones por Correo: Integración con la API de SendGrid para el envío automatizado de correos de confirmación de reservas y flujos de recuperación de contraseñas.",
+        "Panel de Control Analítico: Dashboard interactivo para dueños que presenta gráficos de barras e históricos sobre las horas más populares de reserva, nivel de ocupación y reservas por período.",
+        "Ciclo de Vida DevOps Completo: Despliegue de microservicios contenerizados utilizando Docker y Docker Compose, alojados en Azure Container Apps con base de datos PostgreSQL en Azure.",
+        "Metodología Ágil de Éxito: Planificación, seguimiento de requerimientos y gestión de issues coordinada a través de Jira Software en 8 Sprints secuenciales."
+      ],
+      "arch_title": "Arquitectura del Sistema & Patrón de Diseño",
+      "arch_desc": "Play Finder se diseñó con un enfoque desacoplado, modular y robusto, estructurando el backend en Node.js con Express y TypeScript bajo el patrón Repository-Service-Handler. Las peticiones HTTP viajan del cliente al Handler de Express, que delega la lógica de negocio en la capa de Services para finalmente interactuar con PostgreSQL mediante Prisma ORM en la capa de Repository. El frontend, una Single Page Application (SPA) en React con Chakra UI y Vite, consume eficientemente los endpoints mediante hooks personalizados impulsados por TanStack Query, logrando una sincronización en tiempo real fluida y robusta.",
+      "db_title": "Modelado y Diseño Conceptual de Base de Datos",
+      "db_desc": "El esquema relacional de PostgreSQL fue diseñado y normalizado meticulosamente para asegurar la integridad de los datos. El modelo final (Sprint 8) mapea de manera precisa las relaciones de cardinalidad entre usuarios, planes de suscripción, complejos deportivos, canchas, días de disponibilidad y registros de reservas con transacciones de pago, facilitando consultas de negocio de alto rendimiento y la generación procedural de informes analíticos para los administradores."
     }
   },
   "awards": {

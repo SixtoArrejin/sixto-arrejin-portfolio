@@ -451,6 +451,100 @@ export function ProjectDetail({ project }: { project: Project }) {
             </motion.div>
           )}
 
+          {/* System Architecture Section (Specific to Play Finder) */}
+          {project.slug === "play-finder" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Cpu size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("play-finder.arch_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("play-finder.arch_desc")}
+              </p>
+            </motion.div>
+          )}
+
+          {/* Database Schema Section (Specific to Play Finder) */}
+          {project.slug === "play-finder" && (
+            <motion.div variants={fadeInUp} custom={3.2} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Database size={16} style={{ color: "var(--accent-blue)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  {t("play-finder.db_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("play-finder.db_desc")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                {/* Initial Schema Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-violet)" }} />
+                    Modelo Conceptual Inicial (Sprint 1)
+                  </h3>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/play-finder/db-schema-initial.png");
+                      setActiveDiagramTitle("Modelo Conceptual Inicial (Sprint 1)");
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)", background: "var(--bg-primary)" }}
+                  >
+                    <img
+                      src="/projects/play-finder/db-schema-initial.png"
+                      alt="Modelo Conceptual Inicial (Sprint 1)"
+                      className="w-full h-40 object-contain transition-all duration-300 group-hover:scale-[1.02] p-2 mx-auto"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-[10px] font-semibold px-2 py-1 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/10">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Final Schema Card */}
+                <div className="flex flex-col gap-3 p-4 rounded-xl border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border-color)" }}>
+                  <h3 className="text-sm font-bold flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--accent-blue)" }} />
+                    Modelo Conceptual Final (Sprint 8)
+                  </h3>
+                  <button
+                    onClick={() => {
+                      setActiveDiagramUrl("/projects/play-finder/db-schema-conceptual.png");
+                      setActiveDiagramTitle("Modelo Conceptual Final (Sprint 8)");
+                      setZoomLevel(1);
+                    }}
+                    className="relative block w-full rounded-lg overflow-hidden border group cursor-pointer text-left focus:outline-none"
+                    style={{ borderColor: "var(--border-color)", background: "var(--bg-primary)" }}
+                  >
+                    <img
+                      src="/projects/play-finder/db-schema-conceptual.png"
+                      alt="Modelo Conceptual Final (Sprint 8)"
+                      className="w-full h-40 object-contain transition-all duration-300 group-hover:scale-[1.02] p-2 mx-auto"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-[10px] font-semibold px-2 py-1 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/10">
+                        {t("view_more")}
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* System Architecture Section (Specific to SCyT) */}
           {project.slug === "scyt-utn" && (
             <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
