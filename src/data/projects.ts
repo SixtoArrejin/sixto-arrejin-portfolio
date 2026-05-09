@@ -263,7 +263,6 @@ export const projects: Project[] = [
     team: 7,
     links: {
       github: "https://github.com/agustinbravop/utn-seminario",
-      live: "https://playfinder-front.gentlesand-306ace58.brazilsouth.azurecontainerapps.io/",
     },
     media: [
       { type: "image", url: "/projects/play-finder/1-sprint1-planes.png" },
