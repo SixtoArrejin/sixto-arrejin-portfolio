@@ -174,7 +174,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               <motion.div
                 variants={fadeInUp}
                 custom={0.5}
-                className={`w-full ${project.slug !== 'elepad' ? 'lg:w-[42%] lg:max-w-[480px]' : 'lg:w-[35%] lg:max-w-[360px]'} lg:float-right lg:ml-10 lg:mb-6 mb-8 flex justify-center lg:justify-end`}
+                className={`hidden lg:flex w-full ${project.slug !== 'elepad' ? 'lg:w-[42%] lg:max-w-[480px]' : 'lg:w-[35%] lg:max-w-[360px]'} lg:float-right lg:ml-10 lg:mb-6 mb-8 justify-center lg:justify-end`}
               >
                 <ProjectHeaderCarousel
                   media={project.media!}
@@ -232,6 +232,21 @@ export function ProjectDetail({ project }: { project: Project }) {
                   </button>
                 )}
               </p>
+
+              {/* Mobile Featured Carousel (Below Description) */}
+              {hasMedia && (
+                <motion.div
+                  variants={fadeInUp}
+                  custom={0.5}
+                  className="lg:hidden w-full my-6 flex justify-center"
+                >
+                  <ProjectHeaderCarousel
+                    media={project.media!}
+                    onOpenLightbox={(idx) => setLightboxIndex(idx)}
+                    isDesktop={project.slug !== "elepad"}
+                  />
+                </motion.div>
+              )}
               {/* Links */}
               {(project.links.github || project.links.live || project.links.playStore) && (
                 <div className="flex flex-wrap gap-3 mt-8">
