@@ -61,6 +61,7 @@
     "team": "Team of {count} people",
     "links_github": "Source code",
     "links_live": "Live demo",
+    "links_web": "Web",
     "links_playstore": "Google Play Store",
     "features_title": "Implemented features",
     "stack_title": "Tech Stack",
@@ -136,7 +137,9 @@
         "Pre-compiled high-performance PDF viewer executing heavy rendering workload on a background Web Worker.",
         "Customized experience: multiple chessboard square themes (Cyberpunk, Ocean, Wood, etc.) and intelligent Dark/Light mode integration.",
         "Advanced Web-Native persistence: historical memory tracking of the latest read page and ArrayBuffer caching via IndexedDB and Service Workers.",
-        "Direct inclusion of classic chess book cards like Roberto Grau's series dynamically fetched on the fly."
+        "Direct inclusion of classic chess book cards like Roberto Grau's series dynamically fetched on the fly.",
+        "Algebraic notation on the board with navigable move history (start, previous, next, end) in Analysis Mode.",
+        "Layout configuration: swap PDF/board panels, rotate piece perspective, and load custom PDFs via drag-and-drop."
       ],
       "arch_title": "Front-End Architecture & Web-Native Persistence",
       "arch_desc": "The application was built leveraging the React 18 ecosystem paired with Vite for lightning-fast bundling. The primary technical challenge was orchestrating the highly demanding rendering of massive PDF files alongside a reactive chessboard without dropping UI frames or locking the main thread. This was mitigated by isolating the PDF viewer inside a controlled context and offloading the heavy lift to background message-passing. In tandem, an asynchronous cache layer structured on top of IndexedDB guaranteed that blocking resources loaded cleanly and locally after a first visit."

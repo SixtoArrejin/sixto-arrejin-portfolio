@@ -7,6 +7,7 @@ export type Project = {
     github?: string;
     live?: string;
     playStore?: string;
+    liveAsWeb?: boolean;
   };
   image?: string;
   media?: { type: "image" | "video"; url: string }[];
@@ -22,14 +23,17 @@ export const projects: Project[] = [
       "Vite",
       "JavaScript (ES6+)",
       "Tailwind CSS",
+      "chess.js",
+      "react-chessboard",
+      "PDF.js",
       "IndexedDB",
-      "PDF.js"
     ],
     type: "personal",
     videoEmbed: "https://www.youtube.com/embed/o91drm59cmY",
     links: {
       github: "https://github.com/SixtoArrejin/chess-study",
       live: "https://my-chess-study.vercel.app/",
+      liveAsWeb: true,
     },
     media: [
       { type: "image", url: "/projects/chess-study/1-modo-claro-esmeralda.png" },

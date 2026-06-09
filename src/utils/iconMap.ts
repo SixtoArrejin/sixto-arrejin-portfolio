@@ -6,8 +6,11 @@ import {
   SiTerraform, SiGithubactions, SiCloudflare, SiRender,
   SiPandas, SiNumpy, SiScikitlearn, SiGit,
   SiGithub, SiJira, SiOpentelemetry, SiPrometheus, SiGrafana,
+  SiVite, SiMozilla,
 } from "react-icons/si";
 import { FaDatabase, FaInfinity, FaChartBar } from "react-icons/fa";
+import { FaChess } from "react-icons/fa6";
+import { GiEmptyChessboard } from "react-icons/gi";
 import { TbApi } from "react-icons/tb";
 import { DiScrum } from "react-icons/di";
 import { VscAzure } from "react-icons/vsc";
@@ -74,5 +77,10 @@ export const iconMap: Record<string, { icon: IconType; color: string }> = {
   "Docker Buildx": { icon: SiDocker, color: "#2496ED" },
   "Azure ACR": { icon: VscAzure, color: "#0078D4" },
   "Azure ACI": { icon: VscAzure, color: "#0078D4" },
-  "Pytest": { icon: SiPython, color: "#3776AB" }
+  "Pytest": { icon: SiPython, color: "#3776AB" },
+  "Vite": { icon: SiVite, color: "#646CFF" },
+  "PDF.js": { icon: SiMozilla, color: "#FF7139" },
+  "chess.js": { icon: FaChess, color: "#C9A227" },
+  "react-chessboard": { icon: GiEmptyChessboard, color: "#8B7355" },
+  "IndexedDB": { icon: FaDatabase, color: "#FF9800" },
 };

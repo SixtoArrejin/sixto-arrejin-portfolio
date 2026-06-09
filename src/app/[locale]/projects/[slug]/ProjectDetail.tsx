@@ -7,6 +7,7 @@ import { type Project } from "@/data/projects";
 import {
   ArrowLeft,
   ExternalLink,
+  Globe,
   Smartphone,
   Users,
   Calendar,
@@ -51,6 +52,10 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Expo": "frontend",
   "ChakraUI": "frontend",
   "Tailwind CSS": "frontend",
+  "Vite": "frontend",
+  "PDF.js": "frontend",
+  "chess.js": "frontend",
+  "react-chessboard": "frontend",
   "HTML5": "frontend",
   "CSS3": "frontend",
   "TanStack Query": "frontend",
@@ -81,6 +86,7 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "SSAS": "database",
   "ETL": "database",
   "OLAP": "database",
+  "IndexedDB": "database",
 
   // DevOps & Infra
   "Docker": "devops",
@@ -274,8 +280,8 @@ export function ProjectDetail({ project }: { project: Project }) {
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-white transition-all duration-200 hover:scale-105"
                       style={{ background: "var(--accent-gradient)" }}
                     >
-                      <ExternalLink size={16} />
-                      {t("links_live")}
+                      {project.links.liveAsWeb ? <Globe size={16} /> : <ExternalLink size={16} />}
+                      {t(project.links.liveAsWeb ? "links_web" : "links_live")}
                     </a>
                   )}
                   {project.links.playStore && (

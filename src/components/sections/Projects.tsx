@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { ArrowRight, ExternalLink, Smartphone, Calendar } from "lucide-react";
+import { ArrowRight, ExternalLink, Globe, Smartphone, Calendar } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { Link } from "@/i18n/routing";
 
@@ -125,8 +125,9 @@ export function Projects() {
                       style={{ color: "var(--text-muted)" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-blue)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+                      title={project.links.liveAsWeb ? t("links_web") : t("links_live")}
                     >
-                      <ExternalLink size={16} />
+                      {project.links.liveAsWeb ? <Globe size={16} /> : <ExternalLink size={16} />}
                     </a>
                   )}
                   {project.links.playStore && (
