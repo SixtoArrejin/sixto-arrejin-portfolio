@@ -57,6 +57,7 @@
     "type_professional": "Professional",
     "type_academic": "Academic",
     "type_thesis": "Final Degree Project",
+    "type_personal": "Personal",
     "team": "Team of {count} people",
     "links_github": "Source code",
     "links_live": "Live demo",
@@ -124,6 +125,22 @@
     "bi_cube_desc": "OLAP multidimensional cube design with integrated complex hierarchies (geographical store views and temporal views), measure groups, and custom MDX calculations to track Unmet Demand.",
     "bi_powerbi_label": "Executive Dashboard & OLAP Interactions",
     "bi_powerbi_desc": "Executive dashboard consolidated in Power BI that interactively presents ROI analysis, sales by genre, geographical maps, and compliance metrics, enabling Drill-down, Roll-up, Slice, and Dice operations.",
+    "chess-study": {
+      "dateRange": "May 2026",
+      "title": "Chess Study — SPA & Interactive Board",
+      "description": "Unified PDF book reader and interactive analysis chessboard in a single screen for seamless chess studying.",
+      "long_description": "Chess Study is a smooth Single-Page Application (SPA) tailor-made to solve one of the most common frictions for chess students: having to constantly switch windows between a digital book and an analysis program.\n\nBy uniting a high-performance PDF viewer—independently driven by Mozilla's PDF.js rendering engine at 60 FPS—and an interactive smart chessboard powered by React in a responsive split-screen interface, it lets users read, drag pieces, replicate, and analyze chess positions seamlessly. It also features robust offline persistence via IndexedDB capability: you upload a book once, and your local browser caches it forever, instantly remembering the last page you were on.",
+      "features": [
+        "Fluid 'Split-Screen' interactive interface with draggable resizer and glassmorphic styling that automatically stacks on mobile formats.",
+        "Smart dual mode (Free Drag-and-Drop Editor and Analysis Mode regulated by chess.js legal move validation).",
+        "Pre-compiled high-performance PDF viewer executing heavy rendering workload on a background Web Worker.",
+        "Customized experience: multiple chessboard square themes (Cyberpunk, Ocean, Wood, etc.) and intelligent Dark/Light mode integration.",
+        "Advanced Web-Native persistence: historical memory tracking of the latest read page and ArrayBuffer caching via IndexedDB and Service Workers.",
+        "Direct inclusion of classic chess book cards like Roberto Grau's series dynamically fetched on the fly."
+      ],
+      "arch_title": "Front-End Architecture & Web-Native Persistence",
+      "arch_desc": "The application was built leveraging the React 18 ecosystem paired with Vite for lightning-fast bundling. The primary technical challenge was orchestrating the highly demanding rendering of massive PDF files alongside a reactive chessboard without dropping UI frames or locking the main thread. This was mitigated by isolating the PDF viewer inside a controlled context and offloading the heavy lift to background message-passing. In tandem, an asynchronous cache layer structured on top of IndexedDB guaranteed that blocking resources loaded cleanly and locally after a first visit."
+    },
     "elepad": {
       "dateRange": "March 2025 - March 2026",
       "title": "Elepad — Mobile App for Senior Citizens",

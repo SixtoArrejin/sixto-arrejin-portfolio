@@ -57,6 +57,7 @@
     "type_professional": "Profesional",
     "type_academic": "Académico",
     "type_thesis": "Proyecto Final",
+    "type_personal": "Personal",
     "team": "Equipo de {count} personas",
     "links_github": "Código fuente",
     "links_live": "Ver en vivo",
@@ -124,6 +125,22 @@
     "bi_cube_desc": "Diseño del cubo OLAP multidimensional con jerarquías complejas integradas (vistas geográficas de tiendas y temporales), grupos de medidas y la fórmula MDX calculada para rastrear la Demanda Insatisfecha.",
     "bi_powerbi_label": "Dashboard Ejecutivo e Interacciones OLAP",
     "bi_powerbi_desc": "Tablero ejecutivo consolidado en Power BI que presenta de forma interactiva análisis de ROI, ventas por género, mapas geográficos y métricas de cumplimiento, permitiendo navegación Drill-down, Roll-up, Slice y Dice.",
+    "chess-study": {
+      "dateRange": "Mayo 2026",
+      "title": "Chess Study — SPA & Tablero Interactivo",
+      "description": "Lector de libros PDF y Tablero de Análisis interactivo unificados en una sola pantalla para estudio de ajedrez.",
+      "long_description": "Chess Study es una aplicación web de una sola página (SPA) fluida, diseñada específicamente para resolver una de las fricciones más comunes de los estudiantes de ajedrez: tener que cambiar constantemente de ventanas entre un libro digital y un programa de análisis.\n\nAl unificar un visor de PDF de alto rendimiento —impulsado de forma independiente por el motor de Mozilla PDF.js a 60 FPS— y un tablero inteligente manipulable con React en una interfaz responsiva de pantalla dividida (split-screen), permite al usuario leer, arrastrar, replicar, y analizar posiciones de ajedrez sin interrupciones. Cuenta también con soporte nativo de persistencia offline vía IndexedDB: cargas un libro una vez, y tu navegador lo guarda para siempre, recordando instantáneamente la última página en la que dejaste la lectura.",
+      "features": [
+        "Interfaz iteractiva y fluida 'Split-Screen' con divisor arrastrable y estilización glassmorphic auto-ajustable a formato móvil apilable.",
+        "Modo dual inteligente (Editor libre Drag-and-Drop y Modo Análisis regidos por la validación de movimientos legales de chess.js).",
+        "Visor PDF pre-compilado de alto desempeño ejecutando la carga de renderizado pesada en un Web Worker en segundo plano.",
+        "Experiencia personalizada: Múltiples temas de casillas del tablero (Cyberpunk, Océano, Madera, etc) e integración con Modo Oscuro/Claro inteligente.",
+        "Persistencia web-native avanzada: Memoria histórica de la última página leída y caché del ArrayBuffer en IndexedDB y Service Workers.",
+        "Inclusión directa de tarjetas clásicas de libros como el 'Tratado General de Ajedrez de Roberto Grau' integrados vía fetch al vuelo."
+      ],
+      "arch_title": "Arquitectura Fron-End y Persistencia Web-Native",
+      "arch_desc": "La aplicación fue construida aprovechando el ecosistema integral de React 18 acoplado a Vite para un empaquetado ultra rápido. El mayor desafío técnico enfrentado fue orquestar el pesadísimo renderizado de archivos PDF masivos junto con un tablero reactivo sin afectar la experiencia del usuario (UX) o congelar el hilo principal. Esto se resolvió aislando el visor de PDF (PDF.js) dentro de un contexto controlado y delegando el procesamiento intensivo a través de pasaje de mensajes en segundo plano. Al mismo tiempo, la persistencia en caché asíncrono sobre IndexedDB garantizó que recursos bloqueantes se carguen limpiamente de forma local tras una primera visita."
+    },
     "elepad": {
       "dateRange": "Marzo 2025 - Marzo 2026",
       "title": "Elepad — App Móvil para Adultos Mayores",

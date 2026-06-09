@@ -1,7 +1,7 @@
 export type Project = {
   slug: string;
   tags: string[];
-  type: "professional" | "academic" | "thesis";
+  type: "professional" | "academic" | "thesis" | "personal";
   team?: number;
   links: {
     github?: string;
@@ -11,9 +11,33 @@ export type Project = {
   image?: string;
   media?: { type: "image" | "video"; url: string }[];
   documents?: { title: string; url: string; size?: string }[];
+  videoEmbed?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "chess-study",
+    tags: [
+      "React",
+      "Vite",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "IndexedDB",
+      "PDF.js"
+    ],
+    type: "personal",
+    videoEmbed: "https://www.youtube.com/embed/o91drm59cmY",
+    links: {
+      github: "https://github.com/SixtoArrejin/chess-study",
+      live: "https://my-chess-study.vercel.app/",
+    },
+    media: [
+      { type: "image", url: "/projects/chess-study/1-modo-claro-esmeralda.png" },
+      { type: "image", url: "/projects/chess-study/2-modo-oscuro-oceano.png" },
+      { type: "image", url: "/projects/chess-study/3-configuracion-claro.png" },
+      { type: "image", url: "/projects/chess-study/4-configuracion-oscuro.png" },
+    ],
+  },
   {
     slug: "elepad",
     tags: [
@@ -325,3 +349,4 @@ export const projects: Project[] = [
     ],
   },
 ];
+

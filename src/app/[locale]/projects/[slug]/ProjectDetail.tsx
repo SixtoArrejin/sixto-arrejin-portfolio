@@ -357,6 +357,21 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
           </motion.div>
 
+          {project.videoEmbed && (
+            <motion.div variants={fadeInUp} custom={2.5} className="flex justify-center">
+              <div className="w-1/2 rounded-2xl overflow-hidden shadow-lg border border-white/5 aspect-video">
+                <iframe
+                  src={project.videoEmbed}
+                  title={`${projectTitle} Demo Video`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </motion.div>
+          )}
+
           {/* Features */}
           <motion.div variants={fadeInUp} custom={3} className="glass-card p-6">
             <div className="flex items-center gap-2 mb-4">
