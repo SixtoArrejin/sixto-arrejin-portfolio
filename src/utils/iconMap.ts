@@ -6,7 +6,7 @@ import {
   SiTerraform, SiGithubactions, SiCloudflare, SiRender,
   SiPandas, SiNumpy, SiScikitlearn, SiGit,
   SiGithub, SiJira, SiOpentelemetry, SiPrometheus, SiGrafana,
-  SiVite, SiMozilla,
+  SiVite, SiMozilla, SiHono, SiMui, SiVercel, SiLangchain
 } from "react-icons/si";
 import { FaDatabase, FaInfinity, FaChartBar } from "react-icons/fa";
 import { FaChess } from "react-icons/fa6";
@@ -83,4 +83,9 @@ export const iconMap: Record<string, { icon: IconType; color: string }> = {
   "chess.js": { icon: FaChess, color: "#C9A227" },
   "react-chessboard": { icon: GiEmptyChessboard, color: "#8B7355" },
   "IndexedDB": { icon: FaDatabase, color: "#FF9800" },
+  "Hono": { icon: SiHono, color: "#E36002" },
+  "LangGraph": { icon: SiLangchain, color: "#12C2E9" },
+  "Material UI": { icon: SiMui, color: "#007FFF" },
+  "MUI": { icon: SiMui, color: "#007FFF" },
+  "Vercel": { icon: SiVercel, color: "var(--text-primary)" },
 };

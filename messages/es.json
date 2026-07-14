@@ -126,6 +126,38 @@
     "bi_cube_desc": "Diseño del cubo OLAP multidimensional con jerarquías complejas integradas (vistas geográficas de tiendas y temporales), grupos de medidas y la fórmula MDX calculada para rastrear la Demanda Insatisfecha.",
     "bi_powerbi_label": "Dashboard Ejecutivo e Interacciones OLAP",
     "bi_powerbi_desc": "Tablero ejecutivo consolidado en Power BI que presenta de forma interactiva análisis de ROI, ventas por género, mapas geográficos y métricas de cumplimiento, permitiendo navegación Drill-down, Roll-up, Slice y Dice.",
+    "duo-propiedades": {
+      "dateRange": "Junio 2026 - Presente",
+      "title": "DÚO Propiedades — Landing & Catálogo Inmobiliario",
+      "description": "Plataforma inmobiliaria mobile-first con catálogo interactivo, solicitudes de tasación y panel administrativo basado en arquitectura serverless.",
+      "long_description": "DÚO Propiedades es una solución digital integral diseñada para digitalizar el catálogo de inmuebles, captar nuevos propietarios mediante solicitudes de tasación y optimizar la gestión comercial de la inmobiliaria en Pirané, Formosa.\n\nEl sistema fue desarrollado utilizando una arquitectura Serverless desacoplada y escalable, que permite operar la base de datos, la autenticación, el almacenamiento de imágenes y el hosting de manera robusta y con alta disponibilidad.\n\nLa Fase 1 está completada e implementada en producción, entregando una landing page institucional mobile-first, un catálogo de propiedades con buscador y filtros avanzados, un formulario web para capturar solicitudes de tasación y un panel de administración protegido para gestionar el inventario (CRUD) y los estados dinámicos (Disponible, Reservado, En Negociación).",
+      "features": [
+        "Desarrollo web responsive y mobile-first con Next.js, React y TypeScript para optimización SEO y campañas publicitarias.",
+        "Catálogo interactivo con buscador dinámico inteligente y filtros avanzados por tipo de propiedad (Casas, Terrenos, Locales), zona, precio y superficie (m²).",
+        "Panel de administración interno seguro y protegido por autenticación mediante Supabase Auth.",
+        "Módulo CRUD completo para carga y edición ágil de inmuebles (detalles técnicos, servicios y carga de fotos).",
+        "Controlador rápido de estados (Disponible, Reservado, En Negociación) visibles al público de forma instantánea.",
+        "Flujo de tasaciones para capturar WhatsApp y datos de contacto de propietarios, con visualización centralizada para el administrador.",
+        "Arquitectura 100% serverless con almacenamiento en la nube en Supabase Storage y hosting escalable en Vercel."
+      ],
+      "arch_title": "Arquitectura Serverless y Cloud",
+      "arch_desc": "El sistema fue diseñado con una topología serverless desacoplada que garantiza alta disponibilidad y escalabilidad elástica. La landing page y el panel CRUD se ejecutan sobre Next.js en Vercel, mientras que los datos, la autenticación y las fotos se sirven desde Supabase (PostgreSQL y Storage), permitiendo una infraestructura moderna y sin costos operativos fijos innecesarios."
+    },
+    "datebox": {
+      "dateRange": "Abril 2026 - Presente",
+      "title": "DateBox — Plataforma para Salidas Sociales",
+      "description": "Plataforma móvil con IA y recomendación B2B para coordinar salidas grupales, sincronizar agendas de amigos y descubrir actividades locales.",
+      "long_description": "DateBox es una plataforma móvil diseñada para simplificar la organización de salidas grupales y eventos sociales. La aplicación automatiza la búsqueda de coincidencias en los calendarios de grupos de amigos y aplica algoritmos de recomendación inteligente para sugerir locales gastronómicos, espectáculos y espacios recreativos locales.\n\nAdemás de facilitar la coordinación grupal y evitar la indecisión, integra un modelo publicitario B2B que permite a comercios y emprendimientos locales promocionar sus servicios de manera directa a grupos de personas con alta intención de consumo en tiempo real.\n\nActualmente el proyecto se encuentra en fase de desarrollo activo como un Producto Mínimo Viable (MVP).",
+      "features": [
+        "Desarrollo móvil nativo multiplataforma utilizando React Native y Expo para iOS y Android (fase MVP).",
+        "Arquitectura de backend serverless de alto rendimiento desarrollada con Hono y desplegada en Cloudflare Workers.",
+        "Motor de recomendación inteligente de actividades y locales gastronómicos mediante agentes de IA creados con Python y LangGraph.",
+        "Base de datos relacional y autenticación administradas mediante Supabase (PostgreSQL, Auth, Storage, Realtime).",
+        "Generación y sincronización de tipos TypeScript de extremo a extremo a través de Orval API Client.",
+        "Estructura Monorepo organizada y gestionada eficientemente utilizando Turborepo.",
+        "Automatización de despliegues y pruebas continuas utilizando pipelines de CI/CD en GitHub Actions."
+      ]
+    },
     "chess-study": {
       "dateRange": "Mayo 2026",
       "title": "Chess Study — SPA & Tablero Interactivo",

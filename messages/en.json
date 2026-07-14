@@ -126,6 +126,38 @@
     "bi_cube_desc": "OLAP multidimensional cube design with integrated complex hierarchies (geographical store views and temporal views), measure groups, and custom MDX calculations to track Unmet Demand.",
     "bi_powerbi_label": "Executive Dashboard & OLAP Interactions",
     "bi_powerbi_desc": "Executive dashboard consolidated in Power BI that interactively presents ROI analysis, sales by genre, geographical maps, and compliance metrics, enabling Drill-down, Roll-up, Slice, and Dice operations.",
+    "duo-propiedades": {
+      "dateRange": "June 2026 - Present",
+      "title": "DÚO Propiedades — Landing & Real Estate Catalog",
+      "description": "Mobile-first real estate platform featuring an interactive catalog, valuation requests, and an administrative dashboard built on serverless architecture.",
+      "long_description": "DÚO Propiedades is a comprehensive digital solution designed to digitize the property catalog, attract new owners via online valuation requests, and optimize the commercial operations of the agency in Pirané, Formosa.\n\nThe system was architected using a decoupled and scalable Serverless infrastructure, hosting database, authentication, media storage, and server environments on high-availability cloud platforms.\n\nPhase 1 is fully completed and deployed to production, delivering an institutional mobile-first landing page, a properties catalog with advanced search and filtering, a web form to capture valuation requests, and a secured internal administrative panel to manage property inventory (CRUD) and dynamic states (Available, Reserved, Under Negotiation).",
+      "features": [
+        "Responsive, mobile-first web interface built with Next.js, React, and TypeScript for SEO optimization and advertising campaigns.",
+        "Interactive catalog with smart dynamic search and advanced filtering by property type (Houses, Land, Commercial), location, price, and size (m²).",
+        "Secure internal administration dashboard protected by Supabase Auth.",
+        "Complete CRUD module for easy property listing uploads and editing (technical details, amenities, and photos).",
+        "Instant real-time status controller (Available, Reserved, Under Negotiation) immediately reflected on the public site.",
+        "Valuation flow to capture owner contact details and WhatsApp numbers, with centralized tracking for the administrator.",
+        "100% serverless architecture utilizing Supabase Storage for property media and Vercel for scalable hosting."
+      ],
+      "arch_title": "Serverless & Cloud Architecture",
+      "arch_desc": "The system was designed with a decoupled serverless topology that guarantees high availability and elastic scalability. The landing page and CRUD panel run on Next.js hosted on Vercel, while data, authentication, and media are served from Supabase (PostgreSQL and Storage), enabling a modern cloud infrastructure without unnecessary fixed operational overhead."
+    },
+    "datebox": {
+      "dateRange": "April 2026 - Present",
+      "title": "DateBox — Social Outings Platform",
+      "description": "Mobile platform with AI recommendations and B2B marketing to coordinate group outings, sync calendars, and discover local spots.",
+      "long_description": "DateBox is a mobile platform designed to simplify the organization of group outings and social events. The application automates finding open slots in friends' calendars and utilizes smart recommendation algorithms to suggest restaurants, events, and local spots.\n\nBesides facilitating group coordination and reducing indecisiveness, it integrates a B2B advertising model that enables local businesses and venues to promote their services directly to groups with high consumption intent in real-time.\n\nCurrently, the project is under active development as a Minimum Viable Product (MVP).",
+      "features": [
+        "Multiplatform native mobile development using React Native and Expo for iOS and Android (MVP phase).",
+        "High-performance serverless backend architecture developed with Hono and deployed on Cloudflare Workers.",
+        "Smart recommendation engine for activities and venues using AI agents built with Python and LangGraph.",
+        "Relational database and user authentication managed via Supabase (PostgreSQL, Auth, Storage, Realtime).",
+        "Type-safe client-server integration with TypeScript API client automatically generated using Orval.",
+        "Organized and efficiently managed monorepo structure utilizing Turborepo.",
+        "Continuous deployment and automated testing pipelines set up via CI/CD on GitHub Actions."
+      ]
+    },
     "chess-study": {
       "dateRange": "May 2026",
       "title": "Chess Study — SPA & Interactive Board",

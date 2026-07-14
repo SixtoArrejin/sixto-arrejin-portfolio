@@ -8,6 +8,7 @@ export type Project = {
     live?: string;
     playStore?: string;
     liveAsWeb?: boolean;
+    instagram?: string;
   };
   image?: string;
   media?: { type: "image" | "video"; url: string }[];
@@ -16,6 +17,55 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "duo-propiedades",
+    tags: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel",
+    ],
+    type: "professional",
+    links: {
+      live: "https://duopropiedades.com.ar",
+      liveAsWeb: true,
+    },
+    media: Array.from({ length: 21 }, (_, i) => ({
+      type: "image" as const,
+      url: `/projects/duo-propiedades/${i + 1}.png`,
+    })),
+  },
+  {
+    slug: "datebox",
+    tags: [
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "Cloudflare Workers",
+      "Hono",
+      "Supabase",
+      "PostgreSQL",
+      "React",
+      "Vite",
+      "Python",
+      "LangGraph",
+    ],
+    type: "personal",
+    team: 4,
+    videoEmbed: "https://www.youtube.com/embed/Xh6E90fD3_k",
+    links: {
+      live: "https://datebox.com.ar",
+      liveAsWeb: true,
+      instagram: "https://www.instagram.com/datebox.app",
+    },
+    media: Array.from({ length: 8 }, (_, i) => ({
+      type: "image" as const,
+      url: `/projects/datebox/${i + 1}.png`,
+    })),
+  },
   {
     slug: "chess-study",
     tags: [

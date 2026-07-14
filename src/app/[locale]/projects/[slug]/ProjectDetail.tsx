@@ -25,6 +25,7 @@ import {
   GitBranch,
   BarChart3,
 } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
 import { GithubIcon } from "@/components/ui/Icons";
 import { iconMap } from "@/utils/iconMap";
 import { ProjectGallery } from "@/components/ui/ProjectGallery";
@@ -60,6 +61,8 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "CSS3": "frontend",
   "TanStack Query": "frontend",
   "Power BI": "frontend",
+  "Material UI": "frontend",
+  "MUI": "frontend",
 
   // Backend
   "Node.js": "backend",
@@ -73,6 +76,8 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "REST APIs": "backend",
   "Pytest": "backend",
   "Python": "backend",
+  "Hono": "backend",
+  "LangGraph": "backend",
 
   // Database
   "Supabase": "database",
@@ -106,6 +111,7 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Azure ACI": "devops",
   "Render": "devops",
   "Turborepo": "devops",
+  "Vercel": "devops",
 };
 
 export function ProjectDetail({ project }: { project: Project }) {
@@ -254,7 +260,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                 </motion.div>
               )}
               {/* Links */}
-              {(project.links.github || project.links.live || project.links.playStore) && (
+              {(project.links.github || project.links.live || project.links.playStore || project.links.instagram) && (
                 <div className="flex flex-wrap gap-3 mt-8">
                   {project.links.github && (
                     <a
@@ -298,6 +304,22 @@ export function ProjectDetail({ project }: { project: Project }) {
                     >
                       <Smartphone size={16} />
                       {t("links_playstore")}
+                    </a>
+                  )}
+                  {project.links.instagram && (
+                    <a
+                      href={project.links.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+                      style={{
+                        background: "var(--bg-card)",
+                        border: "1px solid var(--border-color)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      <SiInstagram size={16} style={{ color: "#E1306C" }} />
+                      Instagram
                     </a>
                   )}
                 </div>
@@ -707,6 +729,24 @@ export function ProjectDetail({ project }: { project: Project }) {
                   </button>
                 </div>
               </div>
+            </motion.div>
+          )}
+
+          {/* Serverless Architecture Section (Specific to Duo Propiedades) */}
+          {project.slug === "duo-propiedades" && (
+            <motion.div variants={fadeInUp} custom={3.1} className="glass-card p-6 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Cpu size={16} style={{ color: "var(--accent-violet)" }} />
+                <h2
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ color: "var(--accent-violet)" }}
+                >
+                  {t("duo-propiedades.arch_title")}
+                </h2>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("duo-propiedades.arch_desc")}
+              </p>
             </motion.div>
           )}
 
