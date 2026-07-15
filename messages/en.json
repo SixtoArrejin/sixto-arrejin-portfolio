@@ -145,9 +145,9 @@
     },
     "datebox": {
       "dateRange": "April 2026 - Present",
-      "title": "DateBox — Social Outings Platform",
+      "title": "Datebox — Social Outings Platform",
       "description": "Mobile platform with AI recommendations and B2B marketing to coordinate group outings, sync calendars, and discover local spots.",
-      "long_description": "DateBox is a mobile platform designed to simplify the organization of group outings and social events. The application automates finding open slots in friends' calendars and utilizes smart recommendation algorithms to suggest restaurants, events, and local spots.\n\nBesides facilitating group coordination and reducing indecisiveness, it integrates a B2B advertising model that enables local businesses and venues to promote their services directly to groups with high consumption intent in real-time.\n\nCurrently, the project is under active development as a Minimum Viable Product (MVP).",
+      "long_description": "Datebox is a mobile platform designed to simplify the organization of group outings and social events. The application automates finding open slots in friends' calendars and utilizes smart recommendation algorithms to suggest restaurants, events, and local spots.\n\nBesides facilitating group coordination and reducing indecisiveness, it integrates a B2B advertising model that enables local businesses and venues to promote their services directly to groups with high consumption intent in real-time.\n\nCurrently, the project is under active development as a Minimum Viable Product (MVP).",
       "features": [
         "Multiplatform native mobile development using React Native and Expo for iOS and Android (MVP phase).",
         "High-performance serverless backend architecture developed with Hono and deployed on Cloudflare Workers.",
@@ -268,7 +268,7 @@
       ]
     },
     "play-finder": {
-      "dateRange": "March 2023 - December 2023",
+      "dateRange": "March - December 2023",
       "title": "Play Finder — Sports Booking Management",
       "description": "Full Stack web platform for court booking management, sports complex administration, and real-time booking analytics.",
       "long_description": "Play Finder is a responsive Full Stack web platform designed to optimize and simplify the booking of sports courts, seamlessly connecting complex owners with sports players. Developed collaboratively by a team of 7 people over 8 three-week sprints using Scrum methodology, it served as the Capstone Project for the University Software Developer Analyst (ADUSI) program at UTN-FRRe.\n\nThe system supports two primary user flows: an owner portal (to manage sports complexes, customize courts, manage hourly pricing, and view dashboard analytics such as popular booking hours and occupancy periods) and a player portal (featuring advanced search, live scheduling, booking confirmation, credit card payment simulation, and automated email notifications). The platform was containerized and deployed on Microsoft Azure.",

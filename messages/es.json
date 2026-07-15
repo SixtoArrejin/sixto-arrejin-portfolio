@@ -145,9 +145,9 @@
     },
     "datebox": {
       "dateRange": "Abril 2026 - Presente",
-      "title": "DateBox — Plataforma para Salidas Sociales",
+      "title": "Datebox — Plataforma para Salidas Sociales",
       "description": "Plataforma móvil con IA y recomendación B2B para coordinar salidas grupales, sincronizar agendas de amigos y descubrir actividades locales.",
-      "long_description": "DateBox es una plataforma móvil diseñada para simplificar la organización de salidas grupales y eventos sociales. La aplicación automatiza la búsqueda de coincidencias en los calendarios de grupos de amigos y aplica algoritmos de recomendación inteligente para sugerir locales gastronómicos, espectáculos y espacios recreativos locales.\n\nAdemás de facilitar la coordinación grupal y evitar la indecisión, integra un modelo publicitario B2B que permite a comercios y emprendimientos locales promocionar sus servicios de manera directa a grupos de personas con alta intención de consumo en tiempo real.\n\nActualmente el proyecto se encuentra en fase de desarrollo activo como un Producto Mínimo Viable (MVP).",
+      "long_description": "Datebox es una plataforma móvil diseñada para simplificar la organización de salidas grupales y eventos sociales. La aplicación automatiza la búsqueda de coincidencias en los calendarios de grupos de amigos y aplica algoritmos de recomendación inteligente para sugerir locales gastronómicos, espectáculos y espacios recreativos locales.\n\nAdemás de facilitar la coordinación grupal y evitar la indecisión, integra un modelo publicitario B2B que permite a comercios y emprendimientos locales promocionar sus servicios de manera directa a grupos de personas con alta intención de consumo en tiempo real.\n\nActualmente el proyecto se encuentra en fase de desarrollo activo como un Producto Mínimo Viable (MVP).",
       "features": [
         "Desarrollo móvil nativo multiplataforma utilizando React Native y Expo para iOS y Android (fase MVP).",
         "Arquitectura de backend serverless de alto rendimiento desarrollada con Hono y desplegada en Cloudflare Workers.",
@@ -268,7 +268,7 @@
       ]
     },
     "play-finder": {
-      "dateRange": "Marzo 2023 - Diciembre 2023",
+      "dateRange": "Marzo - Diciembre 2023",
       "title": "Play Finder — Gestión y Reserva de Canchas Deportivas",
       "description": "Plataforma web Full Stack para la reserva de turnos, administración de complejos deportivos y analítica de reservas en tiempo real.",
       "long_description": "Play Finder es una plataforma web responsive diseñada para optimizar y simplificar la gestión y reserva de canchas deportivas, conectando de forma ágil a dueños de complejos deportivos con jugadores. Desarrollada de manera colaborativa por un equipo de 7 personas a lo largo de 8 sprints de 3 semanas bajo la metodología Scrum, sirvió como el Proyecto Integrador de la carrera Analista Desarrollador Universitario en Sistemas de Información (ADUSI) de la UTN-FRRe.\n\nEl sistema cuenta con dos flujos principales: un portal para dueños (administración de complejos, parametrización de canchas, gestión de tarifas y un panel de analítica con gráficos de reservas e ingresos populares) y un portal para jugadores (búsqueda avanzada con geolocalización, reserva en vivo, simulación de pagos con pasarela y notificaciones por correo). La plataforma fue desplegada en producción en Microsoft Azure utilizando contenedores Docker.",
