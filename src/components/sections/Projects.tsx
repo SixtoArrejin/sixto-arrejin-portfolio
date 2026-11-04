@@ -258,52 +258,33 @@ export function Projects() {
           })}
         </div>
 
-        {/* View All Projects CTA Banner */}
+        {/* View All Projects Discreet Link */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-14 p-7 sm:p-9 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden"
-          style={{
-            background: "var(--bg-card)",
-            borderColor: "var(--border-color)",
-          }}
+          transition={{ duration: 0.4 }}
+          className="mt-14 flex justify-center"
         >
-          <div className="max-w-xl">
-            <span
-              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.14em] mb-2"
-              style={{ color: "var(--accent-blue)" }}
-            >
-              <FolderGit2 size={14} />
-              {t("archive_kicker")}
-            </span>
-            <h3
-              className="text-xl sm:text-2xl font-semibold tracking-[-0.02em]"
-              style={{ color: "var(--text-primary)" }}
-            >
-              {t("archive_title")}
-            </h3>
-            <p
-              className="text-xs sm:text-sm mt-1.5 leading-relaxed"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              {t("archive_desc")}
-            </p>
-          </div>
-
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-mono-tech font-bold uppercase tracking-wider transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap shadow-md cursor-pointer group shrink-0"
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-mono-tech font-semibold tracking-wider transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent-blue)] group shadow-sm cursor-pointer"
             style={{
-              background: "var(--bg-inverted)",
-              color: "var(--text-inverted)",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border-color)",
+              color: "var(--text-primary)",
             }}
           >
+            <FolderGit2
+              size={14}
+              style={{ color: "var(--accent-blue)" }}
+              className="transition-transform group-hover:scale-110"
+            />
             <span>{t("archive_cta")}</span>
             <ArrowUpRight
-              size={15}
+              size={13}
               className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              style={{ color: "var(--text-secondary)" }}
             />
           </Link>
         </motion.div>
