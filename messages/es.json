@@ -36,8 +36,8 @@
     "title_italic": "personas y el producto",
     "bio": "Soy Ingeniero en Sistemas de Información graduado en la UTN (Promedio 8.55/10, Escolta de la Bandera 2025) y desarrollador Full Stack & Mobile con experiencia construyendo soluciones de punta a punta: desde la arquitectura de datos hasta la experiencia de usuario final.\n\nA lo largo de mi trayectoria lideré la digitalización integral de la Secretaría de Ciencia y Tecnología de la UTN-FRRe, desarrollé soluciones Web3 galardonadas internacionalmente como Dosel (1° Puesto Stellar en NEA TECH 2026), lancé aplicaciones móviles publicadas en Google Play (DateBox, Chess Study, Elepad) y construí plataformas comerciales como Mandadito y DÚO Propiedades.\n\nEntiendo el software como un medio para resolver problemas concretos de personas y negocios, no para sumar complejidad innecesaria. Actualmente busco integrarme a equipos de ingeniería y empresas de producto donde pueda aportar criterio técnico, ownership en todo el stack y una visión orientada a entregar valor en producción con solidez y escalabilidad.",
     "id_role": "INGENIERO EN SISTEMAS · FULL STACK",
-    "id_tap_flip": "Clic para girar credencial ↻",
-    "id_tap_back": "Clic para volver al frente ↻",
+    "id_tap_flip": "Tocar para girar credencial ↻",
+    "id_tap_back": "Tocar para volver al frente ↻",
     "id_summary_title": "En resumen",
     "id_summary_1": "Desarrollo aplicaciones web y móviles completas de punta a punta.",
     "id_summary_2": "Experiencia en producción con usuarios reales, pasarelas de pago y stores.",
@@ -180,6 +180,54 @@
     "bi_cube_desc": "Diseño del cubo OLAP multidimensional con jerarquías complejas integradas (vistas geográficas de tiendas y temporales), grupos de medidas y la fórmula MDX calculada para rastrear la Demanda Insatisfecha.",
     "bi_powerbi_label": "Dashboard Ejecutivo e Interacciones OLAP",
     "bi_powerbi_desc": "Tablero ejecutivo consolidado en Power BI que presenta de forma interactiva análisis de ROI, ventas por género, mapas geográficos y métricas de cumplimiento, permitiendo navegación Drill-down, Roll-up, Slice y Dice.",
+    "mandadito": {
+      "dateRange": "Agosto 2026 – Septiembre 2026",
+      "clientOrContext": "Mandadito (Charata, Chaco)",
+      "badge": "En Desarrollo · Cliente Real",
+      "title": "Mandadito",
+      "subtitle": "Marketplace Multi-Rol, Blindaje de Seguridad & Split de Pagos",
+      "description": "Plataforma de delivery hiperlocal para comercio de cercanía. Modernización integral a Next.js 16 con React 19, blindaje de seguridad transaccional, flujo de compra con split de pagos de Mercado Pago y control de stock fraccionado.",
+      "long_description": "Mandadito es una plataforma web de comercio electrónico hiperlocal y logística de última milla pensada para conectar comercios de múltiples rubros (gastronomía, almacenes, heladerías, panaderías) con compradores y repartidores en Charata (Chaco).\n\nFui contratado como desarrollador freelance para liderar la arquitectura técnica, la modernización del sistema a Next.js 16 con React 19, y el blindaje de seguridad transaccional en su etapa de desarrollo y preparación para el lanzamiento comercial.\n\nMi labor se centró en erradicar vulnerabilidades críticas en el cálculo de precios y comisiones (migrando toda la validación exclusivamente al servidor), diseñar el embudo de checkout con split de pagos automático entre comercio y repartidor vía Mercado Pago OAuth, implementar políticas de seguridad a nivel de fila (RLS) en Supabase PostgreSQL, integrar rate limiting con Upstash Redis, e incorporar autenticación 2FA para el panel de administración con Telegram Bot.",
+      "challenge": "La base inicial contaba con vistas desarticuladas, persistencia frágil y una brecha de seguridad sensible: el cálculo de precios se realizaba del lado del cliente, lo que permitía manipular montos en solicitudes HTTP. Además, los cobros no estaban automatizados y el inventario no soportaba productos de venta por peso fraccionado (como carne o helado por kg) ni envases retornables por litro.",
+      "solution": "Blindé integralmente la lógica transaccional: reescribí el cálculo de precios y comisiones en el servidor mediante funciones RPC y triggers en PostgreSQL, protegí los tokens OAuth de cada negocio, implementé verificación anti-replay en webhooks de Mercado Pago con rate limiting en Upstash Redis, y construí un motor de inventario multi-unidad con verificación de horarios de atención en tiempo real.",
+      "highlights": [
+        { "metric": "Next.js 16", "label": "Arquitectura moderna con React 19 y App Router" },
+        { "metric": "Fintech & MP", "label": "Split de pagos y vinculación OAuth con Mercado Pago" },
+        { "metric": "Anti-Replay", "label": "Webhooks protegidos con firma criptográfica y triggers" },
+        { "metric": "4 Portales", "label": "Comprador, Comercio, Delivery y Admin con 2FA" }
+      ],
+      "key_features": [
+        {
+          "title": "Checkout con Split de Pagos",
+          "description": "Flujo de compra con selección de dirección geolocalizada, bifurcación automática del cobro de productos (para el comercio) y del costo de envío (para la logística) mediante Mercado Pago."
+        },
+        {
+          "title": "Blindaje de Seguridad & Row Level Security (RLS)",
+          "description": "Cálculo estricto de precios en servidor, aislamiento de datos multi-tenant mediante políticas RLS en Supabase, rate limiting distribuido con Upstash Redis y revocación forzada de sesiones."
+        },
+        {
+          "title": "Motor de Stock Multi-Unidad & Horarios",
+          "description": "Soporte transaccional para venta por unidad, peso fraccionado (kg en carnicerías y heladerías) y envases por litro, junto con bloqueo de pedidos fuera del horario comercial."
+        },
+        {
+          "title": "Autenticación 2FA con Bot de Telegram",
+          "description": "Módulo de seguridad para el panel de administración que despacha y valida códigos de doble factor de forma segura y directa a través de Telegram API."
+        }
+      ],
+      "features": [
+        "Migración completa de vistas iniciales a componentes nativos en Next.js 16 con React 19 y TypeScript estricto.",
+        "Blindaje de APIs y validación de esquemas con Zod, asegurando que ningún precio o monto sea dictado por el frontend.",
+        "Procesamiento asíncrono y optimización de caché con TanStack Query v5 para navegación instantánea a 0ms.",
+        "Gestión de estado global del carrito de compras y persistencia por ciudad utilizando Zustand.",
+        "Integración oficial con Mercado Pago: onboarding OAuth de comercios, split payments y webhooks criptográficos anti-replay.",
+        "Control granular de roles y permisos: paneles independientes para compradores, comercios, repartidores y administradores.",
+        "Seguridad administrativa avanzada: autenticación de dos factores (2FA) integrada mediante bot propio de Telegram.",
+        "Geolocalización interactiva para selección precisa de puntos de entrega por mapa.",
+        "Diseño de experiencia mobile web completa: arquitectura de navegación en móviles, vistas de tiendas con horarios de atención en vivo, y modales bottom-sheet para selección de productos por peso y unidad."
+      ],
+      "arch_title": "Arquitectura Multi-Rol, Seguridad Transaccional & Ecosistema de Pagos",
+      "arch_desc": "Mandadito opera bajo una arquitectura desacoplada en Next.js 16 App Router con renderizado híbrido. El frontend interactivo sincroniza estado local con Zustand y caché asíncrono mediante TanStack Query v5. En la capa de datos y seguridad, Supabase (PostgreSQL) gobierna el aislamiento multi-tenant con Row Level Security (RLS) y funciones RPC atómicas que calculan totales y comisiones en servidor. Las pasarelas de pago delegan a Mercado Pago con split automático hacia las cuentas de los comercios vendedores vía OAuth, blindado por rate limiting distribuido en Upstash Redis y webhooks validados criptográficamente contra ataques de repetición (replay attacks)."
+    },
     "dosel": {
       "dateRange": "Octubre 2026",
       "clientOrContext": "Ideatón NEA TECH 2026 (Stellar Track)",

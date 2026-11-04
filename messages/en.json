@@ -36,8 +36,8 @@
     "title_italic": "people and product",
     "bio": "I am an Information Systems Engineer graduated from UTN (GPA 8.55/10, Flag Escort of Honor 2025) and a Full Stack & Mobile Engineer experienced in building end-to-end software: from database architecture to the final user experience.\n\nThroughout my career, I led the digital transformation platform for the Science & Technology Department at UTN-FRRe, developed internationally awarded Web3 solutions like Dosel (1st Place Stellar Track at NEA TECH 2026), launched mobile apps published on Google Play (DateBox, Chess Study, Elepad), and built high-traffic commercial platforms like Mandadito and DÚO Propiedades.\n\nI believe great software exists to solve tangible problems for people and businesses, never to add unnecessary complexity. Currently, I am looking to join engineering teams and product companies where I can contribute technical ownership across the stack, solid architectural judgment, and a commitment to shipping resilient, scalable value to production.",
     "id_role": "SYSTEMS ENGINEER · FULL STACK",
-    "id_tap_flip": "Click to flip ID card ↻",
-    "id_tap_back": "Click to flip back ↻",
+    "id_tap_flip": "Tap to flip ID card ↻",
+    "id_tap_back": "Tap to flip back ↻",
     "id_summary_title": "In short",
     "id_summary_1": "I build end-to-end web and mobile applications from scratch.",
     "id_summary_2": "Production experience with active users, payment gateways, and app stores.",
@@ -180,6 +180,54 @@
     "bi_cube_desc": "OLAP multidimensional cube design with integrated complex hierarchies (geographical store views and temporal views), measure groups, and custom MDX calculations to track Unmet Demand.",
     "bi_powerbi_label": "Executive Dashboard & OLAP Interactions",
     "bi_powerbi_desc": "Executive dashboard consolidated in Power BI that interactively presents ROI analysis, sales by genre, geographical maps, and compliance metrics, enabling Drill-down, Roll-up, Slice, and Dice operations.",
+    "mandadito": {
+      "dateRange": "August 2026 – September 2026",
+      "clientOrContext": "Mandadito (Charata, Chaco)",
+      "badge": "In Development · Real Client",
+      "title": "Mandadito",
+      "subtitle": "Multi-Role Marketplace, Security Hardening & Split Payments",
+      "description": "Hyperlocal delivery web platform for local commerce. Comprehensive modernization to Next.js 16 with React 19, transactional security hardening, checkout flow with Mercado Pago split payments, and fractional stock control.",
+      "long_description": "Mandadito is a hyperlocal e-commerce and last-mile delivery web platform designed to connect multi-category merchants (restaurants, supermarkets, ice cream shops, bakeries) with buyers and couriers in the city of Charata (Chaco).\n\nI was hired as a freelance engineer to lead the technical architecture, modernization to Next.js 16 with React 19, and transactional security hardening during its development and commercial launch preparation phase.\n\nMy work focused on eliminating critical vulnerabilities in price and commission calculations (moving all validations strictly server-side), designing the checkout funnel with automated payment splitting between merchant and courier via Mercado Pago OAuth, implementing Row Level Security (RLS) policies in Supabase PostgreSQL, integrating distributed rate limiting with Upstash Redis, and embedding Telegram Bot 2FA for the administration panel.",
+      "challenge": "The initial codebase suffered from disconnected views, brittle persistence, and a critical vulnerability: price calculation occurred on the client side, allowing request payload manipulation. Furthermore, payouts were manual, and inventory lacked support for fractional weight products (such as meat or ice cream by the kilo) or volume containers by the liter.",
+      "solution": "I thoroughly hardened the transactional logic: rewrote price and fee calculations on the server via PostgreSQL RPC functions and triggers, secured merchant OAuth tokens, implemented cryptographic anti-replay validation on Mercado Pago webhooks with Upstash Redis rate limiting, and built a multi-unit inventory engine with real-time business hour enforcement.",
+      "highlights": [
+        { "metric": "Next.js 16", "label": "Modern architecture with React 19 and App Router" },
+        { "metric": "Fintech & MP", "label": "Split payments and OAuth merchant onboarding with Mercado Pago" },
+        { "metric": "Anti-Replay", "label": "Webhooks secured with cryptographic signatures and DB triggers" },
+        { "metric": "4 Portals", "label": "Buyer, Merchant, Courier, and Admin with 2FA" }
+      ],
+      "key_features": [
+        {
+          "title": "Checkout with Split Payments",
+          "description": "Streamlined checkout with geolocation-based address selection, automatically splitting product revenue (for the merchant) and delivery fees (for the courier) via Mercado Pago."
+        },
+        {
+          "title": "Security Hardening & Row Level Security (RLS)",
+          "description": "Strict server-side price computation, multi-tenant data isolation via Supabase RLS policies, distributed rate limiting with Upstash Redis, and forced session revocation."
+        },
+        {
+          "title": "Multi-Unit Stock Engine & Operating Hours",
+          "description": "Transactional support for unit sales, fractional weight (kg in butcheries/ice cream parlors), and volume (liters), alongside automatic order cutoffs outside business hours."
+        },
+        {
+          "title": "Telegram Bot 2FA Authentication",
+          "description": "Dedicated security module for the admin panel that generates and validates two-factor authentication tokens directly via the Telegram API."
+        }
+      ],
+      "features": [
+        "Full migration of initial views to native Next.js 16 components with React 19 and strict TypeScript.",
+        "API security hardening and Zod schema validation, guaranteeing that no prices or monetary amounts are dictated by the client.",
+        "Asynchronous state management and cache optimization via TanStack Query v5 for instantaneous 0ms transitions.",
+        "Global cart state and city-level persistence using Zustand.",
+        "Official Mercado Pago integration: OAuth onboarding for merchants, split payments, and cryptographic anti-replay webhooks.",
+        "Granular role-based access control: dedicated portals for buyers, merchants, couriers, and administrators.",
+        "Advanced administrative security: two-factor authentication (2FA) integrated via a custom Telegram bot.",
+        "Interactive geolocation for pinpoint delivery address selection on maps.",
+        "Full mobile web UX engineering: mobile navigation architecture, store views with real-time business hour validation, and interactive bottom-sheet dialogs for unit and fractional weight product selection."
+      ],
+      "arch_title": "Multi-Role Architecture, Transactional Security & Payment Ecosystem",
+      "arch_desc": "Mandadito operates on a decoupled Next.js 16 App Router architecture with hybrid rendering. The interactive frontend coordinates local state with Zustand and asynchronous cache via TanStack Query v5. In the persistence and security layer, Supabase (PostgreSQL) enforces multi-tenant isolation through Row Level Security (RLS) and atomic RPC functions that compute totals and commissions server-side. Payment gateways route through Mercado Pago with automated splits to merchant accounts via OAuth, protected by distributed rate limiting in Upstash Redis and cryptographically validated webhooks immune to replay attacks."
+    },
     "dosel": {
       "dateRange": "October 2026",
       "clientOrContext": "1st Place Stellar Track · NEA TECH Ideathon 2026",

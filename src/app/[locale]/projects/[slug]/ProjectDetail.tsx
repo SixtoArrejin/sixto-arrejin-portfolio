@@ -93,6 +93,7 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Stellar": "backend",
   "Sentinel-2": "backend",
   "Web3": "backend",
+  "Mercado Pago": "backend",
 
   // Database
   "Supabase": "database",
@@ -101,6 +102,7 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Prisma ORM": "database",
   "Prisma": "database",
   "Redis": "database",
+  "Upstash Redis": "database",
   "SQL Server": "database",
   "SSIS": "database",
   "SSAS": "database",

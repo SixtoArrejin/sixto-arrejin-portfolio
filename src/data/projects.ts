@@ -18,6 +18,36 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "mandadito",
+    tags: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Mercado Pago",
+      "Redis",
+      "TanStack Query",
+      "Tailwind CSS",
+    ],
+    type: "professional",
+    links: {
+      live: "https://www.mandadito-app.com.ar",
+      liveAsWeb: true,
+      github: "https://github.com/braiancardozo143-ai/mandadito",
+    },
+    media: [
+      { type: "image" as const, url: "/projects/mandadito/01-como-funciona.png" },
+      { type: "image" as const, url: "/projects/mandadito/02-sumar-negocio.png" },
+      { type: "image" as const, url: "/projects/mandadito/03-catalogo-desktop.png" },
+      { type: "image" as const, url: "/projects/mandadito/04-catalogo-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/05-tienda-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/06-detalle-producto-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/07-carrito.png" },
+      { type: "image" as const, url: "/projects/mandadito/08-seleccionar-ciudad.png" },
+    ],
+  },
+  {
     slug: "dosel",
     tags: [
       "Stellar (Soroban)",

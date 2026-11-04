@@ -29,6 +29,7 @@ const skillElements: SkillElement[] = [
     descEs: "Tipado estático de extremo a extremo para aplicaciones web, móviles y APIs serverless.",
     descEn: "End-to-end static typing across web applications, mobile apps, and serverless APIs.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
@@ -101,6 +102,7 @@ const skillElements: SkillElement[] = [
     descEs: "Arquitectura de componentes reutilizables, hooks personalizados y estado sincronizado.",
     descEn: "Reusable component architecture, custom hooks, and synchronized client state.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
@@ -117,6 +119,7 @@ const skillElements: SkillElement[] = [
     descEs: "Plataformas web optimizadas para SEO, App Router y renderizado híbrido en servidor.",
     descEn: "SEO-optimized web platforms, App Router, and hybrid server rendering.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "devops-azure", label: "CI/CD Azure" },
       { slug: "devops-kubernetes", label: "K8s & Observabilidad" },
@@ -157,6 +160,7 @@ const skillElements: SkillElement[] = [
     descEs: "Sistemas de diseño consistentes, layouts mobile-first y temas claro/oscuro.",
     descEn: "Consistent design systems, mobile-first layouts, and light/dark theming.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "chess-study", label: "Chess Study" },
@@ -172,6 +176,7 @@ const skillElements: SkillElement[] = [
     descEs: "Caché inteligente de peticiones asíncronas, sincronización y reducción de carga al servidor.",
     descEn: "Smart async request caching, state synchronization, and reduced server load.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
       { slug: "play-finder", label: "Play Finder" },
     ],
@@ -266,6 +271,7 @@ const skillElements: SkillElement[] = [
     descEs: "Motor relacional principal para sistemas transaccionales con integridad referencial estricta.",
     descEn: "Primary relational engine for transactional systems with strict referential integrity.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
@@ -281,6 +287,7 @@ const skillElements: SkillElement[] = [
     descEs: "Base de datos PostgreSQL, autenticación OAuth, Storage en la nube y sincronización Realtime.",
     descEn: "PostgreSQL database, OAuth authentication, cloud storage, and Realtime sync.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
       { slug: "datebox", label: "DateBox" },
@@ -308,6 +315,7 @@ const skillElements: SkillElement[] = [
     descEs: "Almacenamiento en memoria de baja latencia y persistencia AOF en contenedores.",
     descEn: "Low-latency in-memory store and AOF persistence across containerized environments.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "devops-kubernetes", label: "K8s & Observabilidad" },
       { slug: "devops-azure", label: "CI/CD Azure" },
     ],
@@ -321,6 +329,7 @@ const skillElements: SkillElement[] = [
     descEs: "Autenticación segura con tokens firmados, Google OAuth y protección de rutas por rol.",
     descEn: "Secure authentication with signed tokens, Google OAuth, and role-based route guards.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "elepad", label: "Elepad" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
       { slug: "play-finder", label: "Play Finder" },
@@ -415,6 +424,7 @@ const skillElements: SkillElement[] = [
     descEs: "Despliegue continuo de plataformas web en producción con dominios personalizados y SSL.",
     descEn: "Continuous production deployment of web platforms with custom domains and SSL.",
     projects: [
+      { slug: "mandadito", label: "Mandadito" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
       { slug: "chess-study", label: "Chess Study" },

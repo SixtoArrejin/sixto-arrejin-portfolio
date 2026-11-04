@@ -7,7 +7,8 @@ import {
   SiPandas, SiNumpy, SiScikitlearn, SiGit,
   SiGithub, SiJira, SiOpentelemetry, SiPrometheus, SiGrafana,
   SiVite, SiMozilla, SiHono, SiMui, SiVercel, SiLangchain,
-  SiRust, SiStellar, SiWebassembly, SiGoogleplay, SiWeb3Dotjs
+  SiRust, SiStellar, SiWebassembly, SiGoogleplay, SiWeb3Dotjs,
+  SiMercadopago
 } from "react-icons/si";
 import { FaDatabase, FaInfinity, FaChartBar } from "react-icons/fa";
 import { FaChess } from "react-icons/fa6";
@@ -100,4 +101,7 @@ export const iconMap: Record<string, { icon: IconType; color: string }> = {
   "React 19": { icon: SiReact, color: "#61DAFB" },
   "PWA / TWA": { icon: SiGoogleplay, color: "#414141" },
   "Google Play": { icon: SiGoogleplay, color: "#414141" },
+  "Mercado Pago": { icon: SiMercadopago, color: "#009EE3" },
+  "Zustand": { icon: SiReact, color: "#443E38" },
+  "Upstash Redis": { icon: SiRedis, color: "#00E9A3" },
 };

@@ -14,7 +14,9 @@ export function About() {
   const paragraphs = t("bio").split("\n\n");
   const languages = t.raw("languages") as string[];
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
+    if (typeof window !== "undefined" && !window.matchMedia("(hover: hover)").matches) return;
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const relX = (e.clientX - rect.left) / rect.width - 0.5;
@@ -25,11 +27,14 @@ export function About() {
     });
   };
 
-  const handleMouseEnter = () => {
+  const handlePointerEnter = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
+    if (typeof window !== "undefined" && !window.matchMedia("(hover: hover)").matches) return;
     setFlipped(true);
   };
 
-  const handleMouseLeave = () => {
+  const handlePointerLeave = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
     setFlipped(false);
     setTilt({ x: 0, y: 0 });
   };
@@ -254,9 +259,9 @@ export function About() {
                 ref={cardRef}
                 className="w-full max-w-[272px] h-[395px] cursor-pointer select-none"
                 style={{ perspective: "1500px" }}
-                onMouseEnter={handleMouseEnter}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                onPointerEnter={handlePointerEnter}
+                onPointerMove={handlePointerMove}
+                onPointerLeave={handlePointerLeave}
                 onClick={() => setFlipped((prev) => !prev)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -510,6 +515,15 @@ export function About() {
                   </div>
                 </div>
               </div>
+
+              {/* Subtle tap/click helper: only visible on mobile/touch screens */}
+              <p
+                className="mt-3 text-[11px] font-mono-tech flex items-center gap-1.5 transition-colors select-none md:hidden"
+                style={{ color: "var(--text-muted)" }}
+              >
+                <span>↻</span>
+                <span>{flipped ? t("id_tap_back") : t("id_tap_flip")}</span>
+              </p>
             </motion.div>
           </motion.div>
 
