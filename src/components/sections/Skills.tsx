@@ -66,6 +66,18 @@ const skillElements: SkillElement[] = [
   },
   {
     num: "04",
+    symbol: "Rs",
+    name: "Rust",
+    iconKey: "Rust",
+    cat: "languages",
+    descEs: "Desarrollo de contratos inteligentes en Soroban (Stellar), manejo seguro de memoria y compilación a WebAssembly.",
+    descEn: "Smart contracts development on Soroban (Stellar), memory safety, and WebAssembly compilation.",
+    projects: [
+      { slug: "dosel", label: "Dosel" },
+    ],
+  },
+  {
+    num: "05",
     symbol: "Sq",
     name: "SQL",
     iconKey: "SQL",
@@ -81,7 +93,7 @@ const skillElements: SkillElement[] = [
 
   // Frontend & Mobile
   {
-    num: "05",
+    num: "06",
     symbol: "Re",
     name: "React",
     iconKey: "React",
@@ -97,7 +109,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "06",
+    num: "07",
     symbol: "Nx",
     name: "Next.js",
     iconKey: "Next.js",
@@ -111,7 +123,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "07",
+    num: "08",
     symbol: "Rn",
     name: "React Native",
     iconKey: "React Native",
@@ -124,7 +136,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "08",
+    num: "09",
     symbol: "Ex",
     name: "Expo",
     iconKey: "Expo",
@@ -137,7 +149,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "09",
+    num: "10",
     symbol: "Tw",
     name: "Tailwind CSS",
     iconKey: "Tailwind CSS",
@@ -145,13 +157,14 @@ const skillElements: SkillElement[] = [
     descEs: "Sistemas de diseño consistentes, layouts mobile-first y temas claro/oscuro.",
     descEn: "Consistent design systems, mobile-first layouts, and light/dark theming.",
     projects: [
+      { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "chess-study", label: "Chess Study" },
       { slug: "devops-azure", label: "CI/CD Azure" },
     ],
   },
   {
-    num: "10",
+    num: "11",
     symbol: "Tq",
     name: "TanStack Query",
     iconKey: "TanStack Query",
@@ -164,7 +177,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "11",
+    num: "12",
     symbol: "Ck",
     name: "Chakra UI",
     iconKey: "ChakraUI",
@@ -177,14 +190,15 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "12",
+    num: "13",
     symbol: "Vt",
-    name: "Vite & PDF.js",
+    name: "Vite & Web Apps",
     iconKey: "Vite",
     cat: "frontend",
-    descEs: "Empaquetado ultrarrápido y renderizado de documentos pesados a 60 FPS con Web Workers.",
-    descEn: "Lightning-fast bundling and 60 FPS heavy document rendering with Web Workers.",
+    descEs: "Empaquetado ultrarrápido con Vite, renderizado con PDF.js a 60 FPS y aplicaciones web interactivas.",
+    descEn: "Lightning-fast Vite bundling, 60 FPS PDF.js rendering, and interactive web applications.",
     projects: [
+      { slug: "dosel", label: "Dosel" },
       { slug: "chess-study", label: "Chess Study" },
       { slug: "datebox", label: "DateBox" },
     ],
@@ -192,7 +206,7 @@ const skillElements: SkillElement[] = [
 
   // Backend & Databases
   {
-    num: "13",
+    num: "14",
     symbol: "No",
     name: "Node.js",
     iconKey: "Node.js",
@@ -205,7 +219,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "14",
+    num: "15",
     symbol: "Ep",
     name: "Express.js",
     iconKey: "Express.js",
@@ -218,7 +232,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "15",
+    num: "16",
     symbol: "Ho",
     name: "Hono",
     iconKey: "Hono",
@@ -231,7 +245,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "16",
+    num: "17",
     symbol: "Fl",
     name: "Flask",
     iconKey: "Flask",
@@ -244,7 +258,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "17",
+    num: "18",
     symbol: "Pg",
     name: "PostgreSQL",
     iconKey: "PostgreSQL",
@@ -259,7 +273,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "18",
+    num: "19",
     symbol: "Sb",
     name: "Supabase",
     iconKey: "Supabase",
@@ -273,7 +287,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "19",
+    num: "20",
     symbol: "Pr",
     name: "Prisma ORM",
     iconKey: "Prisma ORM",
@@ -286,7 +300,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "20",
+    num: "21",
     symbol: "Rd",
     name: "Redis",
     iconKey: "Redis",
@@ -299,7 +313,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "21",
+    num: "22",
     symbol: "Jw",
     name: "JWT & OAuth",
     iconKey: "JWT/OAuth",
@@ -312,10 +326,22 @@ const skillElements: SkillElement[] = [
       { slug: "play-finder", label: "Play Finder" },
     ],
   },
+  {
+    num: "23",
+    symbol: "St",
+    name: "Stellar / Soroban",
+    iconKey: "Stellar",
+    cat: "backend",
+    descEs: "Smart contracts en Soroban (Rust), tokenización de activos ecológicos y oráculos criptográficos on-chain.",
+    descEn: "Soroban (Rust) smart contracts, eco-asset tokenization, and cryptographic on-chain oracles.",
+    projects: [
+      { slug: "dosel", label: "Dosel" },
+    ],
+  },
 
   // DevOps & Cloud
   {
-    num: "22",
+    num: "24",
     symbol: "Dk",
     name: "Docker",
     iconKey: "Docker",
@@ -329,7 +355,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "23",
+    num: "25",
     symbol: "K8",
     name: "Kubernetes",
     iconKey: "Kubernetes",
@@ -341,7 +367,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "24",
+    num: "26",
     symbol: "Ga",
     name: "GitHub Actions",
     iconKey: "GitHub Actions",
@@ -355,7 +381,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "25",
+    num: "27",
     symbol: "Az",
     name: "Azure Cloud",
     iconKey: "Azure",
@@ -368,7 +394,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "26",
+    num: "28",
     symbol: "Cf",
     name: "Cloudflare",
     iconKey: "Cloudflare Workers",
@@ -381,7 +407,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "27",
+    num: "29",
     symbol: "Vc",
     name: "Vercel & Render",
     iconKey: "Vercel",
@@ -395,7 +421,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "28",
+    num: "30",
     symbol: "Ot",
     name: "OpenTelemetry",
     iconKey: "OpenTelemetry",
@@ -407,7 +433,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "29",
+    num: "31",
     symbol: "Gf",
     name: "Grafana & Prom",
     iconKey: "Grafana",
@@ -421,7 +447,7 @@ const skillElements: SkillElement[] = [
 
   // Data, BI & AI
   {
-    num: "30",
+    num: "32",
     symbol: "Bi",
     name: "Power BI",
     iconKey: "Power BI",
@@ -433,7 +459,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "31",
+    num: "33",
     symbol: "Ss",
     name: "SSIS / SSAS",
     iconKey: "SSIS/SSAS",
@@ -445,7 +471,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "32",
+    num: "34",
     symbol: "Ai",
     name: "LangGraph & AI",
     iconKey: "LangGraph",
@@ -457,10 +483,22 @@ const skillElements: SkillElement[] = [
       { slug: "datebox", label: "DateBox" },
     ],
   },
+  {
+    num: "35",
+    symbol: "S2",
+    name: "Sentinel-2 & GIS",
+    iconKey: "Sentinel-2",
+    cat: "data",
+    descEs: "Procesamiento de imágenes multiespectrales Sentinel-2 (NDVI, teledetección) e inferencia ONNX en cliente.",
+    descEn: "Sentinel-2 multispectral image processing (NDVI, remote sensing) and client-side ONNX inference.",
+    projects: [
+      { slug: "dosel", label: "Dosel" },
+    ],
+  },
 
   // Tools & Methodologies
   {
-    num: "33",
+    num: "36",
     symbol: "Tb",
     name: "Turborepo",
     iconKey: "Turborepo",
@@ -473,7 +511,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "34",
+    num: "37",
     symbol: "Gt",
     name: "Git & GitHub",
     iconKey: "Git",
@@ -487,7 +525,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "35",
+    num: "38",
     symbol: "Sc",
     name: "Scrum & Jira",
     iconKey: "Jira",
@@ -500,7 +538,7 @@ const skillElements: SkillElement[] = [
     ],
   },
   {
-    num: "36",
+    num: "39",
     symbol: "Pt",
     name: "Pytest & QA",
     iconKey: "Pytest",
