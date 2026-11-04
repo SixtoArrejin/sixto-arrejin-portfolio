@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
             key: "Expires",
             value: "0",
           },
+          {
+            key: "Content-Disposition",
+            value: "inline",
+          },
         ],
       },
     ];

@@ -151,7 +151,6 @@ export function Hero() {
                   >
                     <a
                       href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack.pdf?v=${CV_CACHE_VERSION}`}
-                      download="Sixto_Feliciano_Arrejin_CV_FullStack.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:bg-[var(--bg-secondary)]"
@@ -164,7 +163,6 @@ export function Hero() {
                     <div style={{ height: "1px", background: "var(--border-color)" }} />
                     <a
                       href={`/cv/Sixto_Feliciano_Arrejin_Resume_FullStack.pdf?v=${CV_CACHE_VERSION}`}
-                      download="Sixto_Feliciano_Arrejin_Resume_FullStack.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:bg-[var(--bg-secondary)]"
