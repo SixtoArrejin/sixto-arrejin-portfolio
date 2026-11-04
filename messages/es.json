@@ -1,77 +1,130 @@
 {
   "metadata": {
-    "title": "Sixto Feliciano Arrejin — Desarrollador Full Stack",
-    "description": "Portafolio profesional de Sixto Feliciano Arrejin. Ingeniero en Sistemas, desarrollador Full Stack especializado en React, Node.js, TypeScript, Cloud y DevOps."
+    "title": "Sixto Feliciano Arrejin — Ingeniero en Sistemas & Full Stack Developer",
+    "description": "Portafolio de Sixto Feliciano Arrejin. Ingeniero en Sistemas de Información (UTN-FRRe), creador de productos digitales web y mobile, plataformas en la nube y sistemas con impacto real."
   },
   "nav": {
     "about": "Sobre mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "awards": "Logros",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "status": "Disponible · Remoto"
   },
   "hero": {
-    "greeting": "Hola, soy",
+    "greeting": "Sixto Feliciano Arrejin · Corrientes, Argentina",
     "name": "Sixto Feliciano Arrejin",
-    "title": "Desarrollador Full Stack",
-    "subtitle": "React · Node.js · TypeScript · Cloud & DevOps",
-    "description": "Ingeniero en Sistemas de Información enfocado en construir soluciones eficientes con tecnologías modernas, metodologías ágiles y cultura DevOps.",
-    "cta_projects": "Ver proyectos",
-    "cta_contact": "Contactame",
-    "cta_resume": "CV"
+    "headline_1": "Transformo ideas complejas en",
+    "headline_italic": "productos digitales",
+    "headline_2": "claros y listos para usar.",
+    "title": "Ingeniero en Sistemas de Información & Full Stack Developer",
+    "subtitle": "Web · Apps Móviles · Cloud & DevOps · Datos & IA",
+    "description": "Diseño y desarrollo aplicaciones web, apps móviles publicadas en Google Play y plataformas en la nube pensadas para resolver problemas reales de personas, comercios e instituciones.",
+    "cta_projects": "Explorar proyectos",
+    "cta_contact": "Iniciar conversación",
+    "cta_resume": "Descargar CV",
+    "scroll_hint": "Deslizá para recorrer",
+    "stat_gpa_label": "Promedio Ingeniería UTN",
+    "stat_projects_label": "Sistemas y Productos",
+    "stat_award_label": "Rally Latam Innovación"
   },
   "about": {
-    "title": "Sobre mí",
-    "bio": "Desarrollador Full Stack e Ingeniero en Sistemas de Información (UTN-FRRe) con foco en React, Node.js y TypeScript.\n\nDesarrollé y desplegué en producción la plataforma web para la Secretaría de Ciencia y Tecnología de la UTN-FRRe, abarcando desde el diseño de la API REST hasta las interfaces. Además, fui parte del equipo creador de Elepad, una aplicación móvil con impacto social publicada en Google Play Store.\n\nMe apasiona construir soluciones eficientes aplicando metodologías ágiles y cultura DevOps (Docker, CI/CD, Cloud). Actualmente busco sumarme a un equipo donde pueda desarrollar producto real, aprender rápido y aportar valor.",
+    "tag": "01 — Sobre mí",
+    "title_1": "Ingeniería con foco en las",
+    "title_italic": "personas y el producto",
+    "bio": "Soy Ingeniero en Sistemas de Información graduado en la UTN — Facultad Regional Resistencia (Promedio 8.55/10, Escolta de la Bandera 2025) y desarrollador Full Stack & Mobile.\n\nMe gusta involucrarme en todo el camino de un proyecto: desde entender qué problema necesita resolver un cliente o usuario, diseñar una interfaz clara que cualquiera pueda usar sin manuales, hasta construir la arquitectura técnica en la nube para que funcione rápido y sin caídas.\n\nLideré el desarrollo de la plataforma oficial de la Secretaría de Ciencia y Tecnología de la UTN-FRRe, co-creé Elepad (app móvil para adultos mayores premiada a nivel latinoamericano y publicada en Google Play) y desarrollo software a medida para comercios y empresas.",
+    "id_role": "INGENIERO EN SISTEMAS · FULL STACK",
+    "id_tap_flip": "Clic para girar credencial ↻",
+    "id_tap_back": "Clic para volver al frente ↻",
+    "id_summary_title": "En resumen",
+    "id_summary_1": "Construyo aplicaciones web y móviles completas de punta a punta.",
+    "id_summary_2": "Priorizo interfaces simples e intuitivas para cualquier usuario.",
+    "id_summary_3": "Automatizo despliegues y entornos Cloud para máxima estabilidad.",
+    "id_summary_4": "Trabajo en equipo con metodologías ágiles y comunicación clara.",
+    "facts_title": "Ficha rápida",
     "location": "Corrientes, Argentina",
     "location_label": "Ubicación",
-    "remote": "Disponible para trabajo remoto",
-    "education": "Ing. en Sistemas de Información",
-    "education_label": "Educación",
+    "remote": "Disponible para trabajo remoto y proyectos",
+    "education": "Ingeniero en Sistemas de Información",
+    "education_label": "Formación",
     "university": "Universidad Tecnológica Nacional — Facultad Regional Resistencia",
-    "gpa": "Promedio: 8.55/10",
-    "degree_analyst": "Analista Desarrollador Universitario en Sistemas de Información (ADUSI)",
-    "degree_analyst_date": "Marzo 2021 – Julio 2024",
+    "gpa": "Promedio general: 8.55 / 10",
+    "degree_analyst": "Analista Desarrollador Universitario en Sistemas (ADUSI)",
+    "degree_analyst_date": "2021 – 2024",
     "degree_engineer": "Ingeniería en Sistemas de Información",
-    "degree_engineer_date": "Marzo 2021 – Marzo 2026",
+    "degree_engineer_date": "2021 – 2026",
     "languages_label": "Idiomas",
     "languages": [
       "Español (Nativo)",
-      "Inglés (Intermedio técnico)"
+      "Inglés (Intermedio · Lectura y uso técnico)"
     ],
-    "flag_bearer": "Escolta de la bandera 2025"
+    "flag_bearer": "Escolta de la Bandera UTN 2025",
+    "quote": "«El mejor software no es el que usa la tecnología más compleja, sino el que hace fácil lo que antes parecía difícil.»"
   },
   "skills": {
-    "title": "Habilidades Técnicas",
+    "tag": "04 — Tecnologías & Herramientas",
+    "title": "Tecnologías y",
+    "title_italic": "herramientas",
+    "subtitle": "Seleccioná cualquier tecnología para ver cómo la aplico y en qué proyectos reales del portfolio está implementada.",
+    "filter_all": "Todas",
     "languages": "Lenguajes",
-    "frontend": "Frontend",
-    "backend": "Backend & DB",
+    "frontend": "Frontend & Mobile",
+    "backend": "Backend & Datos",
     "devops": "DevOps & Cloud",
-    "data": "Datos & BI",
-    "tools": "Herramientas & Metodologías"
+    "data": "BI, Datos & IA",
+    "tools": "Gestión & Calidad",
+    "inspector_tag": "DETALLE DE TECNOLOGÍA",
+    "inspector_used_in": "Aplicado en proyectos del portfolio",
+    "inspector_no_projects": "Utilizado de forma transversal en arquitectura, desarrollo y prácticas profesionales."
   },
   "projects": {
-    "title": "Proyectos",
-    "view_more": "Ver detalles",
+    "tag": "02 — Trabajos Seleccionados",
+    "title": "Proyectos y casos de",
+    "title_italic": "estudio reales",
+    "subtitle": "Cada proyecto nació de una necesidad concreta: desde inmobiliarias y secretarías universitarias hasta aplicaciones móviles en Google Play e infraestructura en la nube.",
+    "filter_all": "Todos",
+    "view_more": "Ver caso de estudio",
     "back": "Volver a proyectos",
-    "type_professional": "Profesional",
-    "type_academic": "Académico",
-    "type_thesis": "Proyecto Final",
-    "type_personal": "Personal",
+    "type_professional": "Cliente Real · Producción",
+    "type_academic": "Ingeniería & Cloud",
+    "type_thesis": "Proyecto Final · Google Play",
+    "type_personal": "Producto Propio",
     "team": "Equipo de {count} personas",
+    "solo": "Desarrollo individual",
     "links_github": "Código fuente",
-    "links_live": "Ver en vivo",
-    "links_web": "Web",
-    "links_playstore": "Google Play Store",
-    "features_title": "Características implementadas",
-    "stack_title": "Stack Tecnológico",
-    "cat_frontend": "Frontend",
-    "cat_backend": "Backend",
-    "cat_database": "Database & Data",
-    "cat_devops": "DevOps y otras herramientas",
-    "documents_title": "Documentación y Recursos",
-    "read_more": "Ver más...",
-    "read_less": "Ver menos",
+    "links_live": "Abrir demo en vivo",
+    "links_web": "Visitar sitio web",
+    "links_playstore": "Ver en Google Play",
+    "metric_tag": "MÉTRICA",
+    "gallery_tag": "GALERÍA DE INTERFAZ",
+    "gallery_caption": "CAPTURAS DEL SISTEMA",
+    "expand_image": "Ampliar imagen",
+    "problem_tag": "EL PROBLEMA / NECESIDAD",
+    "problem_title": "¿Qué desafío buscábamos resolver?",
+    "solution_tag": "LA SOLUCIÓN IMPLEMENTADA",
+    "solution_title": "¿Cómo funciona en la práctica?",
+    "capabilities_tag": "FUNCIONALIDADES CLAVE",
+    "capabilities_title": "Lo que el sistema permite hacer día a día",
+    "video_tag": "DEMO EN VIDEO",
+    "video_title": "Recorrido por el funcionamiento del sistema",
+    "technical_tag": "INGENIERÍA & ARQUITECTURA",
+    "technical_title": "Ficha técnica y detalles de implementación",
+    "technical_subtitle": "Para perfiles técnicos: stack desglosado por capa, características de ingeniería, diagramas de arquitectura, modelos de base de datos y documentación descargable.",
+    "features_title": "Detalle técnico de características implementadas",
+    "stack_title": "Stack Tecnológico por Capa",
+    "cat_frontend": "Frontend & UI",
+    "cat_backend": "Backend & APIs",
+    "cat_database": "Base de Datos & Persistencia",
+    "cat_devops": "DevOps, Cloud & Observabilidad",
+    "documents_title": "Documentación e Informes Técnicos (PDF)",
+    "prev_project": "Proyecto anterior",
+    "next_project": "Siguiente proyecto",
+    "cta_banner_title": "¿Te gustaría desarrollar una solución similar o conversar sobre este proyecto?",
+    "cta_banner_sub": "Escribime directamente para charlar sobre cómo llevar tu idea o equipo al siguiente nivel.",
+    "cta_banner_btn": "Iniciar conversación",
+    "read_more": "Leer descripción completa",
+    "read_less": "Mostrar menos",
     "arch_title": "Arquitectura del Sistema",
     "arch_desc": "El sistema está estructurado bajo un diseño de arquitectura de software desacoplado y multicapa, que separa la lógica de presentación (Frontend en React), la lógica de negocio y persistencia (Backend en Node.js/Express con Prisma ORM), y el motor de base de datos relacional (PostgreSQL). Todo desplegado de forma independiente en la nube.",
     "db_schema_title": "Diseño y Modelo de Base de Datos",
@@ -128,9 +181,38 @@
     "bi_powerbi_desc": "Tablero ejecutivo consolidado en Power BI que presenta de forma interactiva análisis de ROI, ventas por género, mapas geográficos y métricas de cumplimiento, permitiendo navegación Drill-down, Roll-up, Slice y Dice.",
     "duo-propiedades": {
       "dateRange": "Junio 2026 - Presente",
-      "title": "DÚO Propiedades — Landing & Catálogo Inmobiliario",
-      "description": "Plataforma inmobiliaria mobile-first con catálogo interactivo, solicitudes de tasación y panel administrativo basado en arquitectura serverless.",
+      "clientOrContext": "DÚO Propiedades (Pirané, Formosa)",
+      "badge": "En Producción · Cliente Real",
+      "title": "DÚO Propiedades",
+      "subtitle": "Plataforma Inmobiliaria, Catálogo Interactivo & Panel de Autogestión",
+      "description": "Plataforma web pensada para digitalizar el catálogo de inmuebles, recibir solicitudes de tasación online y administrar propiedades de forma simple desde cualquier dispositivo.",
       "long_description": "DÚO Propiedades es una solución digital integral diseñada para digitalizar el catálogo de inmuebles, captar nuevos propietarios mediante solicitudes de tasación y optimizar la gestión comercial de la inmobiliaria en Pirané, Formosa.\n\nEl sistema fue desarrollado utilizando una arquitectura Serverless desacoplada y escalable, que permite operar la base de datos, la autenticación, el almacenamiento de imágenes y el hosting de manera robusta y con alta disponibilidad.\n\nLa Fase 1 está completada e implementada en producción, entregando una landing page institucional mobile-first, un catálogo de propiedades con buscador y filtros avanzados, un formulario web para capturar solicitudes de tasación y un panel de administración protegido para gestionar el inventario (CRUD) y los estados dinámicos (Disponible, Reservado, En Negociación).",
+      "challenge": "La inmobiliaria necesitaba un canal digital claro para recibir consultas de campañas publicitarias, mostrar su catálogo de inmuebles (casas, terrenos y locales) actualizado y captar propietarios interesados en tasar o vender, manteniendo costos operativos bajos.",
+      "solution": "Desarrollamos una plataforma mobile-first con tres módulos integrados: una portada comercial con accesos rápidos (Comprar, Alquilar, Tasar), un catálogo público con filtros dinámicos y estados en vivo, y un panel interno desde donde la inmobiliaria carga fotos, edita fichas técnicas y gestiona solicitudes de tasación.",
+      "highlights": [
+        { "metric": "3 Flujos", "label": "Compra, Alquiler y Tasación Online" },
+        { "metric": "En Vivo", "label": "Estados: Disponible, Reservado o En Negociación" },
+        { "metric": "Autogestión", "label": "Panel interno para cargar y editar propiedades" },
+        { "metric": "Mobile-First", "label": "Adaptado para consultas desde celulares y redes" }
+      ],
+      "key_features": [
+        {
+          "title": "Catálogo Interactivo con Filtros",
+          "description": "Los interesados buscan y filtran propiedades por operación, categoría (Casas, Terrenos, Locales), ubicación, rango de precio y superficie en metros cuadrados."
+        },
+        {
+          "title": "Fichas de Propiedad con Estado Actualizado",
+          "description": "Cada inmueble muestra galería de fotos, servicios disponibles, especificaciones técnicas, ubicación y etiquetas de estado (Disponible, En Negociación, Reservado)."
+        },
+        {
+          "title": "Recepción de Solicitudes de Tasación",
+          "description": "Formulario guiado para propietarios que desean tasar o poner en venta su inmueble, registrando las características principales y su contacto de WhatsApp."
+        },
+        {
+          "title": "Panel de Administración Interno",
+          "description": "Acceso privado para que el equipo de la inmobiliaria pueda dar de alta propiedades, subir fotos y actualizar estados comerciales sin depender de soporte técnico."
+        }
+      ],
       "features": [
         "Desarrollo web responsive y mobile-first con Next.js, React y TypeScript para optimización SEO y campañas publicitarias.",
         "Catálogo interactivo con buscador dinámico inteligente y filtros avanzados por tipo de propiedad (Casas, Terrenos, Locales), zona, precio y superficie (m²).",
@@ -145,9 +227,38 @@
     },
     "datebox": {
       "dateRange": "Abril 2026 - Presente",
-      "title": "Datebox — Plataforma para Salidas Sociales",
-      "description": "Plataforma móvil con IA y recomendación B2B para coordinar salidas grupales, sincronizar agendas de amigos y descubrir actividades locales.",
-      "long_description": "Datebox es una plataforma móvil diseñada para simplificar la organización de salidas grupales y eventos sociales. La aplicación automatiza la búsqueda de coincidencias en los calendarios de grupos de amigos y aplica algoritmos de recomendación inteligente para sugerir locales gastronómicos, espectáculos y espacios recreativos locales.\n\nAdemás de facilitar la coordinación grupal y evitar la indecisión, integra un modelo publicitario B2B que permite a comercios y emprendimientos locales promocionar sus servicios de manera directa a grupos de personas con alta intención de consumo en tiempo real.\n\nActualmente el proyecto se encuentra en fase de desarrollo activo como un Producto Mínimo Viable (MVP).",
+      "clientOrContext": "Producto Propio · Pre-incubado en Programa EBT Chaco",
+      "badge": "App Móvil & Portal Comercios",
+      "title": "DateBox",
+      "subtitle": "App Móvil para Coordinar Salidas Grupales & Plataforma para Comercios",
+      "description": "Aplicación móvil y portal para comercios que simplifica la organización de salidas con amigos: cruza horarios libres, sugiere planes locales con IA y conecta locales gastronómicos con grupos.",
+      "long_description": "Datebox es una plataforma móvil diseñada para simplificar la organización de salidas grupales y eventos sociales. La aplicación automatiza la búsqueda de coincidencias en los calendarios de grupos de amigos y aplica algoritmos de recomendación inteligente para sugerir locales gastronómicos, espectáculos y espacios recreativos locales.\n\nAdemás de facilitar la coordinación grupal y evitar la indecisión, integra un modelo publicitario B2B que permite a comercios y emprendimientos locales promocionar sus servicios de manera directa a grupos de personas con alta intención de consumo en tiempo real.\n\nActualmente el proyecto cuenta con aplicación móvil multiplataforma y portal web administrativo para comercios.",
+      "challenge": "Coordinar una salida en grupo suele complicarse al intentar coincidir en horarios y decidir adónde ir. Al mismo tiempo, los comercios gastronómicos y culturales locales buscan llegar a grupos de personas que están planeando una salida en su zona.",
+      "solution": "Desarrollamos DateBox: una aplicación móvil donde cada grupo carga sus horarios libres para encontrar coincidencias automáticamente, recibe sugerencias de actividades mediante agentes de IA según sus preferencias y presupuesto, guarda álbumes de fotos compartidos y descubre propuestas de comercios locales cargadas desde un panel web administrativo.",
+      "highlights": [
+        { "metric": "App + Web", "label": "App móvil multiplataforma + Portal para comercios" },
+        { "metric": "Agenda Grupal", "label": "Detección automática de horarios en común" },
+        { "metric": "Agentes IA", "label": "Sugerencias según gustos, zona y presupuesto" },
+        { "metric": "Canal B2B", "label": "Panel web para bares, restaurantes y eventos" }
+      ],
+      "key_features": [
+        {
+          "title": "Cruce de Horarios y Votación Grupal",
+          "description": "Cada integrante marca sus franjas libres y la app identifica automáticamente los días y horarios en que todos coinciden."
+        },
+        {
+          "title": "Sugerencias de Planes y Gastronomía con IA",
+          "description": "Un motor de recomendación analiza las preferencias del grupo, ubicación y presupuesto para proponer bares, restaurantes, eventos y actividades."
+        },
+        {
+          "title": "Álbumes y Recuerdos Compartidos",
+          "description": "Permite subir fotos de cada salida y armar un historial compartido con los lugares visitados por el grupo."
+        },
+        {
+          "title": "Portal Web para Comercios",
+          "description": "Plataforma donde locales gastronómicos y organizadores de eventos publican promociones y destacan sus propuestas dentro de la aplicación."
+        }
+      ],
       "features": [
         "Desarrollo móvil nativo multiplataforma utilizando React Native y Expo para iOS y Android (fase MVP).",
         "Arquitectura de backend serverless de alto rendimiento desarrollada con Hono y desplegada en Cloudflare Workers.",
@@ -160,11 +271,40 @@
     },
     "chess-study": {
       "dateRange": "Mayo 2026",
-      "title": "Chess Study — SPA & Tablero Interactivo",
-      "description": "Lector de libros PDF y Tablero de Análisis interactivo unificados en una sola pantalla para estudio de ajedrez.",
+      "clientOrContext": "Desarrollo Web Open Source",
+      "badge": "Web App · Split-Screen",
+      "title": "Chess Study",
+      "subtitle": "Lector PDF de Libros de Ajedrez y Tablero de Análisis en Pantalla Dividida",
+      "description": "Aplicación web que unifica en una sola pantalla un lector fluido de libros de ajedrez en PDF con un tablero interactivo de análisis y guardado local automático.",
       "long_description": "Chess Study es una aplicación web de una sola página (SPA) fluida, diseñada específicamente para resolver una de las fricciones más comunes de los estudiantes de ajedrez: tener que cambiar constantemente de ventanas entre un libro digital y un programa de análisis.\n\nAl unificar un visor de PDF de alto rendimiento —impulsado de forma independiente por el motor de Mozilla PDF.js a 60 FPS— y un tablero inteligente manipulable con React en una interfaz responsiva de pantalla dividida (split-screen), permite al usuario leer, arrastrar, replicar, y analizar posiciones de ajedrez sin interrupciones. Cuenta también con soporte nativo de persistencia offline vía IndexedDB: cargas un libro una vez, y tu navegador lo guarda para siempre, recordando instantáneamente la última página en la que dejaste la lectura.",
+      "challenge": "Estudiar ajedrez con libros digitales suele implicar cambiar constantemente entre el lector de PDF y un tablero en otra ventana, perdiendo el hilo de la lectura y teniendo que volver a buscar la página cada vez que se retoma el estudio.",
+      "solution": "Construimos una aplicación web de pantalla dividida redimensionable: de un lado se lee el libro PDF con total fluidez y guardado automático en el navegador; del otro se reproducen y analizan las variantes en un tablero interactivo con validación de jugadas legales e historial navegable.",
+      "highlights": [
+        { "metric": "Split-Screen", "label": "Libro PDF y tablero juntos sin cambiar de ventana" },
+        { "metric": "60 FPS", "label": "Lectura de PDFs extensos mediante Web Workers" },
+        { "metric": "Guardado Local", "label": "Recuerda tus libros y la última página leída" },
+        { "metric": "5 Temas", "label": "Personalización del tablero + Modo Claro/Oscuro" }
+      ],
+      "key_features": [
+        {
+          "title": "Pantalla Dividida Ajustable (Split-Screen)",
+          "description": "Divisor arrastrable para ajustar el ancho del libro y del tablero en escritorio, opción de invertir paneles y diseño apilable en celulares."
+        },
+        {
+          "title": "Modo Análisis y Editor Libre",
+          "description": "Permite alternar entre un editor libre para acomodar piezas y un modo de análisis que valida jugadas legales y registra el historial en notación algebraica."
+        },
+        {
+          "title": "Biblioteca Clásica Incluida",
+          "description": "Incluye los 4 tomos del 'Tratado General de Ajedrez' de Roberto Grau listos para estudiar con un clic, además de permitir arrastrar cualquier PDF propio."
+        },
+        {
+          "title": "Memoria Persistente en el Navegador",
+          "description": "Guarda tus libros localmente con IndexedDB sin subirlos a ningún servidor externo y abre cada libro exactamente en la página donde lo dejaste."
+        }
+      ],
       "features": [
-        "Interfaz interactiva y fluida 'Split-Screen' con divisor arrastrable y estilización glassmorphic auto-ajustable a formato móvil apilable.",
+        "Interfaz interactiva y fluida 'Split-Screen' con divisor arrastrable y estilización auto-ajustable a formato móvil apilable.",
         "Modo dual inteligente (Editor libre Drag-and-Drop y Modo Análisis regidos por la validación de movimientos legales de chess.js).",
         "Visor PDF pre-compilado de alto desempeño ejecutando la carga de renderizado pesada en un Web Worker en segundo plano.",
         "Experiencia personalizada: Múltiples temas de casillas del tablero (Cyberpunk, Océano, Madera, etc.) e integración con Modo Oscuro/Claro inteligente.",
@@ -173,14 +313,43 @@
         "Notación algebraica visible en el tablero con historial de jugadas navegable (inicio, anterior, siguiente, fin) en Modo Análisis.",
         "Configuración del layout: invertir paneles PDF/tablero, rotar perspectiva de las piezas y cargar PDFs propios por arrastre."
       ],
-      "arch_title": "Arquitectura Fron-End y Persistencia Web-Native",
-      "arch_desc": "La aplicación fue construida aprovechando el ecosistema integral de React 18 acoplado a Vite para un empaquetado ultra rápido. El mayor desafío técnico enfrentado fue orquestar el pesadísimo renderizado de archivos PDF masivos junto con un tablero reactivo sin afectar la experiencia del usuario (UX) o congelar el hilo principal. Esto se resolvió aislando el visor de PDF (PDF.js) dentro de un contexto controlado y delegando el procesamiento intensivo a través de pasaje de mensajes en segundo plano. Al mismo tiempo, la persistencia en caché asíncrono sobre IndexedDB garantizó que recursos bloqueantes se carguen limpiamente de forma local tras una primera visita."
+      "arch_title": "Arquitectura Front-End y Persistencia Web-Native",
+      "arch_desc": "La aplicación fue construida aprovechando el ecosistema integral de React acoplado a Vite para un empaquetado ultra rápido. El mayor desafío técnico enfrentado fue orquestar el pesadísimo renderizado de archivos PDF masivos junto con un tablero reactivo sin afectar la experiencia del usuario (UX) o congelar el hilo principal. Esto se resolvió aislando el visor de PDF (PDF.js) dentro de un contexto controlado y delegando el procesamiento intensivo a través de pasaje de mensajes en segundo plano. Al mismo tiempo, la persistencia en caché asíncrono sobre IndexedDB garantizó que recursos bloqueantes se carguen limpiamente de forma local tras una primera visita."
     },
     "elepad": {
       "dateRange": "Marzo 2025 - Marzo 2026",
-      "title": "Elepad — App Móvil para Adultos Mayores",
-      "description": "App móvil diseñada para fomentar el bienestar emocional, cognitivo y social de adultos mayores mediante un entorno digital accesible.",
+      "clientOrContext": "Proyecto Final de Ingeniería · Google Play Store",
+      "badge": "Google Play · 3° Puesto Rally Latam",
+      "title": "Elepad",
+      "subtitle": "App Móvil para Adultos Mayores, Juegos Cognitivos & Álbum Familiar con IA",
+      "description": "Aplicación móvil publicada en Google Play que conecta a adultos mayores con sus familias mediante una interfaz clara, juegos diarios de memoria y un álbum familiar asistido por IA.",
       "long_description": "Elepad es una aplicación móvil diseñada para fomentar el bienestar emocional, cognitivo y social de los adultos mayores mediante un entorno digital accesible e interactivo. A través de una interfaz simplificada y herramientas innovadoras como la síntesis de recuerdos con Inteligencia Artificial (Google Gemini), busca construir puentes intergeneracionales significativos dentro de la familia.\n\nOriginada como propuesta ganadora del Rally Latinoamericano de Innovación 2024 (3er puesto Impacto Social), evolucionó hasta convertirse en el Proyecto Final de la carrera de Ingeniería en Sistemas de Información (UTN-FRRe). Disponible en Google Play Store.",
+      "challenge": "Muchas aplicaciones actuales tienen menús complejos y textos pequeños que dificultan su uso por parte de adultos mayores, complicando su integración digital y el contacto cotidiano con su grupo familiar.",
+      "solution": "Nacida en el Rally Latinoamericano de Innovación 2024 (3° puesto en Impacto Social) y luego desarrollada como Proyecto Final de Ingeniería en Sistemas, Elepad ofrece una interfaz adaptada, minijuegos diarios de estimulación cognitiva, seguimiento de actividad y un módulo con Google Gemini que ayuda a redactar y organizar recuerdos familiares.",
+      "highlights": [
+        { "metric": "Google Play", "label": "Aplicación publicada en la tienda oficial de Android" },
+        { "metric": "3° Puesto", "label": "Categoría Impacto Social en Rally Latam 2024" },
+        { "metric": "Álbum con IA", "label": "Redacción y síntesis de recuerdos con Google Gemini" },
+        { "metric": "Proyecto Final", "label": "Tesis de Ingeniería en Sistemas (UTN-FRRe)" }
+      ],
+      "key_features": [
+        {
+          "title": "Interfaz Adaptada y Accesible",
+          "description": "Tipografía legible, botones amplios y navegación directa pensada para que las personas mayores la utilicen con comodidad."
+        },
+        {
+          "title": "Juegos Cognitivos y Seguimiento Familiar",
+          "description": "Incluye juegos para ejercitar memoria, atención y lógica (Memoria, Sudoku, Lights Out) con estadísticas compartidas con la familia."
+        },
+        {
+          "title": "El Álbum: Recuerdos Familiares con IA",
+          "description": "Utiliza Google Gemini para transformar fotos y anécdotas cotidianas en relatos organizados dentro de un álbum familiar compartido."
+        },
+        {
+          "title": "Sincronización en Tiempo Real con la Familia",
+          "description": "Conecta las cuentas de los familiares y del adulto mayor mediante notificaciones push, inicio de sesión con Google y almacenamiento en la nube."
+        }
+      ],
       "features": [
         "Desarrollo móvil multiplataforma (iOS/Android/Web) con React Native, Expo y TypeScript",
         "Arquitectura Backend Serverless hiper-escalable utilizando Cloudflare Workers, Hono y validación con OpenAPI",
@@ -197,9 +366,38 @@
     },
     "scyt-utn": {
       "dateRange": "Abril 2023 - Abril 2026",
+      "clientOrContext": "Secretaría de Ciencia y Tecnología — UTN Facultad Regional Resistencia",
+      "badge": "Sistema Institucional · UTN",
       "title": "Plataforma SCyT — UTN FRRe",
-      "description": "Plataforma web integral para la centralización de procesos administrativos y seguimiento de proyectos de investigación.",
+      "subtitle": "Sistema Integral de Gestión de Proyectos de Investigación, Investigadores y Convenios",
+      "description": "Plataforma web institucional que unifica la administración científica de la Facultad: seguimiento de proyectos de investigación, plantel de investigadores, convenios y presupuestos.",
       "long_description": "Diseñé y desarrollé en su totalidad la plataforma web integral para la Secretaría de Ciencia y Tecnología (SCyT) de la Universidad Tecnológica Nacional - Facultad Regional Resistencia (UTN-FRRe). El proyecto surgió como una solución estratégica para resolver la dispersión de información crítica de investigadores, proyectos y convenios (que anteriormente se gestionaban de forma ineficiente en múltiples planillas de cálculo de manera aislada). El sistema centraliza y unifica toda la administración científica de la Facultad, permitiendo realizar el seguimiento exhaustivo de proyectos (tanto internos PIDs como externos), la gestión del personal docente e investigador, y la administración de vinculaciones tecnológicas, convenios y desembolsos financieros.\n\nAcreditado formalmente como mi Práctica Profesional Supervisada (PPS), lideré todo el ciclo de vida del software: relevamiento (5W+2H), análisis conceptual, diseño de base de datos relacional (DER), prototipado de interfaces (UX/UI), desarrollo full-stack (React, Node.js, Express, Prisma, PostgreSQL) y despliegue continuo en entorno Cloud (Render).",
+      "challenge": "La Secretaría gestionaba cientos de proyectos de investigación, integrantes, convenios y desembolsos en múltiples planillas de Excel aisladas, lo que dificultaba cruzar datos históricos, auditar presupuestos y conocer rápido el estado de cada investigación.",
+      "solution": "Relevé las necesidades junto a los directores de la Secretaría y desarrollé de punta a punta una plataforma web centralizada donde el equipo administrativo registra proyectos (PIDs y externos), asigna investigadores con historial de roles, controla convenios tecnológicos y lleva la trazabilidad de cada desembolso financiero.",
+      "highlights": [
+        { "metric": "4 Módulos", "label": "Proyectos, Investigadores, Convenios y Finanzas" },
+        { "metric": "100% Digital", "label": "Reemplazo de planillas dispersas por base unificada" },
+        { "metric": "End-to-End", "label": "Relevamiento, diseño, desarrollo y despliegue Cloud" },
+        { "metric": "UTN-FRRe", "label": "Acreditado como Práctica Profesional Supervisada" }
+      ],
+      "key_features": [
+        {
+          "title": "Seguimiento de Proyectos Científicos (PIDs y Externos)",
+          "description": "Permite dar de alta proyectos de investigación, consultar su estado operativo, filtrar por tipo o período y acceder a toda su ficha técnica en segundos."
+        },
+        {
+          "title": "Legajo y Trazabilidad de Investigadores",
+          "description": "Administra directores, codirectores, docentes y becarios, conservando el historial completo de en qué proyectos participó cada integrante y con qué rol."
+        },
+        {
+          "title": "Gestión de Convenios y Vinculación Tecnológica",
+          "description": "Centraliza los acuerdos estratégicos firmados con empresas e instituciones externas, vinculándolos directamente con los equipos de trabajo."
+        },
+        {
+          "title": "Control de Presupuestos y Desembolsos",
+          "description": "Registra las partidas presupuestarias asignadas a cada proyecto y lleva el control detallado de los desembolsos ejecutados y pendientes."
+        }
+      ],
       "features": [
         "Diseño e implementación del Módulo de Gestión de Proyectos, permitiendo el registro, edición, búsqueda avanzada y seguimiento del estado operativo de proyectos científicos (internos PIDs y externos).",
         "Desarrollo del Módulo de Investigadores e Integrantes, permitiendo la asignación de directores, codirectores y colaboradores con roles específicos y trazabilidad histórica de su participación.",
@@ -217,9 +415,38 @@
     },
     "devops-kubernetes": {
       "dateRange": "Octubre - Noviembre 2025",
-      "title": "DevOps: Kubernetes & Observabilidad",
-      "description": "Orquestación con Kubernetes, alta disponibilidad y observabilidad completa con OpenTelemetry, Prometheus y Grafana.",
+      "clientOrContext": "Ingeniería en Sistemas — Cátedra DevOps (UTN-FRRe)",
+      "badge": "Cluster K8s · Alta Disponibilidad",
+      "title": "Kubernetes & Observabilidad",
+      "subtitle": "Orquestación de Microservicios en Alta Disponibilidad con Monitoreo en Tiempo Real",
+      "description": "Despliegue de una plataforma web sobre un cluster Kubernetes de 3 nodos con tolerancia a fallos y paneles en vivo de métricas y trazas (Prometheus, OpenTelemetry y Grafana).",
       "long_description": "Proyecto académico sobre el mismo sistema SmartCatalog del TP anterior (rama orchestration-and-observability), elevado a orquestación con Kubernetes local (K3d) y observabilidad de nivel productivo. Desplegamos un cluster tp2-cluster de 3 nodos (1 control-plane + 2 workers) con 2 réplicas del backend Flask distribuidas mediante podAntiAffinity estricto — garantizando que nunca convivan en el mismo worker. El stack de observabilidad integra los tres pilares fundamentales: métricas con Prometheus (+ kube-state-metrics + cAdvisor), trazas distribuidas con OpenTelemetry SDK → OTEL Collector → Tempo, y visualización unificada en Grafana.\n\nSe implementaron métricas custom de negocio (RPS, latencia p95/p50), validación de resiliencia mediante saturación de recursos y health checks automáticos. La entrega fue una exposición en vivo demostrando el cluster funcionando en tiempo real.",
+      "challenge": "Cuando una aplicación recibe mucho tráfico o uno de sus servidores falla, el sistema puede caerse por completo si no cuenta con réplicas distribuidas ni herramientas que avisen en tiempo real dónde está el cuello de botella.",
+      "solution": "Orquestamos el sistema en un cluster Kubernetes de 3 nodos con réplicas separadas en distintos servidores para que, si uno cae, el otro siga respondiendo sin cortes. Además, integramos paneles visuales en Grafana que muestran en vivo cada petición, tiempos de respuesta y uso de memoria.",
+      "highlights": [
+        { "metric": "3 Nodos K8s", "label": "1 Control-Plane + 2 Workers con 8 servicios activos" },
+        { "metric": "Cero Caídas", "label": "Réplicas distribuidas con reinicio automático ante fallos" },
+        { "metric": "Telemetría", "label": "Métricas en vivo (Prometheus) + Trazas (OpenTelemetry)" },
+        { "metric": "Grafana", "label": "Tableros en tiempo real de tráfico y latencia p95" }
+      ],
+      "key_features": [
+        {
+          "title": "Continuidad del Servicio ante Fallos (Alta Disponibilidad)",
+          "description": "El backend corre duplicado en nodos separados: si una instancia falla o se satura, el tráfico se redirige automáticamente a la otra y Kubernetes levanta una nueva."
+        },
+        {
+          "title": "Rastreo Completo de cada Petición (Trazas Distribuidas)",
+          "description": "Permite seguir el recorrido exacto de una acción del usuario desde la pantalla web hasta la base de datos Redis para detectar demoras al instante."
+        },
+        {
+          "title": "Monitoreo de Negocio e Infraestructura",
+          "description": "Mide cuántas votaciones reales ocurren por segundo, cuánto tardan en responder el 95% de las consultas y cuánta memoria consume cada contenedor."
+        },
+        {
+          "title": "Pruebas de Estrés y Límites de Recursos",
+          "description": "Configuración de topes de memoria y procesador por servicio para validar cómo el sistema se recupera solo ante picos extremos de carga."
+        }
+      ],
       "features": [
         "Cluster K3d de 3 nodos: 1 control-plane + 2 workers con 8 microservicios distribuidos (Frontend, Backend x2, Redis, Prometheus, Tempo, OTEL Collector, Grafana, kube-state-metrics)",
         "Alta Disponibilidad garantizada: podAntiAffinity con requiredDuringSchedulingIgnoredDuringExecution impide que las 2 réplicas del backend compartan nodo. Readiness probes cada 5s + liveness probes cada 10s para auto-restart automático",
@@ -233,9 +460,38 @@
     },
     "devops-azure": {
       "dateRange": "Agosto - Septiembre 2025",
-      "title": "DevOps: Contenerización & CI/CD en Azure",
-      "description": "Contenerización de aplicación web y pipeline CI/CD con GitHub Actions para deploy en Azure.",
+      "clientOrContext": "Ingeniería en Sistemas — Cátedra DevOps (UTN-FRRe)",
+      "badge": "Cloud CI/CD · Microsoft Azure",
+      "title": "Contenerización & CI/CD en Azure",
+      "subtitle": "Automatización de Pruebas, Empaquetado Docker y Despliegue Continuo en la Nube",
+      "description": "Automatización completa del ciclo de vida de una aplicación web (Next.js, Python Flask y Redis): desde que se guarda un cambio en el código hasta que se prueba y publica solo en Microsoft Azure.",
       "long_description": "Diseñé e implementé la arquitectura de contenerización y el flujo de trabajo CI/CD completo para SmartCatalog, una aplicación web de microservicios compuesta por un frontend moderno en Next.js (con React 19 y Tailwind CSS 4), un backend API robusto en Python Flask y un servicio de almacenamiento y caché de alta velocidad con Redis. El proyecto consistió en diseñar entornos consistentes utilizando Docker y Docker Compose para desarrollo local, estructurar un pipeline de Integración Continua (CI) en GitHub Actions para ejecutar pruebas de backend automatizadas con Pytest (empleando un servicio de Redis en memoria temporal).\n\nTambién configuramos un pipeline de Despliegue Continuo (CD) que realiza el build-and-push automatizado de imágenes Docker multi-etapa hacia Azure Container Registry (ACR) y su subsiguiente despliegue y orquestación dinámica en Azure Container Instances (ACI). De esta manera, cada push en la rama de despliegue automatiza de forma segura el ciclo de vida completo del software en la nube de Microsoft Azure.",
+      "challenge": "Subir actualizaciones a un servidor de forma manual suele generar errores humanos, diferencias entre las computadoras de desarrollo y el servidor real, y demoras para detectar si un cambio rompió alguna funcionalidad.",
+      "solution": "Empaquetamos los tres servicios de la aplicación en contenedores Docker idénticos en cualquier entorno y creamos un flujo automatizado en GitHub Actions: ante cada actualización, el sistema corre pruebas automáticas y despliega la nueva versión en Microsoft Azure sin intervención manual.",
+      "highlights": [
+        { "metric": "3 Servicios", "label": "Next.js Frontend, Flask API y Redis en contenedores" },
+        { "metric": "100% Auto", "label": "Pruebas con Pytest y despliegue continuo con cada push" },
+        { "metric": "Azure Cloud", "label": "Registro privado (ACR) + Contenedores elásticos (ACI)" },
+        { "metric": "Persistente", "label": "Almacenamiento en nube para no perder votos ni métricas" }
+      ],
+      "key_features": [
+        {
+          "title": "Entornos Idénticos en Desarrollo y Producción",
+          "description": "Con un solo comando de Docker Compose, cualquier desarrollador levanta en su computadora la web, la API y la base de datos configuradas igual que en la nube."
+        },
+        {
+          "title": "Control de Calidad Automático antes de Publicar",
+          "description": "Cada vez que se envía código nuevo, GitHub Actions levanta un entorno temporal y ejecuta pruebas automáticas para verificar que la API responda bien."
+        },
+        {
+          "title": "Publicación Automática en Microsoft Azure",
+          "description": "Si las pruebas pasan, el pipeline compila imágenes livianas, las guarda en el registro privado de Azure y actualiza los servidores en minutos."
+        },
+        {
+          "title": "Aplicación SmartCatalog (Votación a Ciegas de IA)",
+          "description": "Permite a los usuarios votar a ciegas qué descripción de producto redactada por distintos modelos de IA es mejor, mostrando estadísticas en tiempo real."
+        }
+      ],
       "features": [
         "Contenerización Multi-Servicio: Creación de Dockerfiles optimizados de múltiples etapas (multi-stage) para compilar de forma aislada el Frontend en Next.js (Node.js) y el Backend en Python Flask, minimizando el tamaño final de las imágenes.",
         "Orquestación Local con Docker Compose: Configuración de un entorno reproducible local que enlaza y comunica de forma segura el Frontend, Backend y un servicio de Redis con contraseñas seguras y persistencia configurada mediante variables de entorno.",
@@ -249,9 +505,38 @@
     },
     "data-warehouse": {
       "dateRange": "Abril - Junio 2025",
+      "clientOrContext": "Ingeniería en Sistemas — Administración de Datos Empresariales (UTN-FRRe)",
+      "badge": "Data Warehouse · Power BI",
       "title": "Data Warehouse & BI: Sello Discográfico",
-      "description": "Solución end-to-end de Business Intelligence (BI) para un sello discográfico, abarcando modelado dimensional completo, integración ETL en SSIS con historización SCD, cubos OLAP multidimensionales en SSAS y dashboards dinámicos e interactivos en Power BI.",
+      "subtitle": "Almacén de Datos, Integración ETL, Cubos OLAP y Tableros Ejecutivos en Power BI",
+      "description": "Solución integral de Inteligencia de Negocios para transformar datos dispersos de ventas y costos de producción musical en tableros interactivos para toma de decisiones.",
       "long_description": "Desarrollé una solución completa y robusta de Inteligencia de Negocios (BI) para optimizar la toma de decisiones estratégicas de un sello discográfico que distribuye discos a tiendas internacionales. La solución aborda los tres pilares del ciclo de vida del análisis de datos corporativos:\n\n1) Modelado Dimensional (Parte 1): Diseñé el modelo conceptual y lógico usando la metodología 'multidim' y el motor SQL Server. Estructuré el Data Warehouse con dos tablas de hechos principales (HechoVentas para analizar pedidos de tiendas y HechoProducciones para costes de lanzamientos) y ocho dimensiones normalizadas, garantizando granularidad diaria y consistencia referencial con registros comodines (-1).\n\n2) Integración ETL (Parte 2): Implementé en SQL Server Integration Services (SSIS) los flujos de extracción, transformación y carga (masiva e incremental idempotente) con una Staging Area para depuración de datos. Resolví la historización histórica aplicando dimensiones de cambio lento (SCD Tipo 1 para sobrescrituras y Tipo 2 para trazas con fechas de vigencia en DimArtista y DimBanda). Integré limpieza de ubicaciones mediante Data Quality Services (DQS).\n\n3) Análisis Multidimensional y BI (Parte 3): Creé un Cubo OLAP multidimensional en SQL Server Analysis Services (SSAS) configurando jerarquías geográficas e históricas, y medidas calculadas customizadas (como Demanda Insatisfecha y KPIs de rendimiento). Conecté este cubo para desarrollar un Dashboard interactivo en Power BI que consolida análisis de ROI por artista/disco, ventas por género musical y mapas de demanda por región mediante operaciones clásicas de Drill-down, Roll-up, Slice y Dice en tiempo real.",
+      "challenge": "El sello discográfico contaba con registros operativos separados de pedidos de tiendas, envíos y costos de grabación, lo que impedía saber con rapidez qué discos o artistas daban mayor retorno de inversión (ROI) o en qué regiones quedaban pedidos sin cubrir.",
+      "solution": "Construimos un Data Warehouse completo en SQL Server junto con procesos automáticos de limpieza y carga de datos (ETL), un cubo multidimensional de consulta rápida y un tablero ejecutivo en Power BI donde la dirección filtra ventas, costos y demanda por país, año, género o banda.",
+      "highlights": [
+        { "metric": "3 Etapas BI", "label": "Modelado Dimensional, Procesos ETL y Cubo OLAP" },
+        { "metric": "2 Hechos + 8 Dim", "label": "Ventas minoristas y costos de producción musical" },
+        { "metric": "Historial SCD", "label": "Trazabilidad histórica de cambios en artistas y bandas" },
+        { "metric": "Power BI", "label": "Tableros interactivos de ROI, mapas y demanda" }
+      ],
+      "key_features": [
+        {
+          "title": "Unificación y Limpieza Automática de Datos (ETL)",
+          "description": "Integra datos de distintas fuentes, corrige nombres de países e inconsistencias automáticamente y permite actualizar el almacén sin duplicar registros."
+        },
+        {
+          "title": "Conservación del Historial de Cambios",
+          "description": "Registra cuándo un artista o banda cambia de atributos con fechas de vigencia para que los reportes históricos de ventas sigan siendo exactos."
+        },
+        {
+          "title": "Indicadores de Rentabilidad y Demanda Insatisfecha",
+          "description": "Calcula automáticamente el retorno de inversión (ROI) comparando costos de producción contra ventas, y detecta qué tiendas pidieron más discos de los enviados."
+        },
+        {
+          "title": "Tablero Ejecutivo Interactivo en Power BI",
+          "description": "Visualización clara con mapas geográficos, ranking de géneros musicales y filtros dinámicos para explorar desde el total anual hasta el detalle diario."
+        }
+      ],
       "features": [
         "Modelado Dimensional de Negocio: Diseño conceptual y físico con metodología 'multidim', estructurando un almacén de datos (DW) de dos tablas de hechos y ocho dimensiones interconectadas.",
         "Gestión de Granularidad: Definición de granularidad diaria en HechoVentas (pedidos de tiendas, precios acordados, cantidad enviada) y HechoProducciones (costo y fechas de lanzamiento de discos).",
@@ -269,9 +554,38 @@
     },
     "play-finder": {
       "dateRange": "Marzo - Diciembre 2023",
-      "title": "Play Finder — Gestión y Reserva de Canchas Deportivas",
-      "description": "Plataforma web Full Stack para la reserva de turnos, administración de complejos deportivos y analítica de reservas en tiempo real.",
+      "clientOrContext": "Proyecto Integrador ADUSI — UTN Facultad Regional Resistencia",
+      "badge": "Plataforma Full Stack · Azure",
+      "title": "Play Finder",
+      "subtitle": "Plataforma Web de Reserva de Canchas, Gestión de Complejos y Estadísticas",
+      "description": "Plataforma web que conecta a jugadores con complejos deportivos: permite buscar canchas disponibles en vivo, reservar turnos online y administrar horarios e ingresos.",
       "long_description": "Play Finder es una plataforma web responsive diseñada para optimizar y simplificar la gestión y reserva de canchas deportivas, conectando de forma ágil a dueños de complejos deportivos con jugadores. Desarrollada de manera colaborativa por un equipo de 7 personas a lo largo de 8 sprints de 3 semanas bajo la metodología Scrum, sirvió como el Proyecto Integrador de la carrera Analista Desarrollador Universitario en Sistemas de Información (ADUSI) de la UTN-FRRe.\n\nEl sistema cuenta con dos flujos principales: un portal para dueños (administración de complejos, parametrización de canchas, gestión de tarifas y un panel de analítica con gráficos de reservas e ingresos populares) y un portal para jugadores (búsqueda avanzada con geolocalización, reserva en vivo, simulación de pagos con pasarela y notificaciones por correo). La plataforma fue desplegada en producción en Microsoft Azure utilizando contenedores Docker.",
+      "challenge": "Reservar una cancha deportiva suele requerir mensajes o llamadas para consultar qué horarios quedan libres, mientras que los dueños de complejos pierden tiempo anotando turnos manualmente y lidiando con superposiciones.",
+      "solution": "Desarrollamos una plataforma web con dos portales: uno para que los jugadores busquen canchas por deporte, día y horario y reserven al instante con confirmación por correo; y otro para que los dueños configuren sus canchas, tarifas y visualicen estadísticas de ocupación.",
+      "highlights": [
+        { "metric": "2 Portales", "label": "Experiencia para Jugadores y Panel para Dueños" },
+        { "metric": "En Vivo", "label": "Validación automática para evitar reservas superpuestas" },
+        { "metric": "Analítica", "label": "Reportes de horarios pico y reservas por período" },
+        { "metric": "8 Sprints", "label": "Desarrollo colaborativo en Scrum desplegado en Azure" }
+      ],
+      "key_features": [
+        {
+          "title": "Buscador de Canchas y Disponibilidad en Tiempo Real",
+          "description": "Los jugadores filtran complejos por deporte (fútbol, pádel, básquet), fecha y franja horaria, viendo únicamente los turnos realmente libres."
+        },
+        {
+          "title": "Reserva Online y Avisos Automáticos por Email",
+          "description": "Flujo guiado de reserva con simulación de pago de seña, inicio de sesión con Google y envío inmediato del comprobante por correo electrónico."
+        },
+        {
+          "title": "Administración de Complejos, Canchas y Tarifas",
+          "description": "Los propietarios dan de alta sus establecimientos, cargan fotos, definen el tipo de superficie de cada cancha y configuran sus horarios de apertura."
+        },
+        {
+          "title": "Tablero de Estadísticas para Propietarios",
+          "description": "Muestra gráficos claros con los horarios más demandados y el volumen de reservas por período para ayudar a tomar decisiones comerciales."
+        }
+      ],
       "features": [
         "Arquitectura Full Stack desacoplada: Frontend interactivo en React.js con Chakra UI y backend robusto en Node.js, Express y TypeScript.",
         "Modelado de base de datos relacional PostgreSQL con Prisma ORM, garantizando integridad referencial mediante claves foráneas y un óptimo rendimiento en consultas anidadas complejas.",
@@ -292,23 +606,104 @@
       "db_desc": "El esquema relacional de PostgreSQL fue diseñado y normalizado meticulosamente para asegurar la integridad de los datos. El modelo final (Sprint 8) mapea de manera precisa las relaciones de cardinalidad entre usuarios, planes de suscripción, complejos deportivos, canchas, días de disponibilidad y registros de reservas con transacciones de pago, facilitando consultas de negocio de alto rendimiento y la generación procedural de informes analíticos para los administradores."
     }
   },
+  "experience": {
+    "tag": "03 — EXPERIENCIA Y EDUCACIÓN",
+    "title": "El camino",
+    "title_italic": "recorrido.",
+    "subtitle": "Educación y roles en una sola línea, del más antiguo al actual. La línea se dibuja a medida que hacés scroll.",
+    "case_study_cta": "Ver caso en el portfolio",
+    "live_site_cta": "Visitar sitio web",
+    "playstore_cta": "Google Play",
+    "next_year": "Siguiente",
+    "next_badge": "DISPONIBLE PARA PROYECTOS · PRÓXIMO PASO",
+    "next_title_1": "¿Tu",
+    "next_title_italic": "equipo?",
+    "next_cta": "Hablemos",
+    "items": [
+      {
+        "year": "2021",
+        "period": "Mar 2021 – Mar 2026",
+        "type": "EDUCACIÓN",
+        "role": "Ingeniería en Sistemas de Información",
+        "company": "Universidad Tecnológica Nacional — Facultad Regional Resistencia (UTN-FRRe)",
+        "bullets": [
+          "Promedio general: 8.55 / 10 — Designado Escolta de la Bandera de Ceremonias (2025) por mérito académico",
+          "Título intermedio: Analista Desarrollador Universitario en Sistemas de Información (ADUSI, 2021 – 2024)",
+          "Ganador en competencias internacionales: 1° Puesto Track Stellar (NEA TECH 2026) y 3° Puesto Rally Latinoamericano de Innovación (2024 y 2026)"
+        ]
+      },
+      {
+        "year": "2023",
+        "period": "Abr 2023 – Abr 2026",
+        "type": "EXPERIENCIA",
+        "role": "Desarrollador Full Stack & Digitalización de Procesos",
+        "company": "Secretaría de Ciencia y Tecnología (UTN-FRRe) · Híbrido en Resistencia",
+        "bullets": [
+          "Lideré el relevamiento con autoridades, diseño arquitectónico y desarrollo de punta a punta de la plataforma web oficial de gestión científica de la facultad",
+          "Reemplacé planillas aisladas por un sistema auditable al 100% para proyectos de investigación (PIDs), investigadores, convenios y presupuestos con React.js, TanStack Query y Chakra UI",
+          "Construí una API REST multicapa en Node.js, Express y Prisma ORM sobre PostgreSQL con control de acceso por roles (JWT/Bcrypt) y despliegue continuo en la nube"
+        ],
+        "projectSlug": "scyt-utn"
+      },
+      {
+        "year": "2026",
+        "period": "Abr 2026 – Presente",
+        "type": "EXPERIENCIA",
+        "role": "Lead Developer & Arquitectura de Software",
+        "company": "DateBox · Remoto (Equipo de 4 ingenieros)",
+        "statusPill": "EN PRODUCCIÓN · PUBLICADA EN GOOGLE PLAY STORE",
+        "bullets": [
+          "Lidero la arquitectura mobile multiplataforma en React Native + Expo (EAS) y el backend serverless de ultrabaja latencia con Hono sobre Cloudflare Workers",
+          "Co-desarrollé el motor de recomendación grupal integrando agentes de IA en Python y LangGraph que cruzan horarios libres, presupuesto y ubicación",
+          "Automaticé contratos de datos tipados end-to-end mediante esquemas OpenAPI + Orval y pipelines de CI/CD con GitHub Actions"
+        ],
+        "projectSlug": "datebox",
+        "externalUrl": "https://datebox.com.ar"
+      },
+      {
+        "year": "2026",
+        "period": "Jun 2026 – Presente",
+        "type": "EXPERIENCIA",
+        "role": "Desarrollador Full Stack & Consultor Freelance",
+        "company": "Mandadito & DÚO Propiedades · Remoto (Chaco y Formosa)",
+        "statusPill": "SISTEMAS EN PRODUCCIÓN · ABIERTO A NUEVAS OPORTUNIDADES",
+        "bullets": [
+          "Mandadito (Marketplace & Delivery Multi-Rol): Desarrollé y blindé la plataforma web v1.0 (Next.js 16, React 19, Supabase) con 4 paneles operativos, checkout en 3 pasos y stock fraccionado (unidad, kg y litro)",
+          "Seguridad Transaccional & Pagos: Implementé vinculación OAuth y split de pagos con Mercado Pago, validación criptográfica anti-replay en webhooks, políticas RLS en PostgreSQL y rate limiting con Upstash Redis",
+          "DÚO Propiedades (duopropiedades.com.ar): Diseñé y desplegué el portal inmobiliario SSR, catálogo interactivo con filtros dinámicos, flujo de tasaciones online y panel CRUD sobre Vercel y Supabase"
+        ],
+        "projectSlug": "duo-propiedades",
+        "externalUrl": "https://duopropiedades.com.ar"
+      }
+    ]
+  },
   "awards": {
-    "title": "Logros y Certificaciones",
-    "rally_title": "3er Lugar — Rally Latinoamericano de Innovación 2024",
-    "rally_description": "Categoría Impacto Social · Proyecto Elepad (equipo Gang of Four, INTECNOR/UTN-FRRe) · Octubre 2024",
+    "tag": "05 — Reconocimientos & Certificaciones",
+    "title": "Distinciones académicas y",
+    "title_italic": "logros profesionales",
+    "rally_badge": "PREMIO INTERNACIONAL · 2024",
+    "rally_title": "3° Lugar — Rally Latinoamericano de Innovación 2024",
+    "rally_description": "Categoría Impacto Social con el proyecto Elepad (equipo Gang of Four, sede INTECNOR / UTN-FRRe). Competencia de 28 horas continuas resolviendo desafíos reales de la región.",
+    "flag_badge": "MÉRITO ACADÉMICO · 2025",
+    "flag_title": "Escolta de la Bandera — UTN Facultad Regional Resistencia",
+    "flag_description": "Distinción al mérito académico en la carrera de Ingeniería en Sistemas de Información con un promedio general de 8.55 / 10.",
+    "scrum_badge": "CERTIFICACIÓN ÁGIL · 2024",
     "scrum_title": "Scrum Fundamentals Certified (SFC)",
-    "scrum_description": "SCRUMstudy — Accreditation Body for Scrum and Agile (Credential ID: 1040148) · Julio 2024",
-    "flag_title": "Escolta de la Bandera 2025",
-    "flag_description": "UTN — Facultad Regional Resistencia (UTN-FRRe) · Promedio general: 8.55/10"
+    "scrum_description": "SCRUMstudy — Accreditation Body for Scrum and Agile (Credencial ID: 1040148). Gestión de proyectos y equipos bajo marcos ágiles."
   },
   "contact": {
-    "title": "Contacto",
-    "description": "¿Tenés un proyecto en mente o querés conversar? No dudes en contactarme.",
-    "email_label": "Email",
-    "social_label": "Redes profesionales"
+    "tag": "06 — Contacto",
+    "title_1": "¿Construimos algo",
+    "title_italic": "juntos?",
+    "description": "Estoy disponible para sumarme a equipos de desarrollo, colaborar en nuevos productos digitales o conversar sobre cómo llevar una idea a producción.",
+    "email_label": "Correo directo",
+    "whatsapp_label": "WhatsApp directo",
+    "social_label": "Perfiles profesionales",
+    "card_role": "INGENIERO EN SISTEMAS · FULL STACK & MOBILE",
+    "card_cta": "Enviar un correo"
   },
   "footer": {
-    "built_with": "Desarrollado con Next.js, TypeScript y Tailwind CSS",
+    "built_with": "Diseñado y desarrollado por Sixto Feliciano Arrejin · Next.js & TypeScript",
     "rights": "Todos los derechos reservados."
   },
   "theme": {

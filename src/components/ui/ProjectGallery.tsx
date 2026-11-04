@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Maximize2 } from "lucide-react";
+import { Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 
 type Media = {
   type: "image" | "video";
@@ -14,76 +15,165 @@ interface ProjectGalleryProps {
   media: Media[];
   onOpenLightbox: (idx: number) => void;
   isDesktop?: boolean;
+  projectTitle?: string;
 }
 
-export function ProjectGallery({ media, onOpenLightbox, isDesktop }: ProjectGalleryProps) {
-  // Mostramos 5 elementos inicialmente (aproximadamente una fila en escritorio).
-  // Si en el futuro querés que sean múltiplos de la cantidad de columnas, podés usar un custom hook para leer el ancho de ventana, pero 5 es un estándar seguro.
-  const CHUNK_SIZE = isDesktop ? 3 : 5;
-  const [visibleCount, setVisibleCount] = useState(CHUNK_SIZE);
+export function ProjectGallery({
+  media,
+  onOpenLightbox,
+  isDesktop,
+  projectTitle,
+}: ProjectGalleryProps) {
+  const t = useTranslations("projects");
+  const [activeIndex, setActiveIndex] = useState(0);
 
   if (!media || media.length === 0) return null;
 
-  const visibleMedia = media.slice(0, visibleCount);
-  const remainingCount = media.length - visibleCount;
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? media.length - 1 : prev - 1));
+  };
 
-  const handleShowMore = () => {
-    setVisibleCount((prev) => Math.min(prev + CHUNK_SIZE * 3, media.length));
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === media.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <div className="mt-12">
-      <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-sora)" }}>
-        Galería del Proyecto
-      </h3>
-      
-      {/* Grid of Thumbnails */}
-      <div className={`grid gap-4 ${isDesktop ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3' : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'}`}>
-        {visibleMedia.map((item, idx) => {
-          // Si es el último elemento visible y todavía hay más por mostrar, le ponemos el overlay
-          const isLastVisible = idx === visibleMedia.length - 1;
-          const showOverlay = isLastVisible && remainingCount > 0;
-
-          return (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => (showOverlay ? handleShowMore() : onOpenLightbox(idx))}
-              className={`relative ${isDesktop ? 'aspect-video' : 'aspect-square'} rounded-xl overflow-hidden cursor-pointer group glass-card`}
-            >
-              {item.type === "image" ? (
-                <Image
-                  src={item.url}
-                  alt={`Media ${idx + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
-                />
-              ) : (
-                <div className="w-full h-full bg-black/10 flex items-center justify-center">
-                  <span className="text-xs">Video</span>
-                </div>
-              )}
-
-              {/* Overlay estándar (hover) */}
-              {!showOverlay && (
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <Maximize2 className="text-white opacity-0 group-hover:opacity-100 transition-opacity" size={24} />
-                </div>
-              )}
-
-              {/* Overlay de "+X elementos" */}
-              {showOverlay && (
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center transition-colors hover:bg-black/70">
-                  <span className="text-white text-2xl font-bold">+{remainingCount}</span>
-                  <span className="text-white/80 text-xs mt-1">Ver más</span>
-                </div>
-              )}
-            </motion.div>
-          );
-        })}
+    <div
+      className="editorial-card rounded-2xl border shadow-sm overflow-hidden"
+      style={{
+        background: "var(--bg-card)",
+        borderColor: "var(--border-color)",
+      }}
+    >
+      {/* Top Dossier Bar */}
+      <div
+        className="px-5 py-3.5 border-b flex items-center justify-between flex-wrap gap-2 font-mono-tech text-xs"
+        style={{ borderColor: "var(--border-color)" }}
+      >
+        <span
+          className="font-semibold uppercase tracking-wider"
+          style={{ color: "var(--accent-blue)" }}
+        >
+          [{t("gallery_tag")}{projectTitle ? ` // ${projectTitle}` : ""}]
+        </span>
+        <span style={{ color: "var(--text-muted)" }}>
+          {activeIndex + 1} / {media.length}
+        </span>
       </div>
+
+      {/* Main Stage Viewer */}
+      <div
+        className="relative w-full aspect-[16/9] max-h-[540px] flex items-center justify-center overflow-hidden group cursor-pointer"
+        style={{ background: "var(--bg-secondary)" }}
+        onClick={() => onOpenLightbox(activeIndex)}
+      >
+        {media[activeIndex].type === "image" ? (
+          <Image
+            src={media[activeIndex].url}
+            alt={`Capture ${activeIndex + 1}`}
+            fill
+            className={`${
+              isDesktop ? "object-cover object-top" : "object-contain p-3"
+            } transition-transform duration-500 group-hover:scale-[1.01]`}
+            sizes="(max-width: 1024px) 100vw, 1100px"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-sm font-mono-tech">
+            Video
+          </div>
+        )}
+
+        {/* Expand Button Pill */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenLightbox(activeIndex);
+          }}
+          className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-mono-tech font-medium transition-transform duration-200 hover:scale-105 cursor-pointer"
+          style={{
+            background: "var(--bg-inverted)",
+            color: "var(--text-inverted)",
+          }}
+        >
+          <Maximize2 size={13} />
+          <span>{t("expand_image")}</span>
+        </button>
+
+        {/* Prev / Next Controls */}
+        {media.length > 1 && (
+          <>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-105 cursor-pointer z-10"
+              style={{
+                background: "var(--bg-card)",
+                color: "var(--text-primary)",
+                border: "1px solid var(--border-color-hover)",
+              }}
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-105 cursor-pointer z-10"
+              style={{
+                background: "var(--bg-card)",
+                color: "var(--text-primary)",
+                border: "1px solid var(--border-color-hover)",
+              }}
+              aria-label="Next image"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Horizontal Thumbnail Filmstrip */}
+      {media.length > 1 && (
+        <div
+          className="p-4 border-t overflow-x-auto"
+          style={{
+            background: "var(--bg-card)",
+            borderColor: "var(--border-color)",
+          }}
+        >
+          <div className="flex gap-2.5 min-w-max">
+            {media.map((item, idx) => {
+              const isSelected = idx === activeIndex;
+              return (
+                <motion.button
+                  key={idx}
+                  whileTap={{ scale: 0.96 }}
+                  onClick={() => setActiveIndex(idx)}
+                  className="relative w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer transition-all"
+                  style={{
+                    border: isSelected
+                      ? "2px solid var(--accent-blue)"
+                      : "1px solid var(--border-color)",
+                    opacity: isSelected ? 1 : 0.55,
+                  }}
+                >
+                  <Image
+                    src={item.url}
+                    alt={`Thumbnail ${idx + 1}`}
+                    fill
+                    className="object-cover object-top"
+                    sizes="96px"
+                  />
+                </motion.button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

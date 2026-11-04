@@ -1,77 +1,130 @@
 {
   "metadata": {
-    "title": "Sixto Feliciano Arrejin — Full Stack Developer",
-    "description": "Professional portfolio of Sixto Feliciano Arrejin. Information Systems Engineer, Full Stack Developer specialized in React, Node.js, TypeScript, Cloud and DevOps."
+    "title": "Sixto Feliciano Arrejin — Information Systems Engineer & Full Stack Developer",
+    "description": "Portfolio of Sixto Feliciano Arrejin. Information Systems Engineer (UTN-FRRe), builder of web and mobile digital products, cloud platforms, and real-world software solutions."
   },
   "nav": {
     "about": "About",
     "skills": "Skills",
-    "projects": "Projects",
-    "awards": "Awards",
-    "contact": "Contact"
+    "projects": "Work",
+    "experience": "Experience",
+    "awards": "Achievements",
+    "contact": "Contact",
+    "status": "Available · Remote"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "greeting": "Sixto Feliciano Arrejin · Corrientes, Argentina",
     "name": "Sixto Feliciano Arrejin",
-    "title": "Full Stack Developer",
-    "subtitle": "React · Node.js · TypeScript · Cloud & DevOps",
-    "description": "Information Systems Engineer focused on building efficient solutions with modern technologies, agile methodologies, and DevOps culture.",
-    "cta_projects": "View projects",
-    "cta_contact": "Get in touch",
-    "cta_resume": "Resume"
+    "headline_1": "Turning complex ideas into",
+    "headline_italic": "digital products",
+    "headline_2": "that feel effortless to use.",
+    "title": "Information Systems Engineer & Full Stack Developer",
+    "subtitle": "Web · Mobile Apps · Cloud & DevOps · Data & AI",
+    "description": "I design and build web platforms, mobile apps published on Google Play, and cloud systems crafted to solve real problems for people, businesses, and institutions.",
+    "cta_projects": "Explore projects",
+    "cta_contact": "Start a conversation",
+    "cta_resume": "Download CV",
+    "scroll_hint": "Scroll to explore",
+    "stat_gpa_label": "Engineering GPA (UTN)",
+    "stat_projects_label": "Systems & Products",
+    "stat_award_label": "LatAm Innovation Rally"
   },
   "about": {
-    "title": "About me",
-    "bio": "Full Stack Developer and Information Systems Engineer (UTN-FRRe) focusing on React, Node.js, and TypeScript.\n\nI developed and deployed a complete web platform for the UTN-FRRe Secretariat of Science and Technology, covering everything from REST API design to UI implementation. Additionally, I was part of the core team behind Elepad, a social impact mobile app published on the Google Play Store.\n\nI am passionate about building efficient solutions using agile methodologies and DevOps culture (Docker, CI/CD, Cloud). I am currently looking to join a team where I can build real products, learn quickly, and add value.",
+    "tag": "01 — About me",
+    "title_1": "Engineering focused on",
+    "title_italic": "people and product",
+    "bio": "I am an Information Systems Engineer graduated from UTN — Facultad Regional Resistencia (GPA 8.55/10, 2025 Flag Bearer Escort) and a Full Stack & Mobile Developer.\n\nI enjoy owning the full lifecycle of a product: from understanding the real problem a client or user needs to solve, designing a clean interface anyone can navigate without a manual, to building a resilient cloud architecture that runs fast and reliably.\n\nI led the development of the official platform for the Secretariat of Science and Technology at UTN-FRRe, co-created Elepad (an award-winning mobile app for older adults published on Google Play), and build custom software for businesses and teams.",
+    "id_role": "SYSTEMS ENGINEER · FULL STACK",
+    "id_tap_flip": "Click to flip ID card ↻",
+    "id_tap_back": "Click to flip back ↻",
+    "id_summary_title": "In short",
+    "id_summary_1": "I build end-to-end web and mobile applications from scratch.",
+    "id_summary_2": "I prioritize clean, intuitive interfaces for everyday users.",
+    "id_summary_3": "I automate cloud deployments and pipelines for maximum reliability.",
+    "id_summary_4": "I collaborate in agile teams with clear, direct communication.",
+    "facts_title": "Quick facts",
     "location": "Corrientes, Argentina",
     "location_label": "Location",
-    "remote": "Available for remote work",
+    "remote": "Available for remote work and projects",
     "education": "Information Systems Engineer",
     "education_label": "Education",
     "university": "Universidad Tecnológica Nacional — Facultad Regional Resistencia",
-    "gpa": "GPA: 8.55/10",
+    "gpa": "Overall GPA: 8.55 / 10",
     "degree_analyst": "University Software Developer Analyst (ADUSI)",
-    "degree_analyst_date": "March 2021 – July 2024",
+    "degree_analyst_date": "2021 – 2024",
     "degree_engineer": "Information Systems Engineering",
-    "degree_engineer_date": "March 2021 – March 2026",
+    "degree_engineer_date": "2021 – 2026",
     "languages_label": "Languages",
     "languages": [
       "Spanish (Native)",
-      "English (Intermediate, technical use)"
+      "English (Intermediate · Technical reading & communication)"
     ],
-    "flag_bearer": "Flag Bearer Escort 2025"
+    "flag_bearer": "UTN Flag Bearer Escort 2025",
+    "quote": "“The best software isn't the one with the most complex tech, but the one that makes what used to feel hard feel simple.”"
   },
   "skills": {
-    "title": "Technical Skills",
+    "tag": "04 — Technologies & Tools",
+    "title": "Technologies &",
+    "title_italic": "tools",
+    "subtitle": "Select any technology to inspect how I apply it and which real portfolio projects implement it.",
+    "filter_all": "All",
     "languages": "Languages",
-    "frontend": "Frontend",
-    "backend": "Backend & DB",
+    "frontend": "Frontend & Mobile",
+    "backend": "Backend & Data",
     "devops": "DevOps & Cloud",
-    "data": "Data & BI",
-    "tools": "Tools & Methodologies"
+    "data": "BI, Data & AI",
+    "tools": "Management & Quality",
+    "inspector_tag": "TECHNOLOGY SPECIMEN",
+    "inspector_used_in": "Applied in portfolio projects",
+    "inspector_no_projects": "Used across system architecture, software development, and professional workflows."
   },
   "projects": {
-    "title": "Projects",
-    "view_more": "View details",
+    "tag": "02 — Selected Work",
+    "title": "Real-world projects &",
+    "title_italic": "case studies",
+    "subtitle": "Every project started from a concrete need: from real estate agencies and university secretariats to mobile apps on Google Play and resilient cloud infrastructure.",
+    "filter_all": "All",
+    "view_more": "Read case study",
     "back": "Back to projects",
-    "type_professional": "Professional",
-    "type_academic": "Academic",
-    "type_thesis": "Final Degree Project",
-    "type_personal": "Personal",
+    "type_professional": "Real Client · Production",
+    "type_academic": "Engineering & Cloud",
+    "type_thesis": "Capstone · Google Play",
+    "type_personal": "Product & Open Source",
     "team": "Team of {count} people",
+    "solo": "Solo development",
     "links_github": "Source code",
-    "links_live": "Live demo",
-    "links_web": "Web",
-    "links_playstore": "Google Play Store",
-    "features_title": "Implemented features",
-    "stack_title": "Tech Stack",
-    "cat_frontend": "Frontend",
-    "cat_backend": "Backend",
-    "cat_database": "Database & Data",
-    "cat_devops": "DevOps & other tools",
-    "documents_title": "Documentation & Resources",
-    "read_more": "Read more...",
-    "read_less": "Read less",
+    "links_live": "Open live demo",
+    "links_web": "Visit live website",
+    "links_playstore": "View on Google Play",
+    "metric_tag": "METRIC",
+    "gallery_tag": "INTERFACE GALLERY",
+    "gallery_caption": "SYSTEM SCREENSHOTS",
+    "expand_image": "Expand image",
+    "problem_tag": "THE PROBLEM / NEED",
+    "problem_title": "What challenge were we solving?",
+    "solution_tag": "THE IMPLEMENTED SOLUTION",
+    "solution_title": "How does it work in practice?",
+    "capabilities_tag": "KEY CAPABILITIES",
+    "capabilities_title": "What the system enables day to day",
+    "video_tag": "VIDEO DEMO",
+    "video_title": "Walkthrough of the system in action",
+    "technical_tag": "ENGINEERING & ARCHITECTURE",
+    "technical_title": "Technical specifications & implementation details",
+    "technical_subtitle": "For technical readers: stack breakdown by layer, engineering features, architecture diagrams, database schemas, and downloadable documentation.",
+    "features_title": "Detailed technical features implemented",
+    "stack_title": "Tech Stack by Layer",
+    "cat_frontend": "Frontend & UI",
+    "cat_backend": "Backend & APIs",
+    "cat_database": "Database & Persistence",
+    "cat_devops": "DevOps, Cloud & Observability",
+    "documents_title": "Technical Documentation & Reports (PDF)",
+    "prev_project": "Previous project",
+    "next_project": "Next project",
+    "cta_banner_title": "Looking to build a similar solution or discuss this project?",
+    "cta_banner_sub": "Reach out directly to talk about how we can bring your product or team's vision to life.",
+    "cta_banner_btn": "Start a conversation",
+    "read_more": "Read full description",
+    "read_less": "Show less",
     "arch_title": "System Architecture",
     "arch_desc": "The platform is structured under a decoupled and multi-layered software architecture design, separating presentation logic (React Frontend), business logic and persistence (Node.js/Express Backend with Prisma ORM), and the relational database engine (PostgreSQL). Everything is deployed independently in the cloud.",
     "db_schema_title": "Database Design & Data Model",
@@ -128,9 +181,38 @@
     "bi_powerbi_desc": "Executive dashboard consolidated in Power BI that interactively presents ROI analysis, sales by genre, geographical maps, and compliance metrics, enabling Drill-down, Roll-up, Slice, and Dice operations.",
     "duo-propiedades": {
       "dateRange": "June 2026 - Present",
-      "title": "DÚO Propiedades — Landing & Real Estate Catalog",
-      "description": "Mobile-first real estate platform featuring an interactive catalog, valuation requests, and an administrative dashboard built on serverless architecture.",
+      "clientOrContext": "DÚO Propiedades (Pirané, Formosa)",
+      "badge": "In Production · Real Client",
+      "title": "DÚO Propiedades",
+      "subtitle": "Real Estate Platform, Interactive Catalog & Management Dashboard",
+      "description": "Web platform designed to digitize the property catalog, receive online valuation requests, and manage listings effortlessly from any device.",
       "long_description": "DÚO Propiedades is a comprehensive digital solution designed to digitize the property catalog, attract new owners via online valuation requests, and optimize the commercial operations of the agency in Pirané, Formosa.\n\nThe system was architected using a decoupled and scalable Serverless infrastructure, hosting database, authentication, media storage, and server environments on high-availability cloud platforms.\n\nPhase 1 is fully completed and deployed to production, delivering an institutional mobile-first landing page, a properties catalog with advanced search and filtering, a web form to capture valuation requests, and a secured internal administrative panel to manage property inventory (CRUD) and dynamic states (Available, Reserved, Under Negotiation).",
+      "challenge": "The real estate agency needed a clear digital channel to receive inquiries from ad campaigns, showcase an up-to-date catalog of houses, land, and commercial spaces, and capture property owners interested in appraisals or selling while keeping operational costs low.",
+      "solution": "We built a mobile-first platform with three integrated modules: a commercial home page with quick actions (Buy, Rent, Appraise), a public catalog with dynamic filters and live statuses, and an internal panel where the agency uploads photos, edits listings, and manages valuation requests.",
+      "highlights": [
+        { "metric": "3 Flows", "label": "Buying, Renting, and Online Valuation" },
+        { "metric": "Live State", "label": "Statuses: Available, Reserved, or Negotiating" },
+        { "metric": "Self-Managed", "label": "Internal panel to upload and edit properties" },
+        { "metric": "Mobile-First", "label": "Tailored for mobile and social media inquiries" }
+      ],
+      "key_features": [
+        {
+          "title": "Interactive Catalog with Smart Filters",
+          "description": "Visitors search and filter properties by operation type, category (Houses, Land, Commercial), location, price range, and area in square meters."
+        },
+        {
+          "title": "Property Listings with Live Status",
+          "description": "Each property displays a photo gallery, available utilities, technical specifications, map location, and real-time commercial status badges."
+        },
+        {
+          "title": "Online Valuation Request Flow",
+          "description": "Guided form for property owners looking to appraise or sell their property, capturing key characteristics and their WhatsApp contact."
+        },
+        {
+          "title": "Internal Administration Dashboard",
+          "description": "Private portal allowing the agency team to create listings, upload photos, and update commercial statuses without relying on technical support."
+        }
+      ],
       "features": [
         "Responsive, mobile-first web interface built with Next.js, React, and TypeScript for SEO optimization and advertising campaigns.",
         "Interactive catalog with smart dynamic search and advanced filtering by property type (Houses, Land, Commercial), location, price, and size (m²).",
@@ -145,9 +227,38 @@
     },
     "datebox": {
       "dateRange": "April 2026 - Present",
-      "title": "Datebox — Social Outings Platform",
-      "description": "Mobile platform with AI recommendations and B2B marketing to coordinate group outings, sync calendars, and discover local spots.",
-      "long_description": "Datebox is a mobile platform designed to simplify the organization of group outings and social events. The application automates finding open slots in friends' calendars and utilizes smart recommendation algorithms to suggest restaurants, events, and local spots.\n\nBesides facilitating group coordination and reducing indecisiveness, it integrates a B2B advertising model that enables local businesses and venues to promote their services directly to groups with high consumption intent in real-time.\n\nCurrently, the project is under active development as a Minimum Viable Product (MVP).",
+      "clientOrContext": "Own Product · Pre-incubated at EBT Chaco Program",
+      "badge": "Mobile App & Merchant Portal",
+      "title": "DateBox",
+      "subtitle": "Mobile App for Group Outings & Local Merchant Platform",
+      "description": "Mobile app and merchant portal that simplifies planning outings with friends: matches free time slots, suggests local plans with AI, and connects venues with groups.",
+      "long_description": "Datebox is a mobile platform designed to simplify the organization of group outings and social events. The application automates finding open slots in friends' calendars and utilizes smart recommendation algorithms to suggest restaurants, events, and local spots.\n\nBesides facilitating group coordination and reducing indecisiveness, it integrates a B2B advertising model that enables local businesses and venues to promote their services directly to groups with high consumption intent in real-time.\n\nCurrently, the project features a cross-platform mobile application and a web administration portal for local businesses.",
+      "challenge": "Coordinating a group outing often gets stuck trying to match everyone's schedule and deciding where to go. Meanwhile, local restaurants, bars, and cultural venues struggle to reach groups actively planning an outing in their area.",
+      "solution": "We built DateBox: a mobile app where group members mark their free time slots to find matches automatically, receive AI-powered activity suggestions based on preferences and budget, save shared photo albums, and discover local promotions published through a web merchant portal.",
+      "highlights": [
+        { "metric": "App + Web", "label": "Cross-platform mobile app + Merchant web portal" },
+        { "metric": "Group Sync", "label": "Automatic detection of shared free time slots" },
+        { "metric": "AI Agents", "label": "Suggestions tailored to taste, area, and budget" },
+        { "metric": "B2B Channel", "label": "Web dashboard for bars, restaurants, and events" }
+      ],
+      "key_features": [
+        {
+          "title": "Schedule Matching & Group Voting",
+          "description": "Each member marks their available time slots and the app automatically identifies the days and times when everyone can make it."
+        },
+        {
+          "title": "AI-Powered Dining & Activity Suggestions",
+          "description": "A recommendation engine analyzes group preferences, location, and budget to propose bars, restaurants, events, and activities."
+        },
+        {
+          "title": "Shared Albums & Memories",
+          "description": "Allows friends to upload photos from each outing and build a shared timeline of places visited together."
+        },
+        {
+          "title": "Web Portal for Local Businesses",
+          "description": "Platform where restaurants and event organizers publish promotions and highlight their venues inside the mobile app."
+        }
+      ],
       "features": [
         "Multiplatform native mobile development using React Native and Expo for iOS and Android (MVP phase).",
         "High-performance serverless backend architecture developed with Hono and deployed on Cloudflare Workers.",
@@ -160,11 +271,40 @@
     },
     "chess-study": {
       "dateRange": "May 2026",
-      "title": "Chess Study — SPA & Interactive Board",
-      "description": "Unified PDF book reader and interactive analysis chessboard in a single screen for seamless chess studying.",
+      "clientOrContext": "Open Source Web Development",
+      "badge": "Web App · Split-Screen",
+      "title": "Chess Study",
+      "subtitle": "Split-Screen PDF Chess Book Reader & Interactive Analysis Board",
+      "description": "Web application uniting a high-speed PDF chess book reader with an interactive analysis chessboard and automatic local browser storage in a single screen.",
       "long_description": "Chess Study is a smooth Single-Page Application (SPA) tailor-made to solve one of the most common frictions for chess students: having to constantly switch windows between a digital book and an analysis program.\n\nBy uniting a high-performance PDF viewer—independently driven by Mozilla's PDF.js rendering engine at 60 FPS—and an interactive smart chessboard powered by React in a responsive split-screen interface, it lets users read, drag pieces, replicate, and analyze chess positions seamlessly. It also features robust offline persistence via IndexedDB capability: you upload a book once, and your local browser caches it forever, instantly remembering the last page you were on.",
+      "challenge": "Studying chess with digital books usually forces players to constantly alt-tab between a PDF reader and a separate chessboard window, losing their reading flow and having to find their page again every session.",
+      "solution": "We built a resizable split-screen web app: on one side you read the PDF book smoothly with automatic local saving; on the other you replay and analyze variations on an interactive chessboard with legal move validation and navigable move history.",
+      "highlights": [
+        { "metric": "Split-Screen", "label": "PDF book and chessboard side by side in one tab" },
+        { "metric": "60 FPS", "label": "Smooth rendering of large PDFs via Web Workers" },
+        { "metric": "Local Save", "label": "Remembers your books and last read page offline" },
+        { "metric": "5 Themes", "label": "Custom board themes + Light and Dark modes" }
+      ],
+      "key_features": [
+        {
+          "title": "Resizable Split-Screen Workspace",
+          "description": "Draggable divider to adjust book and board widths on desktop, option to swap sides, and stacked layout on mobile."
+        },
+        {
+          "title": "Analysis Mode & Free Board Editor",
+          "description": "Switch between a free drag-and-drop editor to set up positions and an analysis mode that validates legal moves and tracks algebraic notation."
+        },
+        {
+          "title": "Built-in Classic Chess Library",
+          "description": "Includes all 4 volumes of Roberto Grau's classic chess series ready to read with one click, plus drag-and-drop support for any personal PDF."
+        },
+        {
+          "title": "Persistent Browser Memory",
+          "description": "Stores your books locally in IndexedDB without uploading files to external servers and reopens every book on the exact page where you left off."
+        }
+      ],
       "features": [
-        "Fluid 'Split-Screen' interactive interface with draggable resizer and glassmorphic styling that automatically stacks on mobile formats.",
+        "Fluid 'Split-Screen' interactive interface with draggable resizer and styling that automatically stacks on mobile formats.",
         "Smart dual mode (Free Drag-and-Drop Editor and Analysis Mode regulated by chess.js legal move validation).",
         "Pre-compiled high-performance PDF viewer executing heavy rendering workload on a background Web Worker.",
         "Customized experience: multiple chessboard square themes (Cyberpunk, Ocean, Wood, etc.) and intelligent Dark/Light mode integration.",
@@ -174,13 +314,42 @@
         "Layout configuration: swap PDF/board panels, rotate piece perspective, and load custom PDFs via drag-and-drop."
       ],
       "arch_title": "Front-End Architecture & Web-Native Persistence",
-      "arch_desc": "The application was built leveraging the React 18 ecosystem paired with Vite for lightning-fast bundling. The primary technical challenge was orchestrating the highly demanding rendering of massive PDF files alongside a reactive chessboard without dropping UI frames or locking the main thread. This was mitigated by isolating the PDF viewer inside a controlled context and offloading the heavy lift to background message-passing. In tandem, an asynchronous cache layer structured on top of IndexedDB guaranteed that blocking resources loaded cleanly and locally after a first visit."
+      "arch_desc": "The application was built leveraging the React ecosystem paired with Vite for lightning-fast bundling. The primary technical challenge was orchestrating the highly demanding rendering of massive PDF files alongside a reactive chessboard without dropping UI frames or locking the main thread. This was mitigated by isolating the PDF viewer inside a controlled context and offloading the heavy lift to background message-passing. In tandem, an asynchronous cache layer structured on top of IndexedDB guaranteed that blocking resources loaded cleanly and locally after a first visit."
     },
     "elepad": {
       "dateRange": "March 2025 - March 2026",
-      "title": "Elepad — Mobile App for Senior Citizens",
-      "description": "Mobile app designed to foster the emotional, cognitive, and social well-being of older adults through an accessible digital environment.",
+      "clientOrContext": "Engineering Capstone Project · Google Play Store",
+      "badge": "Google Play · 3rd Place LatAm Rally",
+      "title": "Elepad",
+      "subtitle": "Mobile App for Older Adults, Cognitive Games & AI Family Memory Album",
+      "description": "Mobile app published on Google Play that connects older adults with their families through an accessible interface, daily memory games, and an AI-assisted family album.",
       "long_description": "Elepad is a mobile application designed to foster the emotional, cognitive, and social well-being of senior citizens through an accessible and interactive digital environment. Through a simplified interface and innovative tools such as AI-powered memory synthesis (Google Gemini), it seeks to build meaningful intergenerational bridges within the family.\n\nOriginating as a winning proposal at the Latin American Innovation Rally 2024 (3rd place, Social Impact), it evolved into the Final Degree Project for the Information Systems Engineering program (UTN-FRRe). Available on the Google Play Store.",
+      "challenge": "Most modern mobile apps use complex menus and small text that make them frustrating for older adults to navigate, creating a barrier to digital inclusion and everyday connection with their families.",
+      "solution": "Born at the 2024 Latin American Innovation Rally (3rd place in Social Impact) and developed as our Information Systems Engineering Capstone Project, Elepad provides an accessible interface, daily cognitive stimulation games, activity tracking, and a Google Gemini module that helps turn family photos and stories into organized memories.",
+      "highlights": [
+        { "metric": "Google Play", "label": "Published on the official Android store" },
+        { "metric": "3rd Place", "label": "Social Impact category at LatAm Rally 2024" },
+        { "metric": "AI Album", "label": "Memory storytelling assisted by Google Gemini" },
+        { "metric": "Capstone", "label": "Systems Engineering Thesis (UTN-FRRe)" }
+      ],
+      "key_features": [
+        {
+          "title": "Accessible, Senior-Friendly Interface",
+          "description": "Clear typography, generous touch targets, and straightforward navigation designed so older adults can use the app comfortably."
+        },
+        {
+          "title": "Cognitive Games & Family Progress",
+          "description": "Includes daily games to exercise memory, attention, and logic (Memory, Sudoku, Lights Out) with progress shared across the family group."
+        },
+        {
+          "title": "The Album: AI-Assisted Family Memories",
+          "description": "Uses Google Gemini to transform everyday photos and anecdotes into warm, organized stories inside a shared family album."
+        },
+        {
+          "title": "Real-Time Family Synchronization",
+          "description": "Connects family members and older adults through push notifications, Google sign-in, and secure cloud storage."
+        }
+      ],
       "features": [
         "Cross-platform mobile development (iOS/Android/Web) using React Native, Expo, and TypeScript",
         "Hyper-scalable Serverless Backend architecture using Cloudflare Workers, Hono, and OpenAPI validation",
@@ -197,9 +366,38 @@
     },
     "scyt-utn": {
       "dateRange": "April 2023 - April 2026",
+      "clientOrContext": "Secretariat of Science & Technology — UTN Resistencia Regional Faculty",
+      "badge": "Institutional System · UTN",
       "title": "SCyT Platform — UTN FRRe",
-      "description": "Comprehensive web platform for centralizing administrative processes and tracking research projects.",
+      "subtitle": "Comprehensive Management System for Research Projects, Researchers & Agreements",
+      "description": "Institutional web platform unifying the Faculty's scientific administration: tracking research projects, research staff, technological agreements, and budgets.",
       "long_description": "I designed and developed the entire comprehensive web platform for the Secretariat of Science and Technology (SCyT) of the National Technological University - Resistencia Regional Faculty (UTN-FRRe). The project was conceived as a strategic solution to address the dispersion of critical information regarding researchers, projects, and agreements (which were previously managed inefficiently across isolated spreadsheets). The system centralizes and unifies all scientific administration within the Faculty, enabling detailed tracking of research projects (both internal PIDs and external), management of teaching and research personnel, and administration of technological linkages, agreements, and financial disbursements.\n\nFormally accredited as my Supervised Professional Practice (PPS), I led the complete software development lifecycle: requirements gathering (5W+2H), conceptual analysis, relational database design (ERD), interface prototyping (UX/UI), full-stack development (React, Node.js, Express, Prisma, PostgreSQL), and continuous deployment in a Cloud environment (Render).",
+      "challenge": "The Secretariat managed hundreds of research projects, staff records, agreements, and financial disbursements across isolated Excel spreadsheets, making it hard to cross-reference historical data, audit budgets, or quickly check a project's status.",
+      "solution": "Working directly with the Secretariat's directors, I designed and built an end-to-end centralized web platform where administrative staff register projects (internal PIDs and external), assign researchers with role histories, manage technological agreements, and track every financial disbursement.",
+      "highlights": [
+        { "metric": "4 Modules", "label": "Projects, Researchers, Agreements, and Finance" },
+        { "metric": "100% Digital", "label": "Replaced scattered spreadsheets with one database" },
+        { "metric": "End-to-End", "label": "Requirements, design, code, and Cloud deployment" },
+        { "metric": "UTN-FRRe", "label": "Accredited as Supervised Professional Practice" }
+      ],
+      "key_features": [
+        {
+          "title": "Scientific Project Tracking (PIDs & External)",
+          "description": "Register research projects, check operational status, filter by category or period, and access complete technical records in seconds."
+        },
+        {
+          "title": "Researcher Profiles & Role History",
+          "description": "Manage directors, co-directors, faculty, and fellows while preserving the full history of which projects each researcher participated in."
+        },
+        {
+          "title": "Technological Linkage & Agreements Management",
+          "description": "Centralizes strategic agreements signed with external companies and institutions, linking them directly to research teams."
+        },
+        {
+          "title": "Budget & Disbursement Control",
+          "description": "Records budget allocations for each project and tracks executed and pending fund disbursements with full accountability."
+        }
+      ],
       "features": [
         "Design and implementation of the Project Management Module, allowing registration, editing, advanced search, and operational status tracking of scientific projects (internal PIDs and external).",
         "Development of the Researchers & Members Module, enabling the assignment of directors, co-directors, and collaborators with specific roles and historical participation tracking.",
@@ -217,9 +415,38 @@
     },
     "devops-kubernetes": {
       "dateRange": "October - November 2025",
-      "title": "DevOps: Kubernetes & Observability",
-      "description": "Kubernetes orchestration, high availability, and full observability with OpenTelemetry, Prometheus, and Grafana.",
+      "clientOrContext": "Information Systems Engineering — DevOps Course (UTN-FRRe)",
+      "badge": "K8s Cluster · High Availability",
+      "title": "Kubernetes & Observability",
+      "subtitle": "High-Availability Microservices Orchestration with Real-Time Monitoring",
+      "description": "Deployment of a distributed web platform on a 3-node Kubernetes cluster with fault tolerance and live metrics and tracing dashboards (Prometheus, OpenTelemetry, and Grafana).",
       "long_description": "Academic project building on the same SmartCatalog system from TP1 (orchestration-and-observability branch), elevated to Kubernetes local orchestration (K3d) and production-grade observability. We deployed a tp2-cluster with 3 nodes (1 control-plane + 2 workers) and 2 Flask backend replicas distributed via strict podAntiAffinity — ensuring they never coexist on the same worker. The observability stack integrates three fundamental pillars: metrics with Prometheus (+ kube-state-metrics + cAdvisor), distributed traces with OpenTelemetry SDK → OTEL Collector → Tempo, and unified visualization in Grafana.\n\nCustom business metrics (RPS, p95/p50 latency), resilience validation via resource saturation, and automated health checks were implemented. The project was delivered as a live demonstration showing the cluster operating in real time.",
+      "challenge": "When a web application experiences traffic spikes or a server node fails, the service can go offline completely if it lacks distributed replicas and real-time visibility into bottlenecks.",
+      "solution": "We orchestrated the platform across a 3-node Kubernetes cluster with replicas separated on different worker nodes so if one fails, the other keeps serving users without interruption. We also wired live Grafana dashboards tracking every request, latency, and memory metric.",
+      "highlights": [
+        { "metric": "3 K8s Nodes", "label": "1 Control-Plane + 2 Workers running 8 services" },
+        { "metric": "Zero Downtime", "label": "Distributed replicas with automatic self-healing" },
+        { "metric": "Telemetry", "label": "Live metrics (Prometheus) + Traces (OpenTelemetry)" },
+        { "metric": "Grafana", "label": "Real-time dashboards for traffic and p95 latency" }
+      ],
+      "key_features": [
+        {
+          "title": "Fault-Tolerant Service Continuity (High Availability)",
+          "description": "The backend runs duplicated across separate nodes: if one instance fails or saturates, traffic automatically routes to the healthy replica while Kubernetes spins up a replacement."
+        },
+        {
+          "title": "End-to-End Request Tracing (Distributed Traces)",
+          "description": "Follow the exact path of a user action from the web interface through the API to the Redis database to pinpoint slow operations immediately."
+        },
+        {
+          "title": "Business & Infrastructure Monitoring",
+          "description": "Measures real user votes per second, 95th-percentile response times, and CPU/RAM consumption per container."
+        },
+        {
+          "title": "Stress Testing & Resource Safeguards",
+          "description": "Configured memory and CPU limits per service to verify how the cluster automatically recovers under extreme load."
+        }
+      ],
       "features": [
         "K3d 3-node cluster: 1 control-plane + 2 workers running 8 distributed microservices (Frontend, Backend x2, Redis, Prometheus, Tempo, OTEL Collector, Grafana, kube-state-metrics)",
         "Guaranteed High Availability: podAntiAffinity with requiredDuringSchedulingIgnoredDuringExecution prevents the 2 backend replicas from sharing a node. Readiness probes every 5s + liveness probes every 10s for automatic auto-restart",
@@ -233,9 +460,38 @@
     },
     "devops-azure": {
       "dateRange": "August - September 2025",
-      "title": "DevOps: Containerization & CI/CD on Azure",
-      "description": "Web application containerization and CI/CD pipeline with GitHub Actions for Azure deployment.",
+      "clientOrContext": "Information Systems Engineering — DevOps Course (UTN-FRRe)",
+      "badge": "Cloud CI/CD · Microsoft Azure",
+      "title": "Containerization & CI/CD on Azure",
+      "subtitle": "Automated Testing, Docker Packaging & Continuous Cloud Deployment",
+      "description": "Full lifecycle automation for a web application (Next.js, Python Flask, and Redis): from pushing a code change to running automated tests and deploying on Microsoft Azure.",
       "long_description": "Designed and implemented the containerization architecture and complete CI/CD workflow for SmartCatalog, a microservice-based web application consisting of a modern Next.js frontend (with React 19 and Tailwind CSS 4), a robust Python Flask API backend, and a high-speed caching and storage service with Redis. The project involved designing consistent environments using Docker and Docker Compose for local development, structuring a Continuous Integration (CI) pipeline in GitHub Actions to run automated backend tests with Pytest (utilizing a temporary in-memory Redis service).\n\nWe also configured a Continuous Deployment (CD) pipeline that automates the multi-stage Docker image build-and-push to Azure Container Registry (ACR) followed by dynamic deployment and orchestration on Azure Container Instances (ACI). This ensures that every push to the deployment branch securely automates the entire software life cycle on the Microsoft Azure cloud.",
+      "challenge": "Deploying updates manually to a server often leads to human error, environment mismatches between developer laptops and production, and slow detection when a change breaks an existing feature.",
+      "solution": "We packaged all three application services into identical Docker containers and built an automated GitHub Actions workflow: on every push, the system runs automated tests and deploys the updated containers to Microsoft Azure with zero manual steps.",
+      "highlights": [
+        { "metric": "3 Services", "label": "Next.js Frontend, Flask API, and Redis in containers" },
+        { "metric": "100% Auto", "label": "Pytest suite and cloud deploy triggered on every push" },
+        { "metric": "Azure Cloud", "label": "Private Registry (ACR) + Elastic Containers (ACI)" },
+        { "metric": "Persistent", "label": "Cloud storage configured so votes and stats never reset" }
+      ],
+      "key_features": [
+        {
+          "title": "Identical Environments Across Local & Cloud",
+          "description": "With a single Docker Compose command, any developer spins up the web app, API, and database locally with the exact same configuration used in production."
+        },
+        {
+          "title": "Automated Quality Gate Before Release",
+          "description": "Every time new code is pushed, GitHub Actions spins up a temporary test environment and runs automated tests to verify the API behaves properly."
+        },
+        {
+          "title": "Zero-Touch Deployment to Microsoft Azure",
+          "description": "Once tests pass, the pipeline builds lightweight images, stores them in Azure's private registry, and updates the live cloud containers in minutes."
+        },
+        {
+          "title": "SmartCatalog App (Blind AI Model Voting)",
+          "description": "Lets users blindly vote on which AI-generated product description reads best, displaying real-time model performance charts."
+        }
+      ],
       "features": [
         "Multi-Service Containerization: Created optimized multi-stage Dockerfiles to build the Next.js (Node.js) frontend and Python Flask backend in isolation, minimizing final image sizes.",
         "Local Orchestration with Docker Compose: Configured a reproducible local environment that links and securely connects the Frontend, Backend, and Redis service using secure passwords and persistence configured via environment variables.",
@@ -249,9 +505,38 @@
     },
     "data-warehouse": {
       "dateRange": "April - June 2025",
+      "clientOrContext": "Information Systems Engineering — Enterprise Data Management (UTN-FRRe)",
+      "badge": "Data Warehouse · Power BI",
       "title": "Data Warehouse & BI: Record Label",
-      "description": "End-to-end Business Intelligence (BI) solution for a record label, encompassing multidimensional modeling, SSIS ETL integration with SCD history, SSAS OLAP cubes, and interactive Power BI dashboards.",
+      "subtitle": "Data Warehouse, ETL Pipelines, OLAP Cubes & Executive Power BI Dashboards",
+      "description": "End-to-end Business Intelligence solution transforming scattered music sales and production cost records into interactive executive dashboards for decision-making.",
       "long_description": "Developed a complete and robust Business Intelligence (BI) solution to optimize strategic decision-making for a record label distributing music records to global retail stores. The solution implements the three main stages of enterprise data analysis:\n\n1) Dimensional Modeling (Part 1): Designed the conceptual and logical schemas utilizing the 'multidim' methodology and Microsoft SQL Server. Structured the Data Warehouse around two main fact tables (HechoVentas for retail orders and HechoProducciones for album launch costs) and eight normalized dimensions, ensuring daily granularity and referential integrity via surrogate default keys (-1).\n\n2) ETL Integration (Part 2): Built automated extraction, transformation, and load (bulk and incremental idempotent) pipelines inside SQL Server Integration Services (SSIS), deploying a Staging Area for data scrubbing. Managed historical changes by applying Slowly Changing Dimensions (SCD Type 1 for basic overwrites and Type 2 for active/ended validity ranges in DimArtista and DimBanda). Integrated location data cleansing using Data Quality Services (DQS).\n\n3) Multidimensional Analysis & BI (Part 3): Engineered a multidimensional OLAP Cube in SQL Server Analysis Services (SSAS), configuring geographical and temporal hierarchies alongside custom calculated MDX measures (such as Unmet Demand and performance KPIs). Connected this analytical model to develop an interactive Power BI Executive Dashboard consolidating ROI metrics per artist/album, sales by music genre, and region-wide demand heatmaps using real-time Drill-down, Roll-up, Slice, and Dice operations.",
+      "challenge": "The record label held separate operational records for retail store orders, shipments, and studio production costs, making it difficult to see which albums or artists delivered the highest return on investment (ROI) or which regions had unfulfilled demand.",
+      "solution": "We built a complete SQL Server Data Warehouse with automated data cleansing and loading pipelines (ETL), a fast multidimensional OLAP cube, and an executive Power BI dashboard where leadership can filter sales, costs, and demand by country, year, genre, or band.",
+      "highlights": [
+        { "metric": "3 BI Stages", "label": "Dimensional Model, ETL Pipelines, and OLAP Cube" },
+        { "metric": "2 Facts + 8 Dim", "label": "Retail store sales and album production costs" },
+        { "metric": "SCD History", "label": "Historical tracking of artist and band changes" },
+        { "metric": "Power BI", "label": "Interactive ROI, map, and demand dashboards" }
+      ],
+      "key_features": [
+        {
+          "title": "Automated Data Unification & Cleansing (ETL)",
+          "description": "Consolidates data from multiple sources, standardizes country and location names automatically, and updates the warehouse without duplicating records."
+        },
+        {
+          "title": "Historical Change Tracking",
+          "description": "Tracks when an artist or band changes attributes using effective date ranges so historical sales reports remain accurate."
+        },
+        {
+          "title": "Profitability & Unmet Demand Indicators",
+          "description": "Automatically calculates Return on Investment (ROI) comparing production costs against sales, and highlights stores that ordered more records than shipped."
+        },
+        {
+          "title": "Interactive Executive Dashboard in Power BI",
+          "description": "Clear visual reporting with geographical heatmaps, music genre rankings, and dynamic filters to drill down from yearly totals to daily details."
+        }
+      ],
       "features": [
         "Business Dimensional Modeling: Conceptual and physical design using the 'multidim' methodology, structuring a Data Warehouse with two fact tables and eight interconnected dimensions.",
         "Granularity Management: Defined daily granularity for HechoVentas (retail store orders, agreed prices, shipped quantities) and HechoProducciones (album production costs and launch dates).",
@@ -269,9 +554,38 @@
     },
     "play-finder": {
       "dateRange": "March - December 2023",
-      "title": "Play Finder — Sports Booking Management",
-      "description": "Full Stack web platform for court booking management, sports complex administration, and real-time booking analytics.",
+      "clientOrContext": "ADUSI Capstone Project — UTN Resistencia Regional Faculty",
+      "badge": "Full Stack Platform · Azure",
+      "title": "Play Finder",
+      "subtitle": "Sports Court Booking Platform, Complex Management & Analytics",
+      "description": "Web platform connecting players with sports complexes: search live court availability, book time slots online, and manage schedules and revenue.",
       "long_description": "Play Finder is a responsive Full Stack web platform designed to optimize and simplify the booking of sports courts, seamlessly connecting complex owners with sports players. Developed collaboratively by a team of 7 people over 8 three-week sprints using Scrum methodology, it served as the Capstone Project for the University Software Developer Analyst (ADUSI) program at UTN-FRRe.\n\nThe system supports two primary user flows: an owner portal (to manage sports complexes, customize courts, manage hourly pricing, and view dashboard analytics such as popular booking hours and occupancy periods) and a player portal (featuring advanced search, live scheduling, booking confirmation, credit card payment simulation, and automated email notifications). The platform was containerized and deployed on Microsoft Azure.",
+      "challenge": "Booking a sports court often requires back-and-forth calls or messages to check open times, while complex owners spend hours manually writing down reservations and dealing with double-bookings.",
+      "solution": "We built a two-sided web platform: a player portal to search courts by sport, date, and time and book immediately with email confirmation; and an owner portal to configure courts, pricing, and view occupancy statistics.",
+      "highlights": [
+        { "metric": "2 Portals", "label": "Player Booking Experience & Owner Dashboard" },
+        { "metric": "Real-Time", "label": "Automatic validation preventing double-bookings" },
+        { "metric": "Analytics", "label": "Peak hour reports and bookings by time period" },
+        { "metric": "8 Sprints", "label": "Collaborative Scrum development deployed on Azure" }
+      ],
+      "key_features": [
+        {
+          "title": "Live Court Search & Availability",
+          "description": "Players filter sports complexes by discipline (soccer, padel, basketball), date, and time slot, seeing only genuinely available courts."
+        },
+        {
+          "title": "Online Booking & Automated Email Receipts",
+          "description": "Guided reservation flow with simulated deposit checkout, Google sign-in, and instant confirmation sent via email."
+        },
+        {
+          "title": "Complex, Court & Pricing Administration",
+          "description": "Owners register their venues, upload photos, define surface types for each court, and configure opening hours and hourly rates."
+        },
+        {
+          "title": "Owner Analytics Dashboard",
+          "description": "Displays clear charts of the most popular booking hours and reservation volume over time to support business decisions."
+        }
+      ],
       "features": [
         "Decoupled Full Stack architecture: Interactive React.js frontend styled with Chakra UI and a robust Node.js backend using Express and TypeScript.",
         "Relational database modeling with PostgreSQL and Prisma ORM, ensuring high referential integrity and optimized queries for nested complex-to-court relations.",
@@ -292,23 +606,104 @@
       "db_desc": "The PostgreSQL relational database schema was meticulously designed and normalized to guarantee referential integrity. The final model (Sprint 8) maps precise cardinalities among users, subscription plans, complexes, courts, day-to-day schedules, and booking records with payment transactions, enabling high-performance queries and procedural analytics dashboards."
     }
   },
+  "experience": {
+    "tag": "03 — EXPERIENCE & EDUCATION",
+    "title": "The path so",
+    "title_italic": "far.",
+    "subtitle": "Education and roles on one line, oldest first. The spine draws itself as you scroll.",
+    "case_study_cta": "View case study",
+    "live_site_cta": "Visit live website",
+    "playstore_cta": "Google Play",
+    "next_year": "Next",
+    "next_badge": "OPEN TO WORK · NEXT STOP",
+    "next_title_1": "Your",
+    "next_title_italic": "team?",
+    "next_cta": "Let's talk",
+    "items": [
+      {
+        "year": "2021",
+        "period": "Mar 2021 – Mar 2026",
+        "type": "EDUCATION",
+        "role": "Information Systems Engineering",
+        "company": "National Technological University — Resistencia Regional Faculty (UTN-FRRe)",
+        "bullets": [
+          "GPA: 8.55 / 10 — Appointed Flag Bearer Escort (2025) for academic merit",
+          "Intermediate Degree: University Systems Developer Analyst (ADUSI, 2021 – 2024)",
+          "International competition awards: 1st Place Stellar Track (NEA TECH 2026) and 3rd Place Latin American Innovation Rally (2024 & 2026)"
+        ]
+      },
+      {
+        "year": "2023",
+        "period": "Apr 2023 – Apr 2026",
+        "type": "EXPERIENCE",
+        "role": "Full Stack Developer & Process Digitization",
+        "company": "Secretariat of Science & Technology (UTN-FRRe) · Hybrid in Resistencia",
+        "bullets": [
+          "Led requirements gathering with faculty authorities, system architecture, and end-to-end development of the official university R&D management web platform",
+          "Replaced scattered spreadsheets with a 100% auditable system tracking research projects (PIDs), researchers, agreements, and budgets using React.js, TanStack Query, and Chakra UI",
+          "Built a layered REST API in Node.js, Express, and Prisma ORM backed by PostgreSQL with role-based access control (JWT/Bcrypt) and continuous cloud deployment"
+        ],
+        "projectSlug": "scyt-utn"
+      },
+      {
+        "year": "2026",
+        "period": "Apr 2026 – Present",
+        "type": "EXPERIENCE",
+        "role": "Lead Developer & Software Architect",
+        "company": "DateBox · Remote (Team of 4 engineers)",
+        "statusPill": "IN PRODUCTION · PUBLISHED ON GOOGLE PLAY STORE",
+        "bullets": [
+          "Lead cross-platform mobile architecture in React Native + Expo (EAS) and ultra-low-latency serverless backend in Hono on Cloudflare Workers",
+          "Co-developed the group recommendation engine integrating AI agents in Python and LangGraph matching free schedule slots, budget, and location",
+          "Automated end-to-end type-safe API contracts via OpenAPI + Orval and CI/CD pipelines with GitHub Actions"
+        ],
+        "projectSlug": "datebox",
+        "externalUrl": "https://datebox.com.ar"
+      },
+      {
+        "year": "2026",
+        "period": "Jun 2026 – Present",
+        "type": "EXPERIENCE",
+        "role": "Full Stack Developer & Freelance Consultant",
+        "company": "Mandadito & DÚO Propiedades · Remote (Chaco & Formosa)",
+        "statusPill": "PRODUCTION SYSTEMS · ACTIVELY OPEN TO NEW OPPORTUNITIES",
+        "bullets": [
+          "Mandadito (Multi-Role Marketplace & Delivery): Built and hardened the v1.0 web platform (Next.js 16, React 19, Supabase) with 4 role portals, 3-step checkout, and fractional inventory (unit, kg, and liter)",
+          "Transactional Security & Payments: Implemented Mercado Pago OAuth onboarding and split payments, cryptographic anti-replay webhook validation, PostgreSQL RLS policies, and Upstash Redis rate limiting",
+          "DÚO Propiedades (duopropiedades.com.ar): Designed and deployed an end-to-end SSR real estate portal, interactive catalog with dynamic filters, digital appraisal flow, and CRUD dashboard on Vercel and Supabase"
+        ],
+        "projectSlug": "duo-propiedades",
+        "externalUrl": "https://duopropiedades.com.ar"
+      }
+    ]
+  },
   "awards": {
-    "title": "Awards & Certifications",
+    "tag": "05 — Honors & Certifications",
+    "title": "Academic distinctions &",
+    "title_italic": "professional achievements",
+    "rally_badge": "INTERNATIONAL AWARD · 2024",
     "rally_title": "3rd Place — Latin American Innovation Rally 2024",
-    "rally_description": "Social Impact Category · Project Elepad (team Gang of Four, INTECNOR/UTN-FRRe) · October 2024",
+    "rally_description": "Social Impact Category with project Elepad (team Gang of Four, INTECNOR / UTN-FRRe headquarters). 28-hour continuous competition solving real regional challenges.",
+    "flag_badge": "ACADEMIC MERIT · 2025",
+    "flag_title": "Flag Bearer Escort — UTN Resistencia Regional Faculty",
+    "flag_description": "Academic merit distinction in the Information Systems Engineering program with an overall GPA of 8.55 / 10.",
+    "scrum_badge": "AGILE CERTIFICATION · 2024",
     "scrum_title": "Scrum Fundamentals Certified (SFC)",
-    "scrum_description": "SCRUMstudy — Accreditation Body for Scrum and Agile (Credential ID: 1040148) · July 2024",
-    "flag_title": "Flag Bearer Escort 2025",
-    "flag_description": "UTN — Facultad Regional Resistencia (UTN-FRRe) · Overall GPA: 8.55/10"
+    "scrum_description": "SCRUMstudy — Accreditation Body for Scrum and Agile (Credential ID: 1040148). Agile project and team management."
   },
   "contact": {
-    "title": "Contact",
-    "description": "Have a project in mind or want to chat? Feel free to reach out.",
-    "email_label": "Email",
-    "social_label": "Professional networks"
+    "tag": "06 — Contact",
+    "title_1": "Shall we build something",
+    "title_italic": "together?",
+    "description": "I am available to join engineering teams, collaborate on new digital products, or chat about bringing an idea to production.",
+    "email_label": "Direct email",
+    "whatsapp_label": "Direct WhatsApp",
+    "social_label": "Professional profiles",
+    "card_role": "INFORMATION SYSTEMS ENGINEER · FULL STACK & MOBILE",
+    "card_cta": "Send an email"
   },
   "footer": {
-    "built_with": "Built with Next.js, TypeScript, and Tailwind CSS",
+    "built_with": "Designed and built by Sixto Feliciano Arrejin · Next.js & TypeScript",
     "rights": "All rights reserved."
   },
   "theme": {

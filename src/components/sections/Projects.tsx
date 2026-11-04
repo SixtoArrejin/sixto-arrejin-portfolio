@@ -1,160 +1,262 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { ArrowRight, ExternalLink, Globe, Smartphone, Calendar } from "lucide-react";
-import { GithubIcon } from "@/components/ui/Icons";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
-
-
-function TypeBadge({ type, t }: { type: string; t: (key: string) => string }) {
-  return (
-    <span className={`type-badge type-badge--${type}`}>
-      {t(`type_${type}`)}
-    </span>
-  );
-}
 
 export function Projects() {
   const t = useTranslations("projects");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+
+  const filters = [
+    { id: "all", label: t("filter_all") },
+    { id: "professional", label: t("type_professional") },
+    { id: "thesis", label: t("type_thesis") },
+    { id: "personal", label: t("type_personal") },
+    { id: "academic", label: t("type_academic") },
+  ];
+
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((p) => p.type === activeFilter);
 
   return (
-    <section className="py-24" id="projects" style={{ background: "var(--bg-secondary)" }}>
+    <section
+      className="py-24 sm:py-28"
+      id="projects"
+      style={{
+        background: "var(--bg-secondary)",
+        borderBottom: "1px solid var(--border-color)",
+      }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-3xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-sora)" }}
+            transition={{ duration: 0.6 }}
           >
-            {t("title")}
-          </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            <span className="section-tag mb-4">{t("tag")}</span>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-[1.08] mt-3"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {t("title")}{" "}
+              <span
+                className="font-serif-italic font-normal"
+                style={{ color: "var(--accent-blue)" }}
+              >
+                {t("title_italic")}
+              </span>
+            </h2>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="section-divider mb-12" 
-          />
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-sm sm:text-base max-w-md leading-relaxed"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {t("subtitle")}
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project) => (
-            <motion.div
-              key={project.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4, scale: 1.01 }}
-              transition={{ duration: 0.7 }}
-              className="glass-card p-5 flex flex-col group"
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between mb-3">
-                <TypeBadge type={project.type} t={t} />
-                <div className="flex items-center gap-1.5 text-xs opacity-80" style={{ color: "var(--text-muted)" }}>
-                  <Calendar size={13} />
-                  <span>{t(`${project.slug}.dateRange`)}</span>
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3
-                className="text-lg font-bold mb-2 group-hover:text-transparent transition-all duration-300"
+        {/* Category Filter Chips */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {filters.map((f) => {
+            const isActive = activeFilter === f.id;
+            return (
+              <button
+                key={f.id}
+                onClick={() => setActiveFilter(f.id)}
+                className="px-4 py-2 rounded-full text-xs font-mono-tech transition-all duration-200 cursor-pointer active:scale-95"
                 style={{
-                  color: "var(--text-primary)",
-                  fontFamily: "var(--font-sora)",
+                  background: isActive ? "var(--bg-inverted)" : "var(--bg-card)",
+                  color: isActive ? "var(--text-inverted)" : "var(--text-secondary)",
+                  border: `1px solid ${
+                    isActive ? "var(--bg-inverted)" : "var(--border-color)"
+                  }`,
                 }}
               >
-                <span className="group-hover:gradient-text">
-                  {t(`${project.slug}.title`)}
-                </span>
-              </h3>
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
 
-              {/* Description */}
-              <p
-                className="text-sm mb-4 flex-1"
-                style={{ color: "var(--text-muted)" }}
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, index) => {
+            const coverUrl = project.media?.[0]?.url;
+            const numStr = String(index + 1).padStart(2, "0");
+
+            return (
+              <motion.article
+                key={project.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55 }}
+                className="editorial-card rounded-2xl border shadow-sm flex flex-col overflow-hidden group"
+                style={{
+                  background: "var(--bg-card)",
+                  borderColor: "var(--border-color)",
+                }}
               >
-                {t(`${project.slug}.description`)}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.tags.slice(0, 5).map((tag) => (
-                  <span key={tag} className="tech-badge" style={{ fontSize: "0.65rem", padding: "2px 8px" }}>
-                    {tag}
-                  </span>
-                ))}
-                {project.tags.length > 5 && (
-                  <span
-                    className="tech-badge"
-                    style={{ fontSize: "0.65rem", padding: "2px 8px" }}
-                  >
-                    +{project.tags.length - 5}
-                  </span>
-                )}
-              </div>
-
-              {/* Footer: Links + View More */}
-              <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid var(--border-color)" }}>
-                <div className="flex gap-2">
-                  {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-all duration-200 hover:scale-110"
-                      style={{ color: "var(--text-muted)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-blue)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-                    >
-                      <GithubIcon size={16} />
-                    </a>
-                  )}
-                  {project.links.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-all duration-200 hover:scale-110"
-                      style={{ color: "var(--text-muted)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-blue)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-                      title={project.links.liveAsWeb ? t("links_web") : t("links_live")}
-                    >
-                      {project.links.liveAsWeb ? <Globe size={16} /> : <ExternalLink size={16} />}
-                    </a>
-                  )}
-                  {project.links.playStore && (
-                    <a
-                      href={project.links.playStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-all duration-200 hover:scale-110"
-                      style={{ color: "var(--text-muted)" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-blue)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-                    >
-                      <Smartphone size={16} />
-                    </a>
-                  )}
-                </div>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="inline-flex items-center gap-1 text-xs font-semibold transition-all duration-200 hover:gap-2"
-                  style={{ color: "var(--accent-blue)" }}
+                {/* Top Index & Badge Bar */}
+                <div
+                  className="px-5 py-3.5 border-b flex items-center justify-between gap-2"
+                  style={{ borderColor: "var(--border-color)" }}
                 >
-                  {t("view_more")}
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                  <span
+                    className="font-mono-tech text-xs font-semibold"
+                    style={{ color: "var(--accent-blue)" }}
+                  >
+                    {numStr} // {t(`${project.slug}.dateRange`)}
+                  </span>
+                  <span className={`type-badge type-badge--${project.type}`}>
+                    {t(`${project.slug}.badge`)}
+                  </span>
+                </div>
+
+                {/* Cover Image Preview */}
+                {coverUrl && (
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="relative aspect-[16/10] w-full overflow-hidden border-b block"
+                    style={{
+                      background: "var(--bg-primary)",
+                      borderColor: "var(--border-color)",
+                    }}
+                  >
+                    <Image
+                      src={coverUrl}
+                      alt={t(`${project.slug}.title`)}
+                      fill
+                      className={`transition-transform duration-500 group-hover:scale-[1.03] ${
+                        project.slug === "elepad" ? "object-contain p-2" : "object-cover object-top"
+                      }`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </Link>
+                )}
+
+                {/* Card Body — Clean Asymmetric Style */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Context / Client */}
+                    <p
+                      className="font-mono-tech text-[11px] uppercase tracking-wider mb-1.5"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {t(`${project.slug}.clientOrContext`)}
+                    </p>
+
+                    {/* Title */}
+                    <Link href={`/projects/${project.slug}`} className="block group/title">
+                      <h3
+                        className="text-xl font-bold tracking-tight mb-1 transition-colors group-hover/title:text-[var(--accent-blue)]"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {t(`${project.slug}.title`)}
+                      </h3>
+                    </Link>
+
+                    {/* Subtitle */}
+                    <p
+                      className="text-xs font-medium mb-3"
+                      style={{ color: "var(--accent-blue)" }}
+                    >
+                      {t(`${project.slug}.subtitle`)}
+                    </p>
+
+                    {/* Concise Narrative Description */}
+                    <p
+                      className="text-sm leading-relaxed mb-4 line-clamp-3"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {t(`${project.slug}.description`)}
+                    </p>
+                  </div>
+
+                  {/* Card Actions: Asymmetric-Style Clean Bar */}
+                  <div
+                    className="pt-4 border-t flex items-center justify-between gap-3 mt-auto"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
+                    <div className="flex items-center gap-2">
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono-tech font-medium border transition-colors hover:bg-[var(--bg-secondary)]"
+                          style={{
+                            color: "var(--text-secondary)",
+                            borderColor: "var(--border-color)",
+                          }}
+                        >
+                          <span>{project.links.liveAsWeb ? "Web" : "En vivo"}</span>
+                          <ArrowUpRight size={13} />
+                        </a>
+                      )}
+                      {project.links.playStore && (
+                        <a
+                          href={project.links.playStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono-tech font-medium border transition-colors hover:bg-[var(--bg-secondary)]"
+                          style={{
+                            color: "var(--text-secondary)",
+                            borderColor: "var(--border-color)",
+                          }}
+                        >
+                          <span>Play Store</span>
+                          <ArrowUpRight size={13} />
+                        </a>
+                      )}
+                      {project.links.github && !project.links.live && !project.links.playStore && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono-tech font-medium border transition-colors hover:bg-[var(--bg-secondary)]"
+                          style={{
+                            color: "var(--text-secondary)",
+                            borderColor: "var(--border-color)",
+                          }}
+                        >
+                          <span>GitHub</span>
+                          <ArrowUpRight size={13} />
+                        </a>
+                      )}
+                    </div>
+
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[11px] font-mono-tech font-bold uppercase tracking-wider transition-transform hover:-translate-y-0.5 ml-auto"
+                      style={{
+                        background: "var(--bg-inverted)",
+                        color: "var(--text-inverted)",
+                      }}
+                    >
+                      <span>{t("view_more")}</span>
+                      <ArrowUpRight size={13} />
+                    </Link>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

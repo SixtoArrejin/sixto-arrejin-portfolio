@@ -2,7 +2,6 @@
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { Globe } from "lucide-react";
 
 export function LanguageToggle() {
   const locale = useLocale();
@@ -17,16 +16,15 @@ export function LanguageToggle() {
   return (
     <button
       onClick={toggleLocale}
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-300 hover:scale-105"
+      className="flex items-center gap-1.5 px-3 h-9 rounded-full text-xs font-mono-tech font-medium transition-colors duration-200 cursor-pointer active:scale-95"
       style={{
         background: "var(--bg-card)",
         border: "1px solid var(--border-color)",
-        color: "var(--text-secondary)",
+        color: "var(--text-primary)",
       }}
       aria-label="Toggle language"
       id="language-toggle"
     >
-      <Globe size={14} />
       <span className="uppercase tracking-wider">
         {locale === "es" ? "EN" : "ES"}
       </span>

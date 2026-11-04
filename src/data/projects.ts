@@ -236,7 +236,7 @@ export const projects: Project[] = [
         url: "/projects/devops-azure/TP1-AppWebRedisContenerizados-DevOps-UTN-2025.pdf",
       },
       {
-        title: "Informe Técnico de Entrega - Arrejín, Maciel & San Lorenzo",
+        title: "Informe Técnico de Entrega - Arrejin, Maciel & San Lorenzo",
         url: "/projects/devops-azure/devops-tp1-informe.pdf",
       },
     ],

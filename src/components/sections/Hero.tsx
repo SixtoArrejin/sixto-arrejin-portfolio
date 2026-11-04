@@ -4,9 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Download } from "lucide-react";
-import { SiReact, SiNodedotjs, SiTypescript } from "react-icons/si";
-import { FaCloud } from "react-icons/fa";
+import { ArrowDown, ArrowUpRight, Download, ChevronDown } from "lucide-react";
+
+const CV_CACHE_VERSION = "20261104";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -25,204 +25,302 @@ export function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center aurora-bg noise-overlay"
+      className="relative flex flex-col justify-between pt-20 sm:pt-24 pb-8 overflow-hidden"
       id="hero"
+      style={{ borderBottom: "1px solid var(--border-color)" }}
     >
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        {/* Text Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex-1 text-center lg:text-left"
+      {/* Subtle Giant Ghost Wordmark in Background (dataconale.com inspired, fully readable) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute inset-x-0 bottom-20 sm:bottom-24 flex justify-center lg:justify-start max-w-6xl mx-auto px-6 overflow-visible z-0"
+      >
+        <span
+          className="font-bold tracking-[-0.055em] leading-[1.02] whitespace-nowrap py-3"
+          style={{
+            fontSize: "clamp(6rem, 15.5vw, 15.5rem)",
+            color: "var(--text-primary)",
+            opacity: 0.045,
+          }}
         >
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-sm tracking-[0.2em] uppercase mb-4"
-            style={{ color: "var(--accent-blue)", fontFamily: "var(--font-sora)" }}
-          >
-            {t("greeting")}
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4"
-            style={{ fontFamily: "var(--font-sora)" }}
-          >
-            <span className="gradient-text">{t("name")}</span>
-          </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.6 }}
-            className="text-xl sm:text-2xl font-semibold mb-2"
-            style={{ color: "var(--text-primary)", fontFamily: "var(--font-sora)" }}
-          >
-            {t("title")}
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.6 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4 mb-6 text-sm font-medium"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            <div className="flex items-center gap-1.5">
-              <SiReact size={16} color="#61DAFB" /> React
-            </div>
-            <span className="opacity-30">·</span>
-            <div className="flex items-center gap-1.5">
-              <SiNodedotjs size={16} color="#339933" /> Node.js
-            </div>
-            <span className="opacity-30">·</span>
-            <div className="flex items-center gap-1.5">
-              <SiTypescript size={15} color="#3178C6" /> TypeScript
-            </div>
-            <span className="opacity-30">·</span>
-            <div className="flex items-center gap-1.5">
-              <FaCloud size={16} color="#0078D4" /> Cloud & DevOps
-            </div>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65, duration: 0.6 }}
-            className="text-base max-w-lg mb-8"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            {t("description")}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-wrap gap-3 justify-center lg:justify-start"
-          >
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              style={{ background: "var(--accent-gradient)" }}
-              id="cta-projects"
-            >
-              {t("cta_projects")}
-              <ArrowDown size={16} />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-color)",
-                color: "var(--text-primary)",
-              }}
-              id="cta-contact"
-            >
-              <Mail size={16} />
-              {t("cta_contact")}
-            </a>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105"
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border-color)",
-                  color: "var(--text-primary)",
-                }}
-                id="cta-resume"
-              >
-                <Download size={16} />
-                {t("cta_resume")}
-              </button>
-
-              {isDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-full left-0 lg:left-1/2 lg:-translate-x-1/2 mt-2 w-full min-w-[120px] rounded-xl overflow-hidden shadow-lg z-50 flex flex-col backdrop-blur-md"
-                  style={{
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border-color)",
-                  }}
-                >
-                  <a
-                    href="/cv/Sixto_Feliciano_Arrejin_CV_FullStack_ES.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-3 text-sm font-medium transition-colors hover:bg-[var(--border-color)]"
-                    style={{ color: "var(--text-primary)" }}
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    Español
-                  </a>
-                  <div style={{ height: "1px", background: "var(--border-color)" }} />
-                  <a
-                    href="/cv/Sixto_Feliciano_Arrejin_CV_FullStack_EN.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-3 text-sm font-medium transition-colors hover:bg-[var(--border-color)]"
-                    style={{ color: "var(--text-primary)" }}
-                    onClick={() => setIsDropdownOpen(false)}
-                  >
-                    English
-                  </a>
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex-shrink-0"
-        >
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden glow-ring">
-            <Image
-              src="/images/profile.webp"
-              alt="Sixto Feliciano Arrejin"
-              fill
-              className="object-cover object-top scale-120"
-              priority
-              quality={100}
-              sizes="(max-width: 640px) 300px, (max-width: 1024px) 350px, 400px"
-            />
-          </div>
-          {/* Decorative ring */}
-          <div
-            className="absolute -inset-4 rounded-full opacity-20 animate-spin"
-            style={{
-              border: "1px dashed var(--accent-blue)",
-              animationDuration: "30s",
-            }}
-          />
-        </motion.div>
+          ARREJIN
+        </span>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      {/* Main Content Container */}
+      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 pt-2 pb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          {/* Left Column: Editorial Headline & CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 xl:col-span-8"
+          >
+            {/* Kicker Tag */}
+            <div className="mb-6">
+              <span
+                className="inline-flex items-center gap-2.5 text-xs font-mono-tech uppercase tracking-[0.14em]"
+                style={{ color: "var(--text-muted)" }}
+              >
+                <span
+                  className="w-4 h-[1px] inline-block"
+                  style={{ background: "var(--accent-blue)" }}
+                />
+                {t("greeting")}
+              </span>
+            </div>
+
+            {/* Editorial Headline with Serif Italic Accent */}
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[3.55rem] font-semibold tracking-[-0.035em] leading-[1.05] mb-6"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {t("headline_1")}{" "}
+              <span
+                className="font-serif-italic font-normal px-1"
+                style={{ color: "var(--accent-blue)" }}
+              >
+                {t("headline_italic")}
+              </span>{" "}
+              {t("headline_2")}
+            </h1>
+
+            {/* Subtitle Role */}
+            <p
+              className="font-mono-tech text-xs sm:text-sm uppercase tracking-[0.12em] mb-4"
+              style={{ color: "var(--accent-blue)" }}
+            >
+              {t("title")}
+            </p>
+
+            {/* Human-Friendly Description */}
+            <p
+              className="text-base sm:text-lg leading-relaxed max-w-2xl mb-9"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {t("description")}
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#projects"
+                id="cta-projects"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap transition-transform duration-200 hover:-translate-y-0.5 active:scale-95"
+                style={{
+                  background: "var(--bg-inverted)",
+                  color: "var(--text-inverted)",
+                  border: "1px solid var(--bg-inverted)",
+                }}
+              >
+                <span>{t("cta_projects")}</span>
+                <ArrowDown size={15} className="shrink-0" />
+              </a>
+
+              {/* CV Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                  style={{
+                    background: "transparent",
+                    color: "var(--text-primary)",
+                    border: "1px solid var(--border-color-hover)",
+                  }}
+                  id="cta-resume"
+                >
+                  <Download size={15} className="shrink-0" />
+                  <span>{t("cta_resume")}</span>
+                  <ChevronDown
+                    size={14}
+                    className={`shrink-0 transition-transform duration-200 ${
+                      isDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute top-full left-0 mt-2 min-w-[175px] rounded-xl overflow-hidden z-50 flex flex-col border shadow-xl"
+                    style={{
+                      background: "var(--bg-card)",
+                      borderColor: "var(--border-color-hover)",
+                    }}
+                  >
+                    <a
+                      href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack_ES.pdf?v=${CV_CACHE_VERSION}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:opacity-80"
+                      style={{ color: "var(--text-primary)" }}
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <span>CV Español</span>
+                      <ArrowUpRight size={13} style={{ color: "var(--accent-blue)" }} />
+                    </a>
+                    <div style={{ height: "1px", background: "var(--border-color)" }} />
+                    <a
+                      href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack_EN.pdf?v=${CV_CACHE_VERSION}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:opacity-80"
+                      style={{ color: "var(--text-primary)" }}
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <span>Resume English</span>
+                      <ArrowUpRight size={13} style={{ color: "var(--accent-blue)" }} />
+                    </a>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Clean Editorial Portrait Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end"
+          >
+            <div
+              className="w-full max-w-[330px] rounded-2xl p-4 border shadow-sm"
+              style={{
+                background: "var(--bg-card)",
+                borderColor: "var(--border-color)",
+              }}
+            >
+              {/* Top Meta Strip */}
+              <div
+                className="flex items-center justify-between pb-2.5 mb-3 border-b font-mono-tech text-[11px]"
+                style={{
+                  borderColor: "var(--border-color)",
+                  color: "var(--text-muted)",
+                }}
+              >
+                <span>PORTRAIT // SFA</span>
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: "var(--accent-blue)" }}
+                />
+              </div>
+
+              {/* Portrait Image */}
+              <div
+                className="relative aspect-[4/4.6] w-full rounded-xl overflow-hidden border"
+                style={{
+                  background: "var(--bg-secondary)",
+                  borderColor: "var(--border-color)",
+                }}
+              >
+                <Image
+                  src="/images/profile.webp"
+                  alt="Sixto Feliciano Arrejin"
+                  fill
+                  className="object-cover object-top scale-105 transition-transform duration-500 hover:scale-110"
+                  priority
+                  sizes="(max-width: 640px) 300px, 340px"
+                />
+              </div>
+
+              {/* Bottom Caption Strip */}
+              <div className="pt-3.5 flex items-center justify-between">
+                <div>
+                  <p
+                    className="text-xs font-semibold tracking-tight"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Sixto F. Arrejin
+                  </p>
+                  <p
+                    className="text-[11px] font-mono-tech mt-0.5"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    {t("subtitle")}
+                  </p>
+                </div>
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{ background: "var(--accent-blue)" }}
+                  title="Active"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Editorial Metrics & Scroll Strip */}
+      <div
+        className="relative z-10 max-w-6xl w-full mx-auto px-6 pt-8 mt-6 border-t"
+        style={{ borderColor: "var(--border-color)" }}
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={20} style={{ color: "var(--text-muted)" }} />
-        </motion.div>
-      </motion.div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+          <div>
+            <p
+              className="text-2xl sm:text-3xl font-semibold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              8.55
+              <span
+                className="text-sm font-mono-tech font-normal"
+                style={{ color: "var(--text-muted)" }}
+              >
+                /10
+              </span>
+            </p>
+            <p
+              className="text-xs font-mono-tech mt-0.5"
+              style={{ color: "var(--text-muted)" }}
+            >
+              {t("stat_gpa_label")}
+            </p>
+          </div>
+
+          <div>
+            <p
+              className="text-2xl sm:text-3xl font-semibold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              9+
+            </p>
+            <p
+              className="text-xs font-mono-tech mt-0.5"
+              style={{ color: "var(--text-muted)" }}
+            >
+              {t("stat_projects_label")}
+            </p>
+          </div>
+
+          <div>
+            <p
+              className="text-2xl sm:text-3xl font-semibold tracking-tight"
+              style={{ color: "var(--accent-blue)" }}
+            >
+              3° Puesto
+            </p>
+            <p
+              className="text-xs font-mono-tech mt-0.5"
+              style={{ color: "var(--text-muted)" }}
+            >
+              {t("stat_award_label")}
+            </p>
+          </div>
+
+          <div className="hidden sm:flex justify-end">
+            <a
+              href="#about"
+              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider transition-colors"
+              style={{ color: "var(--text-muted)" }}
+            >
+              <span>{t("scroll_hint")}</span>
+              <ArrowDown size={14} style={{ color: "var(--accent-blue)" }} />
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
