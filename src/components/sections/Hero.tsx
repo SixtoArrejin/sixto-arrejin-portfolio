@@ -299,7 +299,7 @@ export function Hero() {
               className="text-2xl sm:text-3xl font-semibold tracking-tight"
               style={{ color: "var(--accent-blue)" }}
             >
-              3° Puesto
+              {t("stat_award_value")}
             </p>
             <p
               className="text-xs font-mono-tech mt-0.5"
