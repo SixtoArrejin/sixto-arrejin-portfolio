@@ -6,12 +6,13 @@ import {
   SiTerraform, SiGithubactions, SiCloudflare, SiRender,
   SiPandas, SiNumpy, SiScikitlearn, SiGit,
   SiGithub, SiJira, SiOpentelemetry, SiPrometheus, SiGrafana,
-  SiVite, SiMozilla, SiHono, SiMui, SiVercel, SiLangchain
+  SiVite, SiMozilla, SiHono, SiMui, SiVercel, SiLangchain,
+  SiRust, SiStellar, SiWebassembly, SiGoogleplay, SiWeb3Dotjs
 } from "react-icons/si";
 import { FaDatabase, FaInfinity, FaChartBar } from "react-icons/fa";
 import { FaChess } from "react-icons/fa6";
 import { GiEmptyChessboard } from "react-icons/gi";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbSatellite } from "react-icons/tb";
 import { DiScrum } from "react-icons/di";
 import { VscAzure } from "react-icons/vsc";
 
@@ -88,4 +89,15 @@ export const iconMap: Record<string, { icon: IconType; color: string }> = {
   "Material UI": { icon: SiMui, color: "#007FFF" },
   "MUI": { icon: SiMui, color: "#007FFF" },
   "Vercel": { icon: SiVercel, color: "var(--text-primary)" },
+  "Rust": { icon: SiRust, color: "#DEA584" },
+  "Stellar (Soroban)": { icon: SiStellar, color: "var(--text-primary)" },
+  "Soroban": { icon: SiStellar, color: "var(--text-primary)" },
+  "Stellar": { icon: SiStellar, color: "var(--text-primary)" },
+  "Web3": { icon: SiWeb3Dotjs, color: "#F16822" },
+  "Sentinel-2": { icon: TbSatellite, color: "#00B4D8" },
+  "ONNX WebAssembly": { icon: SiWebassembly, color: "#654FF0" },
+  "ONNX Runtime Web": { icon: SiWebassembly, color: "#654FF0" },
+  "React 19": { icon: SiReact, color: "#61DAFB" },
+  "PWA / TWA": { icon: SiGoogleplay, color: "#414141" },
+  "Google Play": { icon: SiGoogleplay, color: "#414141" },
 };

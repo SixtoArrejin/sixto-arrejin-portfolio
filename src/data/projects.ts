@@ -18,6 +18,47 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "dosel",
+    tags: [
+      "Stellar (Soroban)",
+      "Rust",
+      "Python",
+      "Sentinel-2",
+      "React",
+      "TypeScript",
+      "Web3",
+      "Tailwind CSS",
+    ],
+    type: "personal",
+    team: 3,
+    videoEmbed: "https://www.youtube.com/embed/Uxa_8bNBiZ4",
+    links: {
+      github: "https://github.com/SixtoArrejin/ideathon",
+      live: "https://ideathon-henna.vercel.app/",
+      liveAsWeb: true,
+    },
+    media: [
+      { type: "image" as const, url: "/projects/dosel/app-portada.png" },
+      { type: "image" as const, url: "/projects/dosel/app-predios.png" },
+      { type: "image" as const, url: "/projects/dosel/app-cobertura.png" },
+      { type: "image" as const, url: "/projects/dosel/sat-impen.png" },
+      { type: "image" as const, url: "/projects/dosel/sat-tacop.png" },
+      { type: "image" as const, url: "/projects/dosel/app-mercado.png" },
+      { type: "image" as const, url: "/projects/dosel/app-modal.png" },
+      { type: "image" as const, url: "/projects/dosel/certificado-pdf.png" },
+    ],
+    documents: [
+      {
+        title: "Slide Deck de Presentación — Dosel (Pitch)",
+        url: "/projects/dosel/Dosel-deck.pdf",
+      },
+      {
+        title: "Certificado de Compensación emitido On-Chain",
+        url: "/projects/dosel/Certificado · Dosel.pdf",
+      },
+    ],
+  },
+  {
     slug: "duo-propiedades",
     tags: [
       "TypeScript",
@@ -58,6 +99,7 @@ export const projects: Project[] = [
     videoEmbed: "https://www.youtube.com/embed/Xh6E90fD3_k",
     links: {
       live: "https://datebox.com.ar",
+      playStore: "https://play.google.com/store/apps/details?id=datebox.com.ar",
       liveAsWeb: true,
       instagram: "https://www.instagram.com/datebox.app",
     },
@@ -69,20 +111,24 @@ export const projects: Project[] = [
   {
     slug: "chess-study",
     tags: [
-      "React",
+      "React 19",
       "Vite",
-      "JavaScript (ES6+)",
+      "TypeScript",
       "Tailwind CSS",
+      "ONNX WebAssembly",
       "chess.js",
       "react-chessboard",
       "PDF.js",
       "IndexedDB",
+      "PWA / TWA",
     ],
     type: "personal",
     videoEmbed: "https://www.youtube.com/embed/o91drm59cmY",
     links: {
       github: "https://github.com/SixtoArrejin/chess-study",
-      live: "https://my-chess-study.vercel.app/",
+      live: "https://chess-study.asymmetric.com.ar",
+      playStore:
+        "https://play.google.com/store/apps/details?id=ar.com.asymmetric.chessstudy",
       liveAsWeb: true,
     },
     media: [
@@ -90,6 +136,12 @@ export const projects: Project[] = [
       { type: "image", url: "/projects/chess-study/2-modo-oscuro-oceano.png" },
       { type: "image", url: "/projects/chess-study/3-configuracion-claro.png" },
       { type: "image", url: "/projects/chess-study/4-configuracion-oscuro.png" },
+      { type: "image", url: "/projects/chess-study/play-store/1.png" },
+      { type: "image", url: "/projects/chess-study/play-store/2.png" },
+      { type: "image", url: "/projects/chess-study/play-store/3.png" },
+      { type: "image", url: "/projects/chess-study/play-store/4.png" },
+      { type: "image", url: "/projects/chess-study/play-store/5.png" },
+      { type: "image", url: "/projects/chess-study/play-store/6.png" },
     ],
   },
   {

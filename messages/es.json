@@ -179,6 +179,52 @@
     "bi_cube_desc": "Diseño del cubo OLAP multidimensional con jerarquías complejas integradas (vistas geográficas de tiendas y temporales), grupos de medidas y la fórmula MDX calculada para rastrear la Demanda Insatisfecha.",
     "bi_powerbi_label": "Dashboard Ejecutivo e Interacciones OLAP",
     "bi_powerbi_desc": "Tablero ejecutivo consolidado en Power BI que presenta de forma interactiva análisis de ROI, ventas por género, mapas geográficos y métricas de cumplimiento, permitiendo navegación Drill-down, Roll-up, Slice y Dice.",
+    "dosel": {
+      "dateRange": "Octubre 2026",
+      "clientOrContext": "Ideatón NEA TECH 2026 (Stellar Track)",
+      "badge": "1° Puesto Track Stellar · Web3 & Satélites",
+      "title": "DOSEL",
+      "subtitle": "Verificación Satelital y Trazabilidad Blockchain de Créditos de Carbono",
+      "description": "Plataforma Web3 para mitigar el greenwashing: oráculo satelital con Sentinel-2 y smart contracts en Rust sobre Stellar (Soroban) que congelan la emisión ante desmontes y permiten compra y quema atómica de créditos.",
+      "long_description": "Dosel es una plataforma Web3 y de teledetección satelital concebida para dar máxima transparencia y trazabilidad al mercado voluntario de créditos de carbono sobre bosques nativos del Gran Chaco y la región del NEA.\n\nEn lugar de basarse en declaraciones juradas o auditorías presenciales burocráticas que demoran meses y no garantizan continuidad, Dosel implementa un oráculo biofísico automatizado en Python: procesa pasadas multiespectrales de satélites Sentinel-2 (a 10 metros de resolución) sobre los polígonos GPS de predios registrados (como El Impenetrable o Taco Pozo) y calcula el índice de vegetación (NDVI) libre de nubes.\n\nSolo si el bosque se mantiene conservado y saludable, los contratos inteligentes desarrollados en Rust sobre la red Stellar (Soroban SDK) habilitan la emisión de tokens GreenTon (1 GTON = 1 tCO2e). Si el oráculo detecta una merma crítica en el NDVI, el contrato congela automáticamente el predio e impide cualquier nueva emisión. La plataforma cuenta con un mercado descentralizado con custodia inteligente y retiro atómico (Buy & Retire), evitando intermediarios y doble contabilización, emitiendo certificados de compensación trazables on-chain.",
+      "challenge": "En el mercado voluntario de créditos de carbono tradicional, la falta de verificación continua genera desconfianza y greenwashing: las auditorías son lentas y costosas, y resulta casi imposible asegurar que una parcela que respaldó un bono no haya sufrido desmontes o degradación posterior.",
+      "solution": "Desarrollamos Dosel durante el Ideatón NEA TECH 2026 (1° Puesto en el Track de Stellar): un oráculo en Python procesa imágenes de Sentinel-2 para medir el vigor vegetal del monte y asentar la verificación en Soroban. Los contratos en Rust gestionan la custodia de lotes y permiten a empresas comprar y quemar créditos en una única transacción atómica irreversible con Freighter Wallet.",
+      "highlights": [
+        { "metric": "1° Puesto", "label": "Track Stellar en Ideatón NEA TECH 2026 ($500 USD SDF & BAF)" },
+        { "metric": "Sentinel-2", "label": "Monitoreo satelital a 10m de resolución (NDVI)" },
+        { "metric": "Auto-Freeze", "label": "Congelamiento preventivo on-chain ante merma vegetal" },
+        { "metric": "Buy & Retire", "label": "Compra y quema atómica irreversible sin reventa" }
+      ],
+      "key_features": [
+        {
+          "title": "Oráculo Satelital (Sentinel-2 L2A)",
+          "description": "Pipeline en Python (Planetary Computer STAC, Rasterio y NumPy) que calcula el NDVI medio sobre las coordenadas GPS del predio y firma criptográficamente las verificaciones."
+        },
+        {
+          "title": "Smart Contracts en Rust (Soroban)",
+          "description": "Contratos GreenTon y Market compilados a WebAssembly (wasm32v1-none) sobre Stellar Testnet con custodia descentralizada y trazabilidad granular por lote y predio."
+        },
+        {
+          "title": "Compra y Retiro Atómico (Buy & Retire)",
+          "description": "Función de mercado que ejecuta el pago del comprador (SAC de XLM) y el retiro/quema irreversible de las toneladas a nombre de la empresa en una misma transacción atómica."
+        },
+        {
+          "title": "Radar del Chaco & Web3 Frontend",
+          "description": "SPA en React, Vite y TypeScript con Stellar SDK y Freighter Wallet, que incluye un radar en tiempo real de noticias ambientales locales y últimas pasadas satelitales."
+        }
+      ],
+      "features": [
+        "Smart contract GreenTon en Rust con soroban-sdk 29: emisión estrictamente condicionada a la firma del oráculo satelital por predio y período.",
+        "Lógica de contingencia on-chain: congelamiento preventivo automático si el NDVI cae por debajo de 0.400 o sufre una merma superior a 0.150 contra la línea base histórica.",
+        "Smart contract Mercado: custodia descentralizada de lotes ofertados y función buy_and_retire con transferencia de fondos y quema atómica irreversible.",
+        "Pipeline geoespacial en Python utilizando pystac-client, Microsoft Planetary Computer, rasterio y numpy sobre bandas B04 y B08 de Sentinel-2.",
+        "Frontend Web3 responsivo con React 19, TypeScript y Vite, interactuando con Soroban RPC y conexión de billeteras mediante Freighter Wallet.",
+        "Módulo 'Radar del Chaco' con monitoreo de cobertura de suelo (Impact Observatory) y recopilación RSS de noticias ambientales regionales.",
+        "Trazabilidad completa en Stellar Expert: más de 61.000 tokens GTON emitidos y compras con quema atómica verificadas on-chain en Testnet."
+      ],
+      "arch_title": "Arquitectura Descentralizada: Oráculo Satelital y Soroban en Stellar",
+      "arch_desc": "Dosel desacopla la captura biofísica de la gobernanza on-chain mediante una arquitectura de tres capas: (1) Capa Satelital: Sentinel-2 y el catálogo STAC de Planetary Computer proveen reflectancias ópticas que el oráculo en Python procesa con Rasterio. (2) Capa Blockchain: Los smart contracts en Rust (Soroban SDK) aplican la lógica de negocio y las reglas de congelamiento automático sobre la Testnet de Stellar, garantizando inmutabilidad y costos de gas mínimos. (3) Capa de Aplicación: La web construida con React y TypeScript consulta el estado de la red vía Soroban RPC y permite a compradores conectar su billetera Freighter para interactuar directamente con los contratos sin intermediarios."
+    },
     "duo-propiedades": {
       "dateRange": "Junio 2026 - Presente",
       "clientOrContext": "DÚO Propiedades (Pirané, Formosa)",
@@ -270,51 +316,50 @@
       ]
     },
     "chess-study": {
-      "dateRange": "Mayo 2026",
-      "clientOrContext": "Desarrollo Web Open Source",
-      "badge": "Web App · Split-Screen",
+      "dateRange": "Mayo 2026 - Octubre 2026",
+      "clientOrContext": "App Móvil en Google Play Store & Web Open Source",
+      "badge": "Google Play Store · IA en Navegador",
       "title": "Chess Study",
-      "subtitle": "Lector PDF de Libros de Ajedrez y Tablero de Análisis en Pantalla Dividida",
-      "description": "Aplicación web que unifica en una sola pantalla un lector fluido de libros de ajedrez en PDF con un tablero interactivo de análisis y guardado local automático.",
-      "long_description": "Chess Study es una aplicación web de una sola página (SPA) fluida, diseñada específicamente para resolver una de las fricciones más comunes de los estudiantes de ajedrez: tener que cambiar constantemente de ventanas entre un libro digital y un programa de análisis.\n\nAl unificar un visor de PDF de alto rendimiento —impulsado de forma independiente por el motor de Mozilla PDF.js a 60 FPS— y un tablero inteligente manipulable con React en una interfaz responsiva de pantalla dividida (split-screen), permite al usuario leer, arrastrar, replicar, y analizar posiciones de ajedrez sin interrupciones. Cuenta también con soporte nativo de persistencia offline vía IndexedDB: cargas un libro una vez, y tu navegador lo guarda para siempre, recordando instantáneamente la última página en la que dejaste la lectura.",
-      "challenge": "Estudiar ajedrez con libros digitales suele implicar cambiar constantemente entre el lector de PDF y un tablero en otra ventana, perdiendo el hilo de la lectura y teniendo que volver a buscar la página cada vez que se retoma el estudio.",
-      "solution": "Construimos una aplicación web de pantalla dividida redimensionable: de un lado se lee el libro PDF con total fluidez y guardado automático en el navegador; del otro se reproducen y analizan las variantes en un tablero interactivo con validación de jugadas legales e historial navegable.",
+      "subtitle": "Lector PDF de Libros de Ajedrez, Tablero de Análisis y Escáner con IA Local",
+      "description": "Aplicación web y móvil (publicada en Google Play Store) que unifica en pantalla dividida un lector fluido de libros de ajedrez en PDF con un tablero interactivo y un escáner con visión artificial local (ONNX / CNN) que detecta posiciones con un clic.",
+      "long_description": "Chess Study es una aplicación móvil y web diseñada específicamente para eliminar la fricción al estudiar ajedrez con libros digitales: unifica en una sola pantalla dividida (split-screen) un lector de PDF de alto rendimiento a 60 FPS y un tablero de análisis interactivo con reconocimiento óptico de diagramas (Chess OCR) impulsado por Inteligencia Artificial 100% local.\n\nEn lugar de alternar constantemente entre lectores de PDF pesados y programas de análisis externos armando posiciones a mano pieza por pieza, Chess Study permite hacer clic sobre cualquier diagrama impreso en el libro (o pegar una captura del portapapeles con Ctrl+V) para que una Red Neuronal Convolucional (CNN) ejecutada directamente en el navegador mediante ONNX Runtime Web y WebAssembly clasifique las 64 casillas y reconstruya la posición en notación FEN en milisegundos, sin enviar datos a servidores externos.\n\nLa aplicación está empaquetada como PWA instalable con Service Workers y publicada en Google Play Store mediante arquitectura Trusted Web Activity (TWA / Android App Bundle firmado con Digital Asset Links). Cuenta además con persistencia offline completa vía IndexedDB: carga cualquier libro propio o biblioteca clásica (como el Tratado de Grau) y recuerda siempre la última página leída.",
+      "challenge": "Estudiar ajedrez con libros digitales suele implicar cambiar constantemente entre el visor de PDF y un tablero en otra ventana, perdiendo el hilo de la lectura y teniendo que armar manualmente cada posición del libro para analizar jugadas.",
+      "solution": "Construimos una aplicación de pantalla dividida a 60 FPS publicada en Google Play Store: de un lado se lee el libro PDF con total fluidez y guardado en el dispositivo; del otro se analizan variantes en un tablero interactivo con notación algebraica FAN. Al hacer clic sobre cualquier diagrama del PDF, un modelo liviano de visión artificial reconoce las piezas y arma la posición en el tablero al instante.",
       "highlights": [
-        { "metric": "Split-Screen", "label": "Libro PDF y tablero juntos sin cambiar de ventana" },
-        { "metric": "60 FPS", "label": "Lectura de PDFs extensos mediante Web Workers" },
-        { "metric": "Guardado Local", "label": "Recuerda tus libros y la última página leída" },
-        { "metric": "5 Temas", "label": "Personalización del tablero + Modo Claro/Oscuro" }
+        { "metric": "Play Store", "label": "Publicada en Google Play Store (TWA / AAB firmado)" },
+        { "metric": "1 Clic", "label": "Escáner Chess OCR con IA local (ONNX WebAssembly)" },
+        { "metric": "60 FPS", "label": "Lectura fluida de PDFs masivos con Web Workers" },
+        { "metric": "Offline", "label": "Persistencia en IndexedDB sin requerir servidores" }
       ],
       "key_features": [
         {
+          "title": "Escáner de Diagramas con IA Local (Chess OCR)",
+          "description": "Red neuronal convolucional (CNN de 1.3 MB) ejecutada con ONNX Runtime Web en WebAssembly que clasifica las casillas y reconstruye el FEN al instante sin enviar datos a servidores."
+        },
+        {
           "title": "Pantalla Dividida Ajustable (Split-Screen)",
-          "description": "Divisor arrastrable para ajustar el ancho del libro y del tablero en escritorio, opción de invertir paneles y diseño apilable en celulares."
+          "description": "Divisor arrastrable para ajustar el ancho del libro y del tablero en escritorio, opción de invertir paneles y diseño responsivo adaptado a dispositivos móviles."
         },
         {
-          "title": "Modo Análisis y Editor Libre",
-          "description": "Permite alternar entre un editor libre para acomodar piezas y un modo de análisis que valida jugadas legales y registra el historial en notación algebraica."
+          "title": "Modo Análisis, Notación FAN y Editor Libre",
+          "description": "Motor de reglas chess.js y react-chessboard con Modo Editor libre y Modo Análisis estricto, notación con figuras SVG (FAN), enroques e inferencia de turno negro (1...)."
         },
         {
-          "title": "Biblioteca Clásica Incluida",
-          "description": "Incluye los 4 tomos del 'Tratado General de Ajedrez' de Roberto Grau listos para estudiar con un clic, además de permitir arrastrar cualquier PDF propio."
-        },
-        {
-          "title": "Memoria Persistente en el Navegador",
-          "description": "Guarda tus libros localmente con IndexedDB sin subirlos a ningún servidor externo y abre cada libro exactamente en la página donde lo dejaste."
+          "title": "Distribución en Google Play y Persistencia Offline",
+          "description": "Publicada en Google Play Store mediante TWA con Digital Asset Links, visor PDF.js v4.2 en Web Worker y almacenamiento de libros en IndexedDB."
         }
       ],
       "features": [
-        "Interfaz interactiva y fluida 'Split-Screen' con divisor arrastrable y estilización auto-ajustable a formato móvil apilable.",
-        "Modo dual inteligente (Editor libre Drag-and-Drop y Modo Análisis regidos por la validación de movimientos legales de chess.js).",
-        "Visor PDF pre-compilado de alto desempeño ejecutando la carga de renderizado pesada en un Web Worker en segundo plano.",
-        "Experiencia personalizada: Múltiples temas de casillas del tablero (Cyberpunk, Océano, Madera, etc.) e integración con Modo Oscuro/Claro inteligente.",
-        "Persistencia web-native avanzada: Memoria histórica de la última página leída y caché del ArrayBuffer en IndexedDB y Service Workers.",
-        "Inclusión directa de tarjetas clásicas de libros como el 'Tratado General de Ajedrez de Roberto Grau' integrados vía fetch al vuelo.",
-        "Notación algebraica visible en el tablero con historial de jugadas navegable (inicio, anterior, siguiente, fin) en Modo Análisis.",
-        "Configuración del layout: invertir paneles PDF/tablero, rotar perspectiva de las piezas y cargar PDFs propios por arrastre."
+        "Publicada en Google Play Store como Trusted Web Activity (TWA) con Service Workers y manifiesto offline.",
+        "Visión computacional en el cliente: modelo CNN liviano (1.3 MB) ejecutado en WebAssembly con ONNX Runtime Web que clasifica las 64 casillas y genera el FEN.",
+        "Algoritmo de detección geométrica por gradientes de contraste para capturar el diagrama con un clic o pegando desde el portapapeles (Ctrl+V).",
+        "Lógica de ajedrez completa con notación FAN (figuras SVG), historial navegable y validación de jugadas con chess.js.",
+        "Visor PDF.js v4.2 precompilado y desacoplado en Web Worker para procesar libros de más de 300 páginas sin trabar la interfaz.",
+        "Persistencia en IndexedDB para recordar libros, biblioteca clásica del Tratado de Grau y última página leída.",
+        "Personalización estética: múltiples temas de tablero (Cyberpunk, Océano, Esmeralda, Madera) e integración con Modo Oscuro/Claro."
       ],
-      "arch_title": "Arquitectura Front-End y Persistencia Web-Native",
-      "arch_desc": "La aplicación fue construida aprovechando el ecosistema integral de React acoplado a Vite para un empaquetado ultra rápido. El mayor desafío técnico enfrentado fue orquestar el pesadísimo renderizado de archivos PDF masivos junto con un tablero reactivo sin afectar la experiencia del usuario (UX) o congelar el hilo principal. Esto se resolvió aislando el visor de PDF (PDF.js) dentro de un contexto controlado y delegando el procesamiento intensivo a través de pasaje de mensajes en segundo plano. Al mismo tiempo, la persistencia en caché asíncrono sobre IndexedDB garantizó que recursos bloqueantes se carguen limpiamente de forma local tras una primera visita."
+      "arch_title": "Arquitectura: Visión Computacional Offline, Web Workers y Distribución Mobile",
+      "arch_desc": "La aplicación combina React 19, Vite y Tailwind CSS con una arquitectura orientada a la privacidad y el rendimiento offline. En lugar de procesar imágenes en servidores costosos con latencia, la inferencia de visión artificial corre 100% en el cliente mediante ONNX Runtime Web compilado a WebAssembly. El renderizado de documentos PDF masivos se delega a un Web Worker dedicado, manteniendo la tasa de refresco en 60 FPS. Para la distribución móvil, se implementó una arquitectura TWA que empaqueta la PWA en un Android App Bundle firmado, habilitando su instalación desde Google Play Store con soporte nativo de pantalla completa."
     },
     "elepad": {
       "dateRange": "Marzo 2025 - Marzo 2026",

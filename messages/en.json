@@ -179,6 +179,52 @@
     "bi_cube_desc": "OLAP multidimensional cube design with integrated complex hierarchies (geographical store views and temporal views), measure groups, and custom MDX calculations to track Unmet Demand.",
     "bi_powerbi_label": "Executive Dashboard & OLAP Interactions",
     "bi_powerbi_desc": "Executive dashboard consolidated in Power BI that interactively presents ROI analysis, sales by genre, geographical maps, and compliance metrics, enabling Drill-down, Roll-up, Slice, and Dice operations.",
+    "dosel": {
+      "dateRange": "October 2026",
+      "clientOrContext": "1st Place Stellar Track · NEA TECH Ideathon 2026",
+      "badge": "1st Place Stellar Track · Web3 & Satellites",
+      "title": "DOSEL",
+      "subtitle": "Satellite Verification & Blockchain Traceability for Carbon Credits",
+      "description": "Web3 platform tackling greenwashing: Sentinel-2 satellite oracle and Rust smart contracts on Stellar (Soroban) that freeze issuance upon deforestation and enable atomic buy-and-retire.",
+      "long_description": "Dosel is a Web3 and satellite remote sensing platform designed to bring radical transparency and traceability to the voluntary carbon credit market across native forests in the Gran Chaco and NEA region.\n\nInstead of relying on self-declarations or bureaucratic on-site audits that take months and fail to ensure continuity, Dosel implements an automated biophysical oracle in Python: it processes multispectral imagery from Sentinel-2 satellites (at 10-meter resolution) over the GPS boundaries of registered parcels (such as El Impenetrable or Taco Pozo) and calculates cloud-free vegetation index (NDVI).\n\nOnly if the forest remains conserved and thriving, smart contracts written in Rust on Stellar (Soroban SDK) issue representative carbon tokens (GreenTon, 1 GTON = 1 tCO2e). If the oracle detects a critical NDVI drop, the contract automatically freezes the parcel and stops further issuance. The platform features a decentralized marketplace with smart custody and atomic retirement (Buy & Retire), bypassing intermediaries, preventing double counting, and generating verifiable on-chain certificates.",
+      "challenge": "In the traditional voluntary carbon market, the lack of continuous verification fuels distrust and greenwashing: on-site audits are slow and costly, making it nearly impossible to ensure that a parcel backing carbon credits hasn't been cleared months after issuance.",
+      "solution": "We built Dosel during the 3-day NEA TECH 2026 Ideathon (winning 1st Place in the Stellar Track): a Python oracle processes Sentinel-2 imagery to gauge canopy vitality and record verified batches in Soroban. Rust smart contracts handle escrow and let corporations purchase and retire credits in a single atomic, irreversible transaction using Freighter Wallet.",
+      "highlights": [
+        { "metric": "1st Place", "label": "Stellar Track · NEA TECH Ideathon ($500 USD award by SDF & BAF)" },
+        { "metric": "Sentinel-2", "label": "Satellite monitoring at 10m resolution (NDVI)" },
+        { "metric": "Auto-Freeze", "label": "On-chain freeze upon detected vegetation loss" },
+        { "metric": "Buy & Retire", "label": "Irreversible atomic purchase & retirement without resale" }
+      ],
+      "key_features": [
+        {
+          "title": "Satellite Oracle (Sentinel-2 L2A)",
+          "description": "Python pipeline (Planetary Computer STAC, Rasterio, and NumPy) calculating mean cloud-free NDVI over parcel GPS bounds and cryptographically signing verifications."
+        },
+        {
+          "title": "Rust Smart Contracts (Soroban)",
+          "description": "GreenTon and Market contracts compiled to WebAssembly (wasm32v1-none) on Stellar Testnet with decentralized custody and parcel-level traceability."
+        },
+        {
+          "title": "Atomic Buy & Retire",
+          "description": "Marketplace function executing payment (XLM SAC) and irreversible retirement/burning of credits on behalf of the buyer in a single atomic transaction."
+        },
+        {
+          "title": "Gran Chaco Radar & Web3 Frontend",
+          "description": "React, Vite, and TypeScript SPA integrated with Stellar SDK and Freighter Wallet, featuring a real-time radar for local environmental news and satellite passes."
+        }
+      ],
+      "features": [
+        "GreenTon smart contract in Rust with soroban-sdk 29: minting strictly conditioned on satellite oracle signatures per parcel and period.",
+        "On-chain contingency logic: automatic parcel freezing if NDVI drops below 0.400 or experiences a decline greater than 0.150 against baseline.",
+        "Marketplace smart contract: decentralized custody of listed batches and atomic buy_and_retire function with instant token retirement.",
+        "Geospatial processing pipeline in Python using pystac-client, Microsoft Planetary Computer, rasterio, and numpy across Sentinel-2 B04 and B08 bands.",
+        "Responsive Web3 frontend with React 19, TypeScript, and Vite, connecting to Soroban RPC and Freighter Wallet.",
+        "Gran Chaco Radar module integrating land cover datasets (Impact Observatory) and RSS environmental news aggregation.",
+        "Complete on-chain traceability in Stellar Expert: over 61,000 GTON tokens minted and verified atomic burn purchases on Testnet."
+      ],
+      "arch_title": "Decentralized Architecture: Satellite Oracle & Stellar Soroban",
+      "arch_desc": "Dosel decouples biophysical data collection from on-chain governance across three layers: (1) Satellite Layer: Sentinel-2 and Planetary Computer STAC catalog provide optical reflectance data processed in Python with Rasterio. (2) Blockchain Layer: Rust smart contracts (Soroban SDK) enforce business logic, parcel escrow, and automated freezing on Stellar Testnet, ensuring immutability and negligible gas fees. (3) Application Layer: The React/TypeScript web app queries network state via Soroban RPC and enables buyers to connect Freighter Wallet to transact directly without intermediaries."
+    },
     "duo-propiedades": {
       "dateRange": "June 2026 - Present",
       "clientOrContext": "DÚO Propiedades (Pirané, Formosa)",
@@ -270,51 +316,50 @@
       ]
     },
     "chess-study": {
-      "dateRange": "May 2026",
-      "clientOrContext": "Open Source Web Development",
-      "badge": "Web App · Split-Screen",
+      "dateRange": "May 2026 - October 2026",
+      "clientOrContext": "Mobile App on Google Play Store & Open Source Web",
+      "badge": "Google Play Store · On-Device AI",
       "title": "Chess Study",
-      "subtitle": "Split-Screen PDF Chess Book Reader & Interactive Analysis Board",
-      "description": "Web application uniting a high-speed PDF chess book reader with an interactive analysis chessboard and automatic local browser storage in a single screen.",
-      "long_description": "Chess Study is a smooth Single-Page Application (SPA) tailor-made to solve one of the most common frictions for chess students: having to constantly switch windows between a digital book and an analysis program.\n\nBy uniting a high-performance PDF viewer—independently driven by Mozilla's PDF.js rendering engine at 60 FPS—and an interactive smart chessboard powered by React in a responsive split-screen interface, it lets users read, drag pieces, replicate, and analyze chess positions seamlessly. It also features robust offline persistence via IndexedDB capability: you upload a book once, and your local browser caches it forever, instantly remembering the last page you were on.",
-      "challenge": "Studying chess with digital books usually forces players to constantly alt-tab between a PDF reader and a separate chessboard window, losing their reading flow and having to find their page again every session.",
-      "solution": "We built a resizable split-screen web app: on one side you read the PDF book smoothly with automatic local saving; on the other you replay and analyze variations on an interactive chessboard with legal move validation and navigable move history.",
+      "subtitle": "Chess Book PDF Reader, Analysis Board & On-Device AI Scanner",
+      "description": "Web and mobile application (published on Google Play Store) combining a 60 FPS split-screen chess PDF reader with an interactive board and an on-device computer vision scanner (ONNX / CNN) that detects positions with a single click.",
+      "long_description": "Chess Study is a mobile and web app designed specifically to eliminate friction when studying chess with digital books: it unifies a high-performance 60 FPS PDF reader and an interactive analysis board with optical diagram recognition (Chess OCR) powered by 100% local AI on a single split-screen.\n\nInstead of constantly switching between heavy PDF readers and external analysis software while manually setting up positions piece by piece, Chess Study allows users to click any diagram printed in the book (or paste a screenshot from clipboard via Ctrl+V) so a Convolutional Neural Network (CNN) running directly in the browser via ONNX Runtime Web and WebAssembly classifies the 64 squares and reconstructs the FEN position in milliseconds—without transmitting data to external servers.\n\nThe application is packaged as an installable PWA with Service Workers and published on Google Play Store via Trusted Web Activity (TWA / signed Android App Bundle with Digital Asset Links). It also features complete offline persistence through IndexedDB: open your own books or the built-in classical library (like Roberto Grau's Treatise) and always resume from the exact page you left off.",
+      "challenge": "Studying chess with digital books often requires switching back and forth between a PDF viewer and an analysis board in another window, losing reading focus and wasting time setting up positions by hand.",
+      "solution": "We built a 60 FPS split-screen application published on Google Play Store: read PDF books smoothly on one side with automatic local storage, and analyze variations on an interactive board with FAN algebraic notation on the other. Clicking any diagram in the PDF triggers a lightweight computer vision model that recognizes the pieces and sets up the board immediately.",
       "highlights": [
-        { "metric": "Split-Screen", "label": "PDF book and chessboard side by side in one tab" },
-        { "metric": "60 FPS", "label": "Smooth rendering of large PDFs via Web Workers" },
-        { "metric": "Local Save", "label": "Remembers your books and last read page offline" },
-        { "metric": "5 Themes", "label": "Custom board themes + Light and Dark modes" }
+        { "metric": "Play Store", "label": "Published on Google Play Store (signed TWA / AAB)" },
+        { "metric": "1 Click", "label": "On-device Chess OCR scanning (ONNX WebAssembly)" },
+        { "metric": "60 FPS", "label": "Smooth large PDF rendering via Web Workers" },
+        { "metric": "Offline", "label": "IndexedDB local persistence without servers" }
       ],
       "key_features": [
         {
-          "title": "Resizable Split-Screen Workspace",
-          "description": "Draggable divider to adjust book and board widths on desktop, option to swap sides, and stacked layout on mobile."
+          "title": "On-Device AI Diagram Scanner (Chess OCR)",
+          "description": "Convolutional Neural Network (1.3 MB CNN) executed with ONNX Runtime Web on WebAssembly that classifies squares and reconstructs FEN on the fly without cloud requests."
         },
         {
-          "title": "Analysis Mode & Free Board Editor",
-          "description": "Switch between a free drag-and-drop editor to set up positions and an analysis mode that validates legal moves and tracks algebraic notation."
+          "title": "Adjustable Split-Screen Layout",
+          "description": "Draggable divider to adjust book and board width on desktop, panel flipping option, and responsive layout optimized for mobile screens."
         },
         {
-          "title": "Built-in Classic Chess Library",
-          "description": "Includes all 4 volumes of Roberto Grau's classic chess series ready to read with one click, plus drag-and-drop support for any personal PDF."
+          "title": "Analysis Mode, FAN Notation & Free Editor",
+          "description": "chess.js rule engine and react-chessboard with Free Editor and strict Analysis Mode, SVG figurine notation (FAN), castling rights, and black-to-move inference (1...)."
         },
         {
-          "title": "Persistent Browser Memory",
-          "description": "Stores your books locally in IndexedDB without uploading files to external servers and reopens every book on the exact page where you left off."
+          "title": "Google Play Distribution & Offline Storage",
+          "description": "Published on Google Play Store via TWA with Digital Asset Links, PDF.js v4.2 reader in a dedicated Web Worker, and IndexedDB book caching."
         }
       ],
       "features": [
-        "Fluid 'Split-Screen' interactive interface with draggable resizer and styling that automatically stacks on mobile formats.",
-        "Smart dual mode (Free Drag-and-Drop Editor and Analysis Mode regulated by chess.js legal move validation).",
-        "Pre-compiled high-performance PDF viewer executing heavy rendering workload on a background Web Worker.",
-        "Customized experience: multiple chessboard square themes (Cyberpunk, Ocean, Wood, etc.) and intelligent Dark/Light mode integration.",
-        "Advanced Web-Native persistence: historical memory tracking of the latest read page and ArrayBuffer caching via IndexedDB and Service Workers.",
-        "Direct inclusion of classic chess book cards like Roberto Grau's series dynamically fetched on the fly.",
-        "Algebraic notation on the board with navigable move history (start, previous, next, end) in Analysis Mode.",
-        "Layout configuration: swap PDF/board panels, rotate piece perspective, and load custom PDFs via drag-and-drop."
+        "Published on Google Play Store as a Trusted Web Activity (TWA) with Service Workers and offline web manifest.",
+        "Client-side computer vision: lightweight CNN model (1.3 MB) running in WebAssembly with ONNX Runtime Web to classify all 64 squares and output FEN.",
+        "Contrast gradient edge detection algorithm to capture diagrams with one click or direct clipboard pasting (Ctrl+V).",
+        "Full chess logic with FAN notation (SVG figurines), move history navigation, and legal move validation via chess.js.",
+        "Precompiled PDF.js v4.2 isolated inside a Web Worker to handle 300+ page books without UI stuttering.",
+        "IndexedDB persistence for custom book uploads, Grau's classical Treatise library, and reading position memory.",
+        "Visual customizer: multiple board themes (Cyberpunk, Ocean, Emerald, Wood) with Dark/Light mode integration."
       ],
-      "arch_title": "Front-End Architecture & Web-Native Persistence",
-      "arch_desc": "The application was built leveraging the React ecosystem paired with Vite for lightning-fast bundling. The primary technical challenge was orchestrating the highly demanding rendering of massive PDF files alongside a reactive chessboard without dropping UI frames or locking the main thread. This was mitigated by isolating the PDF viewer inside a controlled context and offloading the heavy lift to background message-passing. In tandem, an asynchronous cache layer structured on top of IndexedDB guaranteed that blocking resources loaded cleanly and locally after a first visit."
+      "arch_title": "Architecture: Offline Computer Vision, Web Workers & Mobile Distribution",
+      "arch_desc": "The application pairs React 19, Vite, and Tailwind CSS with a privacy-first, offline-ready architecture. Instead of processing images on latency-prone cloud servers, AI inference runs 100% on the client through ONNX Runtime Web compiled to WebAssembly. Heavy PDF document rendering is offloaded to a dedicated Web Worker, maintaining a solid 60 FPS refresh rate. For mobile distribution, a TWA wrapper packages the PWA into a signed Android App Bundle, enabling direct Google Play Store installation with immersive fullscreen support."
     },
     "elepad": {
       "dateRange": "March 2025 - March 2026",

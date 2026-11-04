@@ -29,6 +29,7 @@ const skillElements: SkillElement[] = [
     descEs: "Tipado estático de extremo a extremo para aplicaciones web, móviles y APIs serverless.",
     descEn: "End-to-end static typing across web applications, mobile apps, and serverless APIs.",
     projects: [
+      { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
       { slug: "datebox", label: "DateBox" },
@@ -54,9 +55,10 @@ const skillElements: SkillElement[] = [
     name: "Python",
     iconKey: "Python",
     cat: "languages",
-    descEs: "APIs REST con Flask, agentes de recomendación con IA y análisis de datos.",
-    descEn: "REST APIs with Flask, AI recommendation agents, and data analysis pipelines.",
+    descEs: "APIs REST con Flask, agentes de recomendación con IA y oráculo satelital Sentinel-2.",
+    descEn: "REST APIs with Flask, AI recommendation agents, and Sentinel-2 satellite oracle.",
     projects: [
+      { slug: "dosel", label: "Dosel" },
       { slug: "datebox", label: "DateBox" },
       { slug: "devops-kubernetes", label: "K8s & Observabilidad" },
       { slug: "devops-azure", label: "CI/CD Azure" },
@@ -87,6 +89,7 @@ const skillElements: SkillElement[] = [
     descEs: "Arquitectura de componentes reutilizables, hooks personalizados y estado sincronizado.",
     descEn: "Reusable component architecture, custom hooks, and synchronized client state.",
     projects: [
+      { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "scyt-utn", label: "Plataforma SCyT" },
       { slug: "chess-study", label: "Chess Study" },

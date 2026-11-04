@@ -68,6 +68,10 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Power BI": "frontend",
   "Material UI": "frontend",
   "MUI": "frontend",
+  "React 19": "frontend",
+  "ONNX WebAssembly": "frontend",
+  "ONNX Runtime Web": "frontend",
+  "PWA / TWA": "frontend",
 
   // Backend
   "Node.js": "backend",
@@ -83,6 +87,12 @@ const tagCategories: Record<string, "frontend" | "backend" | "database" | "devop
   "Python": "backend",
   "Hono": "backend",
   "LangGraph": "backend",
+  "Rust": "backend",
+  "Stellar (Soroban)": "backend",
+  "Soroban": "backend",
+  "Stellar": "backend",
+  "Sentinel-2": "backend",
+  "Web3": "backend",
 
   // Database
   "Supabase": "database",
