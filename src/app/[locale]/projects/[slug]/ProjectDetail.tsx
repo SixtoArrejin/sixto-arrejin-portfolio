@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/routing";
-import { projects, type Project } from "@/data/projects";
+import { projects, featuredProjects, otherProjects, type Project } from "@/data/projects";
 import {
   ArrowLeft,
   ArrowRight,
@@ -165,12 +165,15 @@ export function ProjectDetail({ project }: { project: Project }) {
       ? `${firstParagraph.substring(0, descLimit)}...`
       : firstParagraph;
 
-  // Prev / Next navigation
-  const currentIndex = projects.findIndex((p) => p.slug === project.slug);
+  // Prev / Next navigation (cycle inside featured projects if featured, or inside other projects)
+  const navList = project.featured
+    ? featuredProjects
+    : (otherProjects.some((p) => p.slug === project.slug) ? otherProjects : projects);
+  const currentIndex = navList.findIndex((p) => p.slug === project.slug);
   const prevProject =
-    currentIndex > 0 ? projects[currentIndex - 1] : projects[projects.length - 1];
+    currentIndex > 0 ? navList[currentIndex - 1] : navList[navList.length - 1];
   const nextProject =
-    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : projects[0];
+    currentIndex < navList.length - 1 ? navList[currentIndex + 1] : navList[0];
 
   const handleZoomIn = (e: React.MouseEvent) => {
     e.stopPropagation();

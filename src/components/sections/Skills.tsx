@@ -33,7 +33,7 @@ const skillElements: SkillElement[] = [
       { slug: "dosel", label: "Dosel" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
       { slug: "play-finder", label: "Play Finder" },
     ],
   },
@@ -60,7 +60,7 @@ const skillElements: SkillElement[] = [
     descEn: "REST APIs with Flask, AI recommendation agents, and Sentinel-2 satellite oracle.",
     projects: [
       { slug: "dosel", label: "Dosel" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
       { slug: "devops-kubernetes", label: "K8s & Observabilidad" },
       { slug: "devops-azure", label: "CI/CD Azure" },
     ],
@@ -135,7 +135,7 @@ const skillElements: SkillElement[] = [
     descEn: "Cross-platform native mobile apps (Android & iOS) published on app stores.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -148,7 +148,7 @@ const skillElements: SkillElement[] = [
     descEn: "Mobile ecosystem, cloud builds with EAS, push notifications, and native auth.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -205,7 +205,7 @@ const skillElements: SkillElement[] = [
     projects: [
       { slug: "dosel", label: "Dosel" },
       { slug: "chess-study", label: "Chess Study" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
 
@@ -246,7 +246,7 @@ const skillElements: SkillElement[] = [
     descEn: "Ultra-lightweight Edge serverless APIs with OpenAPI validation.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -290,7 +290,7 @@ const skillElements: SkillElement[] = [
       { slug: "mandadito", label: "Mandadito" },
       { slug: "duo-propiedades", label: "DÚO Propiedades" },
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -386,7 +386,7 @@ const skillElements: SkillElement[] = [
     projects: [
       { slug: "devops-azure", label: "CI/CD Azure" },
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -412,7 +412,7 @@ const skillElements: SkillElement[] = [
     descEn: "Globally distributed serverless execution with minimal cold-start latency.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -490,7 +490,7 @@ const skillElements: SkillElement[] = [
     descEn: "Integration of generative AI models (Google Gemini) and smart agents into real products.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {
@@ -517,7 +517,7 @@ const skillElements: SkillElement[] = [
     descEn: "Monorepo orchestration sharing code and types across mobile, web, and backend.",
     projects: [
       { slug: "elepad", label: "Elepad" },
-      { slug: "datebox", label: "DateBox" },
+      { slug: "datebox", label: "Datebox" },
     ],
   },
   {

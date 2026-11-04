@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
-import { ArrowUpRight } from "lucide-react";
+import { featuredProjects } from "@/data/projects";
+import { ArrowUpRight, FolderGit2 } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 export function Projects() {
@@ -13,17 +13,16 @@ export function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const filters = [
-    { id: "all", label: t("filter_all") },
+    { id: "all", label: `${t("filter_all")} (6)` },
     { id: "professional", label: t("type_professional") },
     { id: "thesis", label: t("type_thesis") },
     { id: "personal", label: t("type_personal") },
-    { id: "academic", label: t("type_academic") },
   ];
 
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.type === activeFilter);
+      ? featuredProjects
+      : featuredProjects.filter((p) => p.type === activeFilter);
 
   return (
     <section
@@ -258,6 +257,56 @@ export function Projects() {
             );
           })}
         </div>
+
+        {/* View All Projects CTA Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-14 p-7 sm:p-9 rounded-2xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden"
+          style={{
+            background: "var(--bg-card)",
+            borderColor: "var(--border-color)",
+          }}
+        >
+          <div className="max-w-xl">
+            <span
+              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.14em] mb-2"
+              style={{ color: "var(--accent-blue)" }}
+            >
+              <FolderGit2 size={14} />
+              {t("archive_kicker")}
+            </span>
+            <h3
+              className="text-xl sm:text-2xl font-semibold tracking-[-0.02em]"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {t("archive_title")}
+            </h3>
+            <p
+              className="text-xs sm:text-sm mt-1.5 leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {t("archive_desc")}
+            </p>
+          </div>
+
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-mono-tech font-bold uppercase tracking-wider transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap shadow-md cursor-pointer group shrink-0"
+            style={{
+              background: "var(--bg-inverted)",
+              color: "var(--text-inverted)",
+            }}
+          >
+            <span>{t("archive_cta")}</span>
+            <ArrowUpRight
+              size={15}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

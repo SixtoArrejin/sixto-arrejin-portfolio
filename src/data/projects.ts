@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   tags: string[];
   type: "professional" | "academic" | "thesis" | "personal";
+  featured?: boolean;
   team?: number;
   links: {
     github?: string;
@@ -18,37 +19,8 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "mandadito",
-    tags: [
-      "Next.js",
-      "React 19",
-      "TypeScript",
-      "Supabase",
-      "PostgreSQL",
-      "Mercado Pago",
-      "Redis",
-      "TanStack Query",
-      "Tailwind CSS",
-    ],
-    type: "professional",
-    links: {
-      live: "https://www.mandadito-app.com.ar",
-      liveAsWeb: true,
-      github: "https://github.com/braiancardozo143-ai/mandadito",
-    },
-    media: [
-      { type: "image" as const, url: "/projects/mandadito/01-como-funciona.png" },
-      { type: "image" as const, url: "/projects/mandadito/02-sumar-negocio.png" },
-      { type: "image" as const, url: "/projects/mandadito/03-catalogo-desktop.png" },
-      { type: "image" as const, url: "/projects/mandadito/04-catalogo-mobile.png" },
-      { type: "image" as const, url: "/projects/mandadito/05-tienda-mobile.png" },
-      { type: "image" as const, url: "/projects/mandadito/06-detalle-producto-mobile.png" },
-      { type: "image" as const, url: "/projects/mandadito/07-carrito.png" },
-      { type: "image" as const, url: "/projects/mandadito/08-seleccionar-ciudad.png" },
-    ],
-  },
-  {
     slug: "dosel",
+    featured: true,
     tags: [
       "Stellar (Soroban)",
       "Rust",
@@ -89,28 +61,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "duo-propiedades",
-    tags: [
-      "TypeScript",
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Supabase",
-      "PostgreSQL",
-      "Vercel",
-    ],
-    type: "professional",
-    links: {
-      live: "https://duopropiedades.com.ar",
-      liveAsWeb: true,
-    },
-    media: Array.from({ length: 21 }, (_, i) => ({
-      type: "image" as const,
-      url: `/projects/duo-propiedades/${i + 1}.png`,
-    })),
-  },
-  {
     slug: "datebox",
+    featured: true,
     tags: [
       "TypeScript",
       "React Native",
@@ -139,7 +91,61 @@ export const projects: Project[] = [
     })),
   },
   {
+    slug: "duo-propiedades",
+    featured: true,
+    tags: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel",
+    ],
+    type: "professional",
+    links: {
+      live: "https://duopropiedades.com.ar",
+      liveAsWeb: true,
+    },
+    media: Array.from({ length: 21 }, (_, i) => ({
+      type: "image" as const,
+      url: `/projects/duo-propiedades/${i + 1}.png`,
+    })),
+  },
+  {
+    slug: "mandadito",
+    featured: true,
+    tags: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Mercado Pago",
+      "Redis",
+      "TanStack Query",
+      "Tailwind CSS",
+    ],
+    type: "professional",
+    links: {
+      live: "https://www.mandadito-app.com.ar",
+      liveAsWeb: true,
+      github: "https://github.com/braiancardozo143-ai/mandadito",
+    },
+    media: [
+      { type: "image" as const, url: "/projects/mandadito/01-como-funciona.png" },
+      { type: "image" as const, url: "/projects/mandadito/02-sumar-negocio.png" },
+      { type: "image" as const, url: "/projects/mandadito/03-catalogo-desktop.png" },
+      { type: "image" as const, url: "/projects/mandadito/04-catalogo-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/05-tienda-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/06-detalle-producto-mobile.png" },
+      { type: "image" as const, url: "/projects/mandadito/07-carrito.png" },
+      { type: "image" as const, url: "/projects/mandadito/08-seleccionar-ciudad.png" },
+    ],
+  },
+  {
     slug: "chess-study",
+    featured: true,
     tags: [
       "React 19",
       "Vite",
@@ -176,10 +182,12 @@ export const projects: Project[] = [
   },
   {
     slug: "elepad",
+    featured: true,
     tags: [
       "TypeScript",
       "React Native",
       "Expo",
+      "Google Gemini",
       "Cloudflare Workers",
       "Supabase",
       "PostgreSQL",
@@ -224,6 +232,7 @@ export const projects: Project[] = [
   },
   {
     slug: "scyt-utn",
+    featured: false,
     tags: [
       "JavaScript (ES6+)",
       "React.js",
@@ -485,4 +494,7 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+export const featuredProjects = projects.filter((p) => p.featured);
+export const otherProjects = projects.filter((p) => !p.featured);
 
