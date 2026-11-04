@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download, ChevronDown } from "lucide-react";
 
-const CV_CACHE_VERSION = "20261104";
+const CV_CACHE_VERSION = "20261104-v3";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -47,7 +47,7 @@ export function Hero() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 pt-2 pb-6">
+      <div className="relative z-30 max-w-6xl w-full mx-auto px-6 pt-2 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left Column: Editorial Headline & CTAs */}
           <motion.div
@@ -118,7 +118,7 @@ export function Hero() {
               </a>
 
               {/* CV Dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div className="relative z-40" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
@@ -150,10 +150,11 @@ export function Hero() {
                     }}
                   >
                     <a
-                      href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack_ES.pdf?v=${CV_CACHE_VERSION}`}
+                      href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack.pdf?v=${CV_CACHE_VERSION}`}
+                      download="Sixto_Feliciano_Arrejin_CV_FullStack.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:opacity-80"
+                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:bg-[var(--bg-secondary)]"
                       style={{ color: "var(--text-primary)" }}
                       onClick={() => setIsDropdownOpen(false)}
                     >
@@ -162,10 +163,11 @@ export function Hero() {
                     </a>
                     <div style={{ height: "1px", background: "var(--border-color)" }} />
                     <a
-                      href={`/cv/Sixto_Feliciano_Arrejin_CV_FullStack_EN.pdf?v=${CV_CACHE_VERSION}`}
+                      href={`/cv/Sixto_Feliciano_Arrejin_Resume_FullStack.pdf?v=${CV_CACHE_VERSION}`}
+                      download="Sixto_Feliciano_Arrejin_Resume_FullStack.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:opacity-80"
+                      className="px-4 py-3 text-xs font-mono-tech font-medium transition-colors flex items-center justify-between hover:bg-[var(--bg-secondary)]"
                       style={{ color: "var(--text-primary)" }}
                       onClick={() => setIsDropdownOpen(false)}
                     >
