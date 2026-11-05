@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useMotionValueEvent } from "framer-motion";
 import { Link } from "@/i18n/routing";
 import { ArrowUpRight } from "lucide-react";
 
@@ -23,8 +23,13 @@ export function Experience() {
   const items = (t.raw("items") as TimelineItem[]) || [];
 
   const timelineRef = useRef<HTMLDivElement>(null);
+  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const lastDotRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [lineBounds, setLineBounds] = useState<{ top: number; height: number } | null>(null);
+  const [dotThresholds, setDotThresholds] = useState<number[]>([]);
+  const [reachedDots, setReachedDots] = useState<boolean[]>([]);
 
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -35,6 +40,57 @@ export function Experience() {
     stiffness: 140,
     damping: 28,
     restDelta: 0.001,
+  });
+
+  useEffect(() => {
+    const updateLineBounds = () => {
+      const firstDot = dotRefs.current[0];
+      const lastDot = lastDotRef.current;
+      if (timelineRef.current && firstDot && lastDot) {
+        const containerRect = timelineRef.current.getBoundingClientRect();
+        const firstRect = firstDot.getBoundingClientRect();
+        const lastRect = lastDot.getBoundingClientRect();
+
+        const top = firstRect.top + firstRect.height / 2 - containerRect.top;
+        const bottom = lastRect.top + lastRect.height / 2 - containerRect.top;
+        const height = Math.max(0, bottom - top);
+
+        setLineBounds({ top, height });
+
+        if (height > 0) {
+          const thresholds = dotRefs.current.map((dotEl) => {
+            if (!dotEl) return 0;
+            const r = dotEl.getBoundingClientRect();
+            const dotY = r.top + r.height / 2 - containerRect.top;
+            // The drawn line touches the top edge of the 12px dot (dotY - 6px)
+            const triggerY = dotY - 6;
+            return Math.max(0, Math.min(1, (triggerY - top) / height));
+          });
+          setDotThresholds(thresholds);
+          const currentP = smoothProgress.get();
+          setReachedDots(thresholds.map((th) => currentP >= th));
+        }
+      }
+    };
+
+    updateLineBounds();
+    window.addEventListener("resize", updateLineBounds);
+    const timer = setTimeout(updateLineBounds, 120);
+    return () => {
+      window.removeEventListener("resize", updateLineBounds);
+      clearTimeout(timer);
+    };
+  }, [items.length]);
+
+  useMotionValueEvent(smoothProgress, "change", (latest) => {
+    if (!dotThresholds.length) return;
+    setReachedDots((prev) => {
+      const next = dotThresholds.map((th) => latest >= th);
+      if (prev.length === next.length && prev.every((v, i) => v === next[i])) {
+        return prev;
+      }
+      return next;
+    });
   });
 
   useEffect(() => {
@@ -63,7 +119,7 @@ export function Experience() {
 
   return (
     <section
-      className="py-24 sm:py-32"
+      className="pt-24 sm:pt-28 pb-12 sm:pb-16"
       id="experience"
       style={{
         background: "var(--bg-primary)",
@@ -128,14 +184,20 @@ export function Experience() {
         <div ref={timelineRef} className="relative max-w-4xl">
           {/* Background Spine Track */}
           <div
-            className="absolute top-3 bottom-6 w-[1.5px] left-[16px] sm:left-[148px]"
-            style={{ background: "var(--border-color)" }}
+            className="absolute w-[2px] -translate-x-1/2 left-[16px] sm:left-[148px]"
+            style={{
+              top: lineBounds ? `${lineBounds.top}px` : "16px",
+              height: lineBounds ? `${lineBounds.height}px` : "calc(100% - 60px)",
+              background: "var(--border-color)",
+            }}
           />
 
           {/* Foreground Drawn Spine */}
           <motion.div
-            className="absolute top-3 bottom-6 w-[1.5px] left-[16px] sm:left-[148px] origin-top"
+            className="absolute w-[2px] -translate-x-1/2 left-[16px] sm:left-[148px] origin-top"
             style={{
+              top: lineBounds ? `${lineBounds.top}px` : "16px",
+              height: lineBounds ? `${lineBounds.height}px` : "calc(100% - 60px)",
               background: "var(--text-primary)",
               scaleY: smoothProgress,
             }}
@@ -144,7 +206,11 @@ export function Experience() {
           <div className="space-y-16 sm:space-y-20">
             {items.map((item, idx) => {
               const isActive = activeIndex === idx;
-              const isPassed = idx <= activeIndex;
+              const isReached =
+                reachedDots[idx] ??
+                (dotThresholds[idx] !== undefined
+                  ? smoothProgress.get() >= dotThresholds[idx]
+                  : idx === 0);
 
               return (
                 <div
@@ -176,20 +242,21 @@ export function Experience() {
 
                   {/* Spine Node Circle */}
                   <div
-                    className="absolute left-[16px] sm:left-[148px] top-2.5 -translate-x-1/2 z-10 flex items-center justify-center"
+                    ref={(el) => {
+                      dotRefs.current[idx] = el;
+                    }}
+                    className="absolute left-[16px] sm:left-[148px] top-2.5 -translate-x-1/2 z-10 flex items-center justify-center w-3 h-3"
                     aria-hidden="true"
                   >
                     <span
-                      className="w-3 h-3 rounded-full transition-all duration-300"
+                      className="w-3 h-3 rounded-full transition-all duration-300 block"
                       style={{
-                        background: isActive
+                        background: isReached
                           ? "var(--text-primary)"
                           : "var(--bg-primary)",
-                        border: isActive
+                        border: isReached
                           ? "2px solid var(--text-primary)"
-                          : isPassed
-                            ? "1.5px solid var(--text-secondary)"
-                            : "1.5px solid var(--border-color-hover)",
+                          : "1.5px solid var(--border-color-hover)",
                         boxShadow: isActive
                           ? "0 0 0 4px var(--bg-primary)"
                           : "0 0 0 3px var(--bg-primary)",
@@ -322,11 +389,12 @@ export function Experience() {
 
               {/* Spine Hollow Node */}
               <div
-                className="absolute left-[16px] sm:left-[148px] top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex items-center justify-center"
+                ref={lastDotRef}
+                className="absolute left-[16px] sm:left-[148px] top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-3 h-3"
                 aria-hidden="true"
               >
                 <span
-                  className="w-3 h-3 rounded-full transition-all duration-300"
+                  className="w-3 h-3 rounded-full transition-all duration-300 block"
                   style={{
                     background: "var(--bg-primary)",
                     border: "1.5px solid var(--border-color-hover)",

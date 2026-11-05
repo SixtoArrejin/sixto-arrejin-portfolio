@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ClientIntlProvider } from "@/components/providers/ClientIntlProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
@@ -59,7 +59,9 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const esMessages = (await import("../../../messages/es.json")).default;
+  const enMessages = (await import("../../../messages/en.json")).default;
+  const allMessages = { es: esMessages, en: enMessages };
 
   return (
     <html
@@ -78,11 +80,14 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
+          <ClientIntlProvider
+            initialLocale={locale as "es" | "en"}
+            allMessages={allMessages}
+          >
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
-          </NextIntlClientProvider>
+          </ClientIntlProvider>
         </ThemeProvider>
       </body>
     </html>

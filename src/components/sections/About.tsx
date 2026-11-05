@@ -45,7 +45,7 @@ export function About() {
 
   return (
     <section
-      className="py-24 sm:py-28"
+      className="pt-24 sm:pt-28 pb-12 sm:pb-14"
       id="about"
       style={{ borderBottom: "1px solid var(--border-color)" }}
     >

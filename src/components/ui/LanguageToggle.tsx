@@ -1,26 +1,20 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/routing";
+import { useAppLocale } from "@/components/providers/ClientIntlProvider";
 
 export function LanguageToggle() {
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const toggleLocale = () => {
-    const newLocale = locale === "es" ? "en" : "es";
-    router.replace(pathname, { locale: newLocale });
-  };
+  const { locale, toggleLocale, isPending } = useAppLocale();
 
   return (
     <button
       onClick={toggleLocale}
-      className="flex items-center gap-1.5 px-3 h-9 rounded-full text-xs font-mono-tech font-medium transition-colors duration-200 cursor-pointer active:scale-95"
+      disabled={isPending}
+      className="flex items-center gap-1.5 px-3 h-9 rounded-full text-xs font-mono-tech font-medium transition-all duration-200 cursor-pointer active:scale-95"
       style={{
         background: "var(--bg-card)",
         border: "1px solid var(--border-color)",
         color: "var(--text-primary)",
+        opacity: isPending ? 0.7 : 1,
       }}
       aria-label="Toggle language"
       id="language-toggle"

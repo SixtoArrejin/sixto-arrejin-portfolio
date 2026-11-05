@@ -41,7 +41,7 @@ export function Contact() {
   const t = useTranslations("contact");
 
   return (
-    <section className="py-24 sm:py-28" id="contact">
+    <section className="pt-24 sm:pt-28 pb-12 sm:pb-14" id="contact">
       <div className="max-w-6xl mx-auto px-6">
         {/* Inverted Business-Card Block (dataconale.com inspired) */}
         <motion.div

@@ -582,7 +582,7 @@ export function Skills() {
 
   return (
     <section
-      className="py-20 sm:py-24"
+      className="pt-20 sm:pt-24 pb-10 sm:pb-12"
       id="skills"
       style={{ borderBottom: "1px solid var(--border-color)" }}
     >

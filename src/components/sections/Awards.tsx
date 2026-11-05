@@ -67,7 +67,7 @@ export function Awards() {
 
   return (
     <section
-      className="py-24 sm:py-28"
+      className="pt-24 sm:pt-28 pb-12 sm:pb-14"
       id="awards"
       style={{
         background: "var(--bg-secondary)",
