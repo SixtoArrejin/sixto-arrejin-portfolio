@@ -1,34 +1,36 @@
-# Sixto Feliciano Arrejin — Full Stack Developer Portfolio
+# Sixto Feliciano Arrejin
 
-Welcome to the repository of my professional portfolio. This project is a Single Page Application (SPA) designed to showcase my experience, skills, and featured projects as an Information Systems Engineer and Full Stack Developer.
+Information Systems Engineer & Full Stack Developer based in Argentina. Focused on building high-performance web platforms, mobile applications, cloud architectures, and production-grade software solutions.
 
-🔗 **[View Live Portfolio](https://sixto-arrejin.vercel.app)**
-
-## 🚀 Key Features
-
-This portfolio was built with a strong focus on performance, accessibility, and user experience:
-
-- **Internationalization (i18n):** Native support for English and Spanish using `next-intl`.
-- **Dynamic Theme:** Integrated Light / Dark mode support with `next-themes`.
-- **Fluid Animations:** Smooth interactions and transitions using `framer-motion`.
-- **Responsive Design:** Fully adaptable to mobile devices, tablets, and desktop screens.
-- **Optimized Performance:** Leveraging the capabilities of Next.js 15 Server Components and App Router.
-
-## 💻 Tech Stack
-
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
-- **i18n:** [next-intl](https://next-intl-docs.vercel.app/)
-
-## 📬 Contact
-
-- **LinkedIn:** [linkedin.com/in/sixto-arrejin](https://linkedin.com/in/sixto-arrejin)
-- **GitHub:** [github.com/SixtoArrejin](https://github.com/SixtoArrejin)
-- **Email:** arrejinsixto@gmail.com
-- **WhatsApp:** [+54 379 479-7572](https://wa.me/543794797572)
+[Explore Live Portfolio](https://sixto-arrejin.asymmetric.com.ar/)
 
 ---
-*Designed and developed with dedication by Sixto Feliciano Arrejin.*
+
+### Featured Projects
+
+A curated selection of core engineering solutions featured in the portfolio. The complete archive—including academic degree thesis, Kubernetes microservices, Azure CI/CD pipelines, and business intelligence—is available in the live catalog.
+
+- **Dosel:** Web3 satellite monitoring platform using Rust (Soroban) and Sentinel-2 data. *1st Place Stellar Track — Ideatón NEA Tech 2026.*
+- **Datebox:** Mobile app & Cloudflare Workers edge backend with AI-driven group recommendations. *Available on Google Play.*
+- **DÚO Propiedades:** Commercial real estate platform in production with SSR, SEO optimization, and live client operations.
+- **Mandadito:** Multi-role hyper-local marketplace with Mercado Pago split payments and PostgreSQL RLS security.
+- **Chess Study:** Web & mobile chess companion with on-device computer vision (ONNX Runtime / WebAssembly) at 60 FPS. *Available on Google Play.*
+- **Elepad:** Cognitive accessibility suite with Gemini AI, Turborepo monorepo, and real-world health impact. *3rd Place Rally Latinoamericano de Innovación.*
+
+---
+
+### Technical Highlights
+
+- **Framework:** Next.js 16 (App Router, Turbopack) & React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion (choreographed physical timelines)
+- **Internationalization:** Zero-flicker client-side locale swapping via `next-intl`
+
+---
+
+### Contact
+
+- **Website:** [sixto-arrejin.asymmetric.com.ar](https://sixto-arrejin.asymmetric.com.ar/)
+- **LinkedIn:** [linkedin.com/in/sixto-arrejin](https://linkedin.com/in/sixto-arrejin)
+- **Email:** arrejinsixto@gmail.com
